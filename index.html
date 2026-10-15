@@ -187,22 +187,38 @@ figcaption .src{margin-top:6px}
 .flips{display:grid;gap:14px}
 .flip{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:grid;gap:10px}
 .flip h3{font-size:1.1rem}
-.pair{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 7.5rem minmax(0,1fr);gap:10px;align-items:stretch}
 .pair>div{border-radius:6px;padding:10px 12px;display:grid;gap:4px;align-content:start;min-width:0}
 .pair .was{background:var(--accent-soft)}
 .pair .then{background:var(--warn-soft);border-left:3px solid var(--warn)}
 .pair .when{font:600 .78rem/1.2 var(--mono);color:var(--muted);letter-spacing:.02em}
 .pair p{font-size:1rem}
-.gap{display:grid;place-items:center;text-align:center;font:600 .75rem/1.2 var(--mono);color:var(--warn);min-width:5.5rem}
+.gap{display:grid;place-content:center;justify-items:center;gap:4px;text-align:center;font:600 .75rem/1.2 var(--mono);color:var(--warn)}
 .gap i{font-style:normal;font-size:1.4rem;line-height:1}
 @media (max-width:600px){.pair{grid-template-columns:1fr}.gap{min-width:0;grid-auto-flow:column;gap:8px;justify-content:start;padding-left:12px}.gap i{transform:rotate(90deg)}}
 /* sitat fra nabo */
-.voice{margin:0;padding:16px 18px;border-radius:8px;background:var(--accent-soft);display:grid;gap:8px}
-.voice p{font:600 1.15rem/1.45 var(--body);font-style:normal}
+.voice{padding:18px 20px;border-radius:8px;background:var(--accent-soft);display:grid;gap:12px}
+.voice blockquote{border-left:3px solid var(--accent);font-style:normal;display:grid;gap:2px}
+.voice blockquote p{font:600 1.1rem/1.45 var(--body)}
 .voice footer{border:0;padding:0;font-size:.9rem;color:var(--muted)}
+.vnum{font-size:.98rem}
+.vbtn{justify-self:start;font:700 1rem/1.2 var(--body);text-decoration:none;padding:11px 15px;border-radius:6px;background:var(--accent);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .vbtn{color:#0b1a2b}}
+:root[data-theme="dark"] .vbtn{color:#0b1a2b}
 /* boks til politikerne */
 .ask{background:var(--surface);border:1px solid var(--line);border-left:4px solid #f2c94c;border-radius:6px;padding:18px 20px;display:grid;gap:8px}
 .explain{display:grid;gap:8px;font-size:.98rem}
+
+/* fast innholdsmeny */
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.toc{position:sticky;top:0;z-index:5;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin:-28px calc(-1 * max(16px,env(safe-area-inset-left,0px))) -24px;padding:10px max(16px,env(safe-area-inset-left,0px));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.toc::-webkit-scrollbar{display:none}
+.toc a{flex:none;font:600 .88rem/1 var(--body);text-decoration:none;color:var(--muted);padding:8px 11px;border-radius:999px}
+.toc a:hover{color:var(--fg);background:var(--accent-soft)}
+.toc a.on{color:#fff;background:var(--accent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .toc a.on{color:#0b1a2b}}
+:root[data-theme="dark"] .toc a.on{color:#0b1a2b}
 </style>
 
 </head>
@@ -216,21 +232,20 @@ figcaption .src{margin-top:6px}
     <p>Skjermen langs E6 er 35 år gammel og bygd for langt mindre trafikk. Over 600 personer langs strekningen har støy over 60 dB ved boligen, og mange hus ligger i rød og lilla støysone. Også skolen og barnehagen har støy over anbefalt nivå på uteområdet.</p>
     <div class="cta">
       <a class="btn" href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Bli med i Facebook-gruppa</a>
-      <a class="btn ghost" href="historier.html">Hva naboene forteller</a>
     </div>
   </div>
   <div class="zones" aria-hidden="true"><span style="background:#f2ee4e"></span><span style="background:#f7c96b"></span><span style="background:#f2343c"></span><span style="background:#a63fc2"></span><span style="background:#5b7fd6"></span></div>
   <div class="zone-lbl" aria-hidden="true"><span>55-59 dB</span><span>60-64</span><span>65-69</span><span>70-74</span><span>75+</span></div>
 </header>
 
+<nav class="toc" aria-label="Innhold">
+  <a href="#krav">Krav</a><a href="#tall">Tall</a><a href="#db">Støy</a><a href="#historikk">Historikk</a><a href="#innvendinger">Svar</a><a href="#motstrid">Motstrid</a><a href="#veien">Saksgang</a><a href="#regler">Regler</a><a href="#dok">Dokumenter</a><a href="historier.html">Naboene</a>
+</nav>
+
 <section aria-labelledby="krav">
   <span class="eyebrow">Våre krav</span>
   <h2 id="krav">Dette ber vi om</h2>
   <div class="demands">
-    <div class="split">
-      <div class="yes"><span>Nardo skole og barnehage</span><b>3 mill. kr</b><span>til planlegging, foreslått av Miljøpakken</span></div>
-      <div class="no"><span>Boligene på samme strekning</span><b>0 kr</b><span>ikke med i noe forslag</span></div>
-    </div>
     <div class="demand main">
       <span class="tag">Hovedkrav</span>
       <h3>Ny støyskjerm for hele strekningen Nidarvoll-Moholtlia</h3>
@@ -239,7 +254,7 @@ figcaption .src{margin-top:6px}
     <div class="minor">
       <div><span class="tag">Likebehandling</span><p><b>Boligene vurderes for støyskjerming etter Miljøpakkens egne kriterier.</b> I 2021 brukte Miljøpakken disse kriteriene for skjerming av boliger: bygd før 2005 og uteareal over 60 dB. Mange av husene langs strekningen sto der allerede i 1964, og flere ligger på 69-71 dB.</p></div>
       <div><span class="tag">Mens vi venter</span><p><b>Streknings-ATK og 60-sone.</b> Streknings-ATK holder farten nede på hele strekningen, ikke bare forbi fotoboksen. Statens vegvesen ville selv forsøke å få til streknings-ATK her i 2017. Lavere fart gir mindre støy.</p></div>
-      <span class="src">Miljøpakken, innkalling kontaktutvalget 12.10.2026, sak 39/26, s. 2. Miljøpakken, tilbudsforespørsel 2021, s. 5. EFLA, befaringsrapporter og tabell 4, 2025. SVV, e-post 21.08.2017, sak 17/34060-20</span>
+      <span class="src">Miljøpakken, tilbudsforespørsel 2021, s. 5. EFLA, befaringsrapporter og tabell 4, 2025. SVV, e-post 21.08.2017, sak 17/34060-20</span>
     </div>
   </div>
 </section>
@@ -292,10 +307,13 @@ figcaption .src{margin-top:6px}
     <figcaption>Tungtrafikk på E6, sett gjennom et vindu i dagens støyskjerm. I bakgrunnen ses Nardo barnehage.
     </figcaption>
   </figure>
-  <blockquote class="voice">
-    <p>“Det er vanskelig å kommunisere med hverandre om vi står mer enn to meter fra hverandre.”</p>
-    <footer>Beboer i Njords veg, juni 2026. <a href="historier.html">Les flere historier fra naboene</a></footer>
-  </blockquote>
+  <div class="voice">
+    <span class="eyebrow">Naboene forteller</span>
+    <blockquote><p>“Det er vanskelig å kommunisere med hverandre om vi står mer enn to meter fra hverandre.”</p><footer>Beboer i Njords veg</footer></blockquote>
+    <blockquote><p>“Vi måtte endre barnerom fordi barnet ikke fikk sove på grunn av støy”</p><footer>Beboer i Njords veg</footer></blockquote>
+    <p class="vnum">36 av 52 naboer som svarte på et skjema i sommer, kan ikke ha vinduene åpne. 35 sover dårligere.</p>
+    <a class="vbtn" href="historier.html">Les hva naboene forteller &rarr;</a>
+  </div>
   <h3 style="margin-top:12px">Støysonekartet langs Omkjøringsvegen</h3>
   <p>Kommunens støykart viser beregnet gjennomsnittlig støynivå fra vegtrafikk over døgnet. Fargene betyr, i desibel (dB):</p>
   <ul class="legend" aria-label="Fargeforklaring for støykartet">
@@ -443,15 +461,6 @@ figcaption .src{margin-top:6px}
   </div>
 </section>
 
-<section class="support" aria-labelledby="stotte">
-  <span class="eyebrow">Støtt kravet</span>
-  <h2 id="stotte">Slik kan du hjelpe</h2>
-  <ol>
-    <li>Bli med i Facebook-gruppa <a href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Aksjonsgruppa for ny støyskjerm på Nardo</a>.</li>
-    <li>Del denne siden med naboer og politikere du kjenner.</li>
-  </ol>
-</section>
-
 <section aria-labelledby="dok">
   <span class="eyebrow">Dokumentasjon</span>
   <h2 id="dok">Dokumentene bak denne siden</h2>
@@ -519,5 +528,30 @@ document.getElementById('copy').addEventListener('click', function(){
 });
 </script>
 
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+  if(!('IntersectionObserver' in window)||!links.length) return;
+  var map={}; links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var current=null;
+  function set(id){ if(id===current) return; current=id;
+    links.forEach(function(a){a.classList.toggle('on',a===map[id]);});
+    var a=map[id]; if(a&&a.scrollIntoView){ var n=a.parentNode; n.scrollTo({left:a.offsetLeft-n.clientWidth/2+a.offsetWidth/2,behavior:'smooth'}); }
+  }
+  var heads=Object.keys(map).map(function(id){return document.getElementById(id);}).filter(Boolean);
+  var io=new IntersectionObserver(function(){
+    var y=window.innerHeight*0.3, best=null;
+    heads.forEach(function(h){ if(h.getBoundingClientRect().top<y) best=h.id; });
+    set(best);
+  },{rootMargin:'0px 0px -60% 0px',threshold:[0,1]});
+  heads.forEach(function(h){io.observe(h.closest('section')||h);});
+  window.addEventListener('scroll',function(){
+    var y=window.innerHeight*0.3, best=null;
+    heads.forEach(function(h){ if(h.getBoundingClientRect().top<y) best=h.id; });
+    set(best);
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
