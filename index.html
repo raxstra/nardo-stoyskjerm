@@ -224,6 +224,12 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 @media (max-width:600px){.fbpill{position:static;display:inline-block;margin:16px 0 0 24px}.hero-in{padding-top:18px}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .toc a.on{color:#0b1a2b}}
 :root[data-theme="dark"] .toc a.on{color:#0b1a2b}
+
+/* flyfoto med markeringer */
+.mapfig{position:relative}
+.mapfig svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.mapfig .ml text{font:700 30px/1 var(--body);fill:#fff;paint-order:stroke;stroke:#0f1f33;stroke-width:7px;stroke-linejoin:round}
+@media (max-width:600px){.mapfig .ml text{font-size:40px;stroke-width:9px}}
 </style>
 
 </head>
@@ -347,9 +353,21 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
   <span class="eyebrow">Historikk</span>
   <h2 id="historikk">Fra lokal veg til E6</h2>
   <figure>
-    <img src="nardo-1964.jpg" width="1185" height="769" alt="Svart-hvitt flyfoto av Nardo i 1964. En veg kommer inn nede til venstre og ender i et kryss øverst i bildet, litt til høyre for midten. Boligfeltene ligger allerede tett langs vegen.">
-    <figcaption>Nardo i 1964. Omkjøringsvegen kommer inn nede til venstre og stopper i krysset øverst i bildet. Den fortsetter ikke videre opp Moholtlia. Boligene ligger allerede langs vegen, men den har ingen gjennomgangstrafikk. Der krysset er, ligger i dag rundkjøringen over E6 ved Nardo, midt på strekningen som trenger ny skjerm. Gjennomgangstrafikken kom da vegen ble sammenhengende i 1969. I 2025 var trafikken 47 200 kjøretøy i døgnet, og beregningene Statens vegvesen bruker for 2027, er 53 170.
-      <span class="src">Flyfoto: Kartverket / Norge i bilder, Trondheim-Meldal 1964. Utsnitt, gjort lysere. ÅDT 2025: Statens vegvesen, Trafikkdata. ÅDT 2027: EFLA, Tiltaksutredning for Statens vegvesen, samlerapport 13.05.2025, tabell 4.</span>
+    <div class="mapfig">
+      <img src="nardo-1964.jpg" width="1185" height="769" alt="Svart-hvitt flyfoto av Nardo i 1964. Omkjøringsvegen er markert med rødt fra nede til venstre til et kryss øverst i bildet, der rundkjøringen over E6 ligger i dag. Njords veg og Røllikvegen er merket, og boligene ligger allerede tett langs vegen.">
+      <svg viewBox="0 0 1185 769" aria-hidden="true">
+        <line x1="0" y1="729" x2="696" y2="242" stroke="#e02424" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="696" cy="242" r="34" fill="none" stroke="#f2c94c" stroke-width="7" stroke-dasharray="14 9"/>
+        <g class="ml">
+          <text x="742" y="236">Rundkjøringen</text><text x="742" y="272">over E6 i dag</text>
+          <text x="577" y="398" text-anchor="middle">Njords veg</text>
+          <text x="828" y="150" text-anchor="middle">Røllikvegen</text>
+          <text x="300" y="475" text-anchor="middle" transform="rotate(-35 300 475)">Omkjøringsvegen i 1964</text>
+        </g>
+      </svg>
+    </div>
+    <figcaption><b>Nabolaget var her før gjennomgangstrafikken.</b> Nardo i 1964, med Omkjøringsvegen markert i rødt. Vegen stoppet i krysset der rundkjøringen over E6 ligger i dag, midt på strekningen som trenger ny skjerm, og fortsatte ikke opp Moholtlia. Boligene i Njords veg og Røllikvegen lå allerede langs vegen. Gjennomgangstrafikken kom da vegen ble sammenhengende i 1969. I 2025 var trafikken 47 200 kjøretøy i døgnet, og beregningene Statens vegvesen bruker for 2027, er 53 170.
+      <span class="src">Flyfoto: Kartverket / Norge i bilder, Trondheim-Meldal 1964. Utsnitt, gjort lysere, markeringer lagt til av aksjonsgruppa. ÅDT 2025: Statens vegvesen, Trafikkdata. ÅDT 2027: EFLA, Tiltaksutredning for Statens vegvesen, samlerapport 13.05.2025, tabell 4.</span>
     </figcaption>
   </figure>
   <p>Vegen ble bygd om fra to til fire felt mellom Klæbuvegen og Moholt i 1989-1992, som første del av Trondheimspakken. Støyskjermene ved Nardo ble montert våren 1991.<span class="src"><a href="https://www.strindahistorielag.no/wiki/index.php/Omkj%C3%B8ringsvegen" target="_blank" rel="noopener">WikiStrinda, “Omkjøringsvegen”</a>, Strinda historielag. <a href="https://digitaltmuseum.no/011012926398/rv-706-omkjoringsvegen" target="_blank" rel="noopener">Foto: støyskjermer monteres ved Nardo, 30.05.1991</a>, Norsk vegmuseum, NVM 16-F-03131. <a href="https://digitaltmuseum.no/011012926409/rv-706-omkjoringsvegen" target="_blank" rel="noopener">Foto: Omkjøringsvegen mot Sluppen, sett fra rundkjøringen i Nardo-krysset, 05.07.1991</a>, Norsk vegmuseum, NVM 16-F-03137.</span></p>
