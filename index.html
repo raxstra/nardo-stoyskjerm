@@ -76,6 +76,16 @@ td .src{margin-top:2px}
 .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .phone{font:500 1.1rem/1 var(--mono);user-select:all}
 button{font:600 .85rem/1 var(--body);color:var(--accent);background:transparent;border:1px solid var(--accent);border-radius:4px;padding:8px 12px;cursor:pointer}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:grid;gap:6px;align-content:start}
+.stat b{font:800 2rem/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.stat span{font-size:.95rem}
+.support{display:grid;gap:10px}
+.support ol{margin:0;padding-left:1.3rem;display:grid;gap:6px}
+.qa{display:grid;gap:16px}
+.qa div{display:grid;gap:4px;border-top:1px solid var(--line);padding-top:12px}
+.qa h3{font-size:1rem}
+@media (max-width:620px){.stats{grid-template-columns:1fr}}
 footer{border-top:1px solid var(--line);padding-top:18px}
 figure{margin:0;display:grid;gap:10px}
 figure img{display:block;width:100%;height:auto;border-radius:4px;border:1px solid var(--line);background:var(--surface)}
@@ -98,14 +108,13 @@ figcaption .src{margin-top:6px}
 <header>
   <span class="eyebrow">E6 Omkjøringsvegen, Nidarvoll-Moholtlia, Trondheim</span>
   <h1>Ny støyskjerm på Nardo</h1>
-  <p class="lead">Skjermen langs E6 forbi Nardo ble montert i 1991, da Omkjøringsvegen ble bygd om til fire felt. Bak den ligger Nardo skole, Nardo barnehage og boliger som sto der lenge før vegen ble utvidet. Statens vegvesen har selv skrevet at skjermen må erstattes, og at det må finansieres gjennom Miljøpakken. Likevel er bare planlegging ved skolen og barnehagen foreslått finansiert.</p>
-  <div class="facts">
-    <span>ÅDT 2025 <b>47 200</b></span>
-    <span>Beregnet 2027 <b>53 170</b></span>
-    <span>Tunge kjøretøy <b>11 %</b></span>
-    <span>Underskrifter <b>nær 500</b></span>
-    <span>Innbyggerforslag <b>2026/24722</b></span>
+  <p class="lead">Støyskjermen langs E6 forbi Nardo er 35 år gammel og bygd for langt mindre trafikk. Skolen, barnehagen og boligene bak den ligger i rød og lilla støysone. Vi ber om at Miljøpakken planlegger ny skjerm for hele strekningen, også for boligene.</p>
+  <div class="stats">
+    <div class="stat"><b>1991</b><span>Dagens skjerm ble satt opp da vegen fikk fire felt.</span></div>
+    <div class="stat"><b>47 200</b><span>kjøretøy i døgnet i 2025, mot 25 000-30 000 rundt år 2000.</span></div>
+    <div class="stat"><b>69-71 dB</b><span>ved husveggene. Miljøpakkens mål for uteareal er 55 dB.</span></div>
   </div>
+  <p class="src">Kilder: Statens vegvesen, “På god veg” (2001) og Trafikkdata 2025. EFLA, Tiltaksutredning for Statens vegvesen 2025, tabell 4. Miljøpakken, tilbudsforespørsel 2021.</p>
 </header>
 
 <section class="krav" aria-labelledby="krav">
@@ -114,6 +123,16 @@ figcaption .src{margin-top:6px}
   <ol>
     <li>Planleggingen Miljøpakken nå foreslår ved Nardo skole og barnehage utvides til ny støyskjerm for hele strekningen Nidarvoll-Moholtlia.</li>
     <li>Boligene vurderes etter de samme kriteriene Miljøpakken selv brukte for boliger i 2021: bolig oppført før 2005 og privat uteareal over 60 dB.</li>
+  </ol>
+</section>
+
+<section class="support" aria-labelledby="stotte">
+  <span class="eyebrow">Støtt kravet</span>
+  <h2 id="stotte">Slik kan du hjelpe</h2>
+  <ol>
+    <li>Skriv under på innbyggerforslaget: <a href="https://minsak.no/sak/3665" target="_blank" rel="noopener">minsak.no/sak/3665</a>.</li>
+    <li>Bli med i Facebook-gruppa <a href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Aksjonsgruppa for ny støyskjerm på Nardo</a>.</li>
+    <li>Del denne siden med naboer og politikere du kjenner.</li>
   </ol>
 </section>
 
@@ -171,7 +190,6 @@ figcaption .src{margin-top:6px}
   <p>Vegen ble bygd om fra to til fire felt mellom Klæbuvegen og Moholt i 1989-1992, som første del av Trondheimspakken. Støyskjermene ved Nardo ble montert våren 1991.<span class="src"><a href="https://www.strindahistorielag.no/wiki/index.php/Omkj%C3%B8ringsvegen" target="_blank" rel="noopener">WikiStrinda, “Omkjøringsvegen”</a>, Strinda historielag. <a href="https://digitaltmuseum.no/011012926398/rv-706-omkjoringsvegen" target="_blank" rel="noopener">Foto: støyskjermer monteres ved Nardo, 30.05.1991</a>, Norsk vegmuseum, NVM 16-F-03131. <a href="https://digitaltmuseum.no/011012926409/rv-706-omkjoringsvegen" target="_blank" rel="noopener">Foto: Omkjøringsvegen mot Sluppen, sett fra rundkjøringen i Nardo-krysset, 05.07.1991</a>, Norsk vegmuseum, NVM 16-F-03137.</span></p>
   <h3 style="margin-top:12px">Hva Statens vegvesen selv har skrevet</h3>
   <ol class="tl">
-    <li><span class="yr">2008</span><div>Statens vegvesen betalte 1,2 mill. kr i et spleiselag om skjermen ved skolen, og overtok <q>framtidige drift- og vedlikeholdforpliktelser</q>.<span class="src">Avtale om overtakelse av støyskjerm ved Nardo skole, 2008</span></div></li>
     <li><span class="yr">2017</span><div>
       <blockquote>“For å kunne oppnå en forbedring så må utforming og høyde på skjerm endres vesentlig.”</blockquote>
       <span class="src">SVV, intern e-post 21.08.2017, sak 17/34060-20</span>
@@ -199,6 +217,17 @@ figcaption .src{margin-top:6px}
         <tr><td>Prosjektet i 2017 utgikk av “ressursmessige og økonomiske årsaker”<span class="src">24.09.2026</span></td><td>Det “ble stilt spørsmål ved effekten av de tiltak som var planlagt”<span class="src">02.10.2026, s. 2</span></td></tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<section aria-labelledby="innvendinger">
+  <span class="eyebrow">Innvendinger</span>
+  <h2 id="innvendinger">Det vi ofte får til svar</h2>
+  <div class="qa">
+    <div><h3>“Skolen har jo fått 3 millioner.”</h3><p>Pengene gjelder planlegging av tiltak på de eksisterende skjermene ved skolen og barnehagen. Boligene langs resten av strekningen er ikke med.<span class="src">Innkalling kontaktutvalget 12.10.2026, s. 2</span></p></div>
+    <div><h3>“Dette er statens ansvar, ikke Miljøpakkens.”</h3><p>Statens vegvesen skrev selv i 2024 at utskifting av skjermer langs riksveg her “må finansieres gjennom miljøpakken”. Miljøpakken har støytiltak mot boliger som eget tiltaksområde.<span class="src">Trondheim kommune sak 2024/19783-1, s. 11. Langsiktig tiltaksplan 2022-2029, s. 26</span></p></div>
+    <div><h3>“Husene ligger under grensen.”</h3><p>Grensen i forurensningsforskriften gjelder bare støy innendørs. Hager og uteplasser er ikke omfattet, og Statens vegvesen skriver selv at “lovverket synes noe mangelfullt mht. utendørs støy”. Miljøpakkens egne kriterier for boliger gjelder uteareal over 60 dB.<span class="src">SVV 02.10.2026, s. 3. Miljøpakken, tilbudsforespørsel 2021, s. 5</span></p></div>
+    <div><h3>“Det holder med vedlikehold.”</h3><p>Statens vegvesen konkluderte i 2017: “For å kunne oppnå en forbedring så må utforming og høyde på skjerm endres vesentlig.”<span class="src">SVV, e-post 21.08.2017, sak 17/34060-20</span></p></div>
   </div>
 </section>
 
@@ -238,7 +267,6 @@ figcaption .src{margin-top:6px}
   <ul class="docs">
     <li>Statens vegvesen, e-post 21.08.2017 og brev til Trondheim kommune 2017 (sak 17/34060-19 og -20)</li>
     <li>Statens vegvesen, prosjektark “Forprosjekt Omkjøringsvegen, løsningsvalg”, 06.07.2018</li>
-    <li>Avtale om overtakelse av støyskjerm ved Nardo skole, 2008</li>
     <li>Statens vegvesens innspill til Handlingsplan mot støy 2024-2029 (Trondheim kommune sak 2024/19783-1)</li>
     <li>Statens vegvesens brev i sak 26/199383, juli til oktober 2026</li>
     <li>Miljøpakken, innkalling til kontaktutvalget 12.10.2026, sak 39/26</li>
