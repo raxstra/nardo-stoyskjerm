@@ -124,6 +124,9 @@ button{font:600 .85rem/1 var(--body);color:var(--accent);background:transparent;
 .bar .fill.future{background:repeating-linear-gradient(135deg,var(--accent) 0 8px,#2d6aa5 8px 16px);color:#fff}
 @media (max-width:720px){.kpis{grid-template-columns:1fr 1fr}.kpi.wide{grid-column:1 / -1}}
 @media (max-width:440px){.kpis{grid-template-columns:1fr}}
+.kpi h3{font-size:1.25rem}
+.kpi p{font-size:.95rem;margin-top:4px}
+.kpis .tall2{grid-row:span 2}
 footer{border-top:1px solid var(--line);padding-top:18px}
 figure{margin:0;display:grid;gap:10px}
 figure img{display:block;width:100%;height:auto;border-radius:4px;border:1px solid var(--line);background:var(--surface)}
@@ -170,9 +173,9 @@ figcaption .src{margin-top:6px}
       </div>
       <div class="demand">
         <span class="tag">Mens vi venter</span>
-        <h3>60 km/t og streknings-ATK</h3>
-        <p>Lavere fart virker med en gang. Da fartsgrensen her ble satt ned fra 80 til 70 km/t, ga det beregnet 1,7 dB lavere støy. Statens vegvesen skrev selv i 2017: <q>Vi vil også forsøke å få til strekningsvis ATK her.</q></p>
-        <span class="src">Handlingsplan mot støy i Trondheim 2013-2018. SVV, e-post 21.08.2017, sak 17/34060-20</span>
+        <h3>Streknings-ATK og 60-sone</h3>
+        <p>Streknings-ATK måler snittfarten over en lengre strekning, så farten holdes nede hele vegen og ikke bare forbi én fotoboks. Statens vegvesen fikk allerede i 2017 tilbakemeldinger om at <q>fart og fartsøkning etter fotoboksen var ett problem</q>, og skrev: <q>Vi vil også forsøke å få til strekningsvis ATK her.</q> Lavere fart gir mindre støy: da fartsgrensen her ble satt ned fra 80 til 70 km/t, ga det beregnet 1,7 dB lavere støy.</p>
+        <span class="src">SVV, e-post 21.08.2017, sak 17/34060-20. Handlingsplan mot støy i Trondheim 2013-2018</span>
       </div>
     </div>
   </div>
@@ -182,32 +185,20 @@ figcaption .src{margin-top:6px}
   <span class="eyebrow">Nøkkeltall</span>
   <h2 id="tall">Strekningen i tall</h2>
   <div class="kpis">
-    <div class="kpi"><b>35 år</b><span>gammel er dagens skjerm. Den ble satt opp i 1991, da vegen fikk fire felt.</span></div>
-    <div class="kpi wide">
-      <span>Kjøretøy i døgnet forbi Nardo</span>
-      <div class="bars" role="img" aria-label="Trafikk: 25 000 til 30 000 kjøretøy i døgnet rundt år 2000, 47 200 i 2025, og 53 170 i Statens vegvesens beregninger for 2027.">
-        <div class="bar"><span class="yr">ca. 2000</span><div class="track"><div class="fill" style="width:50%">25-30 000</div></div></div>
-        <div class="bar"><span class="yr">2025</span><div class="track"><div class="fill now" style="width:86%">47 200</div></div></div>
-        <div class="bar"><span class="yr">2027</span><div class="track"><div class="fill future" style="width:97%">53 170</div></div></div>
+    <div class="kpi wide tall2">
+      <h3>Kjøretøy i døgnet forbi Nardo</h3>
+      <div class="bars" role="img" aria-label="Årsdøgntrafikk forbi Nardo: 23 100 i 1993, 31 195 i 2004, 47 200 i 2025, og 53 170 i Statens vegvesens beregninger for 2027.">
+        <div class="bar"><span class="yr">1993</span><div class="track"><div class="fill" style="width:43%">23 100</div></div></div>
+        <div class="bar"><span class="yr">2004</span><div class="track"><div class="fill" style="width:59%">31 195</div></div></div>
+        <div class="bar"><span class="yr">2025</span><div class="track"><div class="fill now" style="width:89%">47 200</div></div></div>
+        <div class="bar"><span class="yr">2027</span><div class="track"><div class="fill future" style="width:100%">53 170</div></div></div>
       </div>
-      <span class="meta">2027 er tallet Statens vegvesens støyberegninger bruker.</span>
+      <p>Trafikken er doblet siden skjermen ble satt opp. Om lag 11 % er tunge kjøretøy. 2027 er tallet Statens vegvesens støyberegninger bruker.</p>
     </div>
     <div class="kpi"><b>69-71 dB</b><span>beregnet ved husveggene i Njords veg. Miljøpakkens mål for uteareal er 55 dB.</span></div>
-    <div class="kpi"><b>2 av 3</b><span>deler av barnehagens uteområde ligger i oransje og røde støysoner.</span></div>
-    <div class="kpi"><b>11 %</b><span>av trafikken er tunge kjøretøy (2025).</span></div>
+    <div class="kpi"><b>35 år</b><span>gammel er dagens skjerm. Den ble satt opp i 1991, da vegen fikk fire felt.</span></div>
   </div>
-  <p class="src">Kilder: Statens vegvesen, “På god veg” (2001) og Trafikkdata 2025. EFLA, Tiltaksutredning for Statens vegvesen 2025, tabell 4. Miljøpakken, tilbudsforespørsel 2021. Barnehageeiers svar til tilsynet, sak 2026/5545-2, s. 2.</p>
-</section>
-
-
-<section class="support" aria-labelledby="stotte">
-  <span class="eyebrow">Støtt kravet</span>
-  <h2 id="stotte">Slik kan du hjelpe</h2>
-  <ol>
-    <li>Skriv under på innbyggerforslaget: <a href="https://minsak.no/sak/3665" target="_blank" rel="noopener">minsak.no/sak/3665</a>.</li>
-    <li>Bli med i Facebook-gruppa <a href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Aksjonsgruppa for ny støyskjerm på Nardo</a>.</li>
-    <li>Del denne siden med naboer og politikere du kjenner.</li>
-  </ol>
+  <p class="src">Kilder: Statens vegvesen, Vegkart, historisk årsdøgntrafikk for E6 ved Nardo (1993, 2004) og Trafikkdata 2025. EFLA, Tiltaksutredning for Statens vegvesen 2025, tabell 4. Miljøpakken, tilbudsforespørsel 2021.</p>
 </section>
 
 <section aria-labelledby="db">
@@ -278,6 +269,17 @@ figcaption .src{margin-top:6px}
   </ol>
 </section>
 
+<section aria-labelledby="innvendinger">
+  <span class="eyebrow">Innvendinger</span>
+  <h2 id="innvendinger">Det vi ofte får til svar</h2>
+  <div class="qa">
+    <div><h3>“Skolen har jo fått 3 millioner.”</h3><p>Pengene gjelder planlegging av tiltak på de eksisterende skjermene ved skolen og barnehagen. Boligene langs resten av strekningen er ikke med.<span class="src">Innkalling kontaktutvalget 12.10.2026, s. 2</span></p></div>
+    <div><h3>“Dette er statens ansvar, ikke Miljøpakkens.”</h3><p>Statens vegvesen skrev selv i 2024 at utskifting av skjermer langs riksveg her “må finansieres gjennom miljøpakken”. Miljøpakken har støytiltak mot boliger som eget tiltaksområde.<span class="src">Trondheim kommune sak 2024/19783-1, s. 11. Langsiktig tiltaksplan 2022-2029, s. 26</span></p></div>
+    <div><h3>“Husene ligger under grensen.”</h3><p>Grensen i forurensningsforskriften gjelder bare støy innendørs. Hager og uteplasser er ikke omfattet, og Statens vegvesen skriver selv at “lovverket synes noe mangelfullt mht. utendørs støy”. Miljøpakkens egne kriterier for boliger gjelder uteareal over 60 dB.<span class="src">SVV 02.10.2026, s. 3. Miljøpakken, tilbudsforespørsel 2021, s. 5</span></p></div>
+    <div><h3>“Det holder med vedlikehold.”</h3><p>Statens vegvesen konkluderte i 2017: “For å kunne oppnå en forbedring så må utforming og høyde på skjerm endres vesentlig.”<span class="src">SVV, e-post 21.08.2017, sak 17/34060-20</span></p></div>
+  </div>
+</section>
+
 <section aria-labelledby="motstrid">
   <span class="eyebrow">Motstrid</span>
   <h2 id="motstrid">Det ene, og det andre</h2>
@@ -294,15 +296,17 @@ figcaption .src{margin-top:6px}
   </div>
 </section>
 
-<section aria-labelledby="innvendinger">
-  <span class="eyebrow">Innvendinger</span>
-  <h2 id="innvendinger">Det vi ofte får til svar</h2>
-  <div class="qa">
-    <div><h3>“Skolen har jo fått 3 millioner.”</h3><p>Pengene gjelder planlegging av tiltak på de eksisterende skjermene ved skolen og barnehagen. Boligene langs resten av strekningen er ikke med.<span class="src">Innkalling kontaktutvalget 12.10.2026, s. 2</span></p></div>
-    <div><h3>“Dette er statens ansvar, ikke Miljøpakkens.”</h3><p>Statens vegvesen skrev selv i 2024 at utskifting av skjermer langs riksveg her “må finansieres gjennom miljøpakken”. Miljøpakken har støytiltak mot boliger som eget tiltaksområde.<span class="src">Trondheim kommune sak 2024/19783-1, s. 11. Langsiktig tiltaksplan 2022-2029, s. 26</span></p></div>
-    <div><h3>“Husene ligger under grensen.”</h3><p>Grensen i forurensningsforskriften gjelder bare støy innendørs. Hager og uteplasser er ikke omfattet, og Statens vegvesen skriver selv at “lovverket synes noe mangelfullt mht. utendørs støy”. Miljøpakkens egne kriterier for boliger gjelder uteareal over 60 dB.<span class="src">SVV 02.10.2026, s. 3. Miljøpakken, tilbudsforespørsel 2021, s. 5</span></p></div>
-    <div><h3>“Det holder med vedlikehold.”</h3><p>Statens vegvesen konkluderte i 2017: “For å kunne oppnå en forbedring så må utforming og høyde på skjerm endres vesentlig.”<span class="src">SVV, e-post 21.08.2017, sak 17/34060-20</span></p></div>
-  </div>
+<section aria-labelledby="veien">
+  <span class="eyebrow">Saksgang</span>
+  <h2 id="veien">Hvor saken avgjøres</h2>
+  <ul class="steps">
+    <li><span class="when">17.08.2026</span><div>Forretningsutvalget sendte innbyggerforslaget enstemmig videre til utvalg for miljø, næring og samferdsel.<span class="src">Forretningsutvalget, PS 99/2026</span></div></li>
+    <li><span class="when">28.09.2026</span><div>Miljøpakkens programråd foreslo 3 mill. kr i bompenger til planlegging av tiltak på eksisterende skjermer ved Nardo skole og barnehage. Boligene er ikke med.<span class="src">Innkalling kontaktutvalget 12.10.2026, sak 39/26, s. 2</span></div></li>
+    <li><span class="when">Høsten 2026</span><div>Utvalg for miljø, næring og samferdsel behandler innbyggerforslaget. Dato er ikke fastsatt.</div></li>
+    <li><span class="when">Desember 2026</span><div>Bystyret, fylkestinget og de andre partene behandler Miljøpakkens handlingsprogram 2027-2030.<span class="src">Innkalling kontaktutvalget 12.10.2026, s. 4</span></div></li>
+    <li><span class="when">Jan.-feb. 2027</span><div>Samordning. <q>De forslagene som da får felles tilslutning fra alle parter, tas inn i handlingsprogrammet.</q><span class="src">Samme, s. 4</span></div></li>
+  </ul>
+  <p>Utvidelsen må altså foreslås av kommunen eller fylket før desember, og staten må slutte seg til den.</p>
 </section>
 
 <section aria-labelledby="regler">
@@ -321,17 +325,14 @@ figcaption .src{margin-top:6px}
   </div>
 </section>
 
-<section aria-labelledby="veien">
-  <span class="eyebrow">Saksgang</span>
-  <h2 id="veien">Hvor saken avgjøres</h2>
-  <ul class="steps">
-    <li><span class="when">17.08.2026</span><div>Forretningsutvalget sendte innbyggerforslaget enstemmig videre til utvalg for miljø, næring og samferdsel.<span class="src">Forretningsutvalget, PS 99/2026</span></div></li>
-    <li><span class="when">28.09.2026</span><div>Miljøpakkens programråd foreslo 3 mill. kr i bompenger til planlegging av tiltak på eksisterende skjermer ved Nardo skole og barnehage. Boligene er ikke med.<span class="src">Innkalling kontaktutvalget 12.10.2026, sak 39/26, s. 2</span></div></li>
-    <li><span class="when">Høsten 2026</span><div>Utvalg for miljø, næring og samferdsel behandler innbyggerforslaget. Dato er ikke fastsatt.</div></li>
-    <li><span class="when">Desember 2026</span><div>Bystyret, fylkestinget og de andre partene behandler Miljøpakkens handlingsprogram 2027-2030.<span class="src">Innkalling kontaktutvalget 12.10.2026, s. 4</span></div></li>
-    <li><span class="when">Jan.-feb. 2027</span><div>Samordning. <q>De forslagene som da får felles tilslutning fra alle parter, tas inn i handlingsprogrammet.</q><span class="src">Samme, s. 4</span></div></li>
-  </ul>
-  <p>Utvidelsen må altså foreslås av kommunen eller fylket før desember, og staten må slutte seg til den.</p>
+<section class="support" aria-labelledby="stotte">
+  <span class="eyebrow">Støtt kravet</span>
+  <h2 id="stotte">Slik kan du hjelpe</h2>
+  <ol>
+    <li>Skriv under på innbyggerforslaget: <a href="https://minsak.no/sak/3665" target="_blank" rel="noopener">minsak.no/sak/3665</a>.</li>
+    <li>Bli med i Facebook-gruppa <a href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Aksjonsgruppa for ny støyskjerm på Nardo</a>.</li>
+    <li>Del denne siden med naboer og politikere du kjenner.</li>
+  </ol>
 </section>
 
 <section aria-labelledby="dok">
