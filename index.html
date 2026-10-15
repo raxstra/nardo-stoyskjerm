@@ -88,6 +88,28 @@ button{font:600 .85rem/1 var(--body);color:var(--accent);background:transparent;
 .qa div{display:grid;gap:4px;border-top:1px solid var(--line);padding-top:12px}
 .qa h3{font-size:1rem}
 @media (max-width:620px){.stats{grid-template-columns:1fr}}
+.hero{display:block;padding:0;border:0;position:relative;border-radius:10px;overflow:hidden;color:#fff;background:#0f1f33 url("stoykart-sorenga.jpg") right center/cover no-repeat;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(9,22,40,.96) 0%,rgba(9,22,40,.9) 45%,rgba(9,22,40,.55) 75%,rgba(9,22,40,.25) 100%)}
+.hero-in{padding:clamp(24px,5vw,48px);display:grid;gap:18px;max-width:40rem}
+.hero .eyebrow{color:#f2c94c}
+.hero h1{color:#fff;font-size:clamp(2.3rem,7vw,3.6rem)}
+.hero p{font-size:1.15rem;color:#e7edf4}
+.zones{display:flex;height:10px}
+.zones span{flex:1}
+.zone-lbl span{flex:1;padding-left:8px}
+.zone-lbl{display:flex;padding:6px 0 14px;font:500 .72rem/1 var(--mono);color:#c9d6e4;background:#0f1f33}
+.demands{display:grid;gap:12px}
+.demand{border-radius:8px;padding:18px 20px;display:grid;gap:6px;align-content:start;background:var(--surface);border:1px solid var(--line)}
+.demand.main{background:var(--accent);border-color:var(--accent);color:#fff}
+.demand.main h3,.demand.main p{color:#fff}
+.demand h3{font-size:1.2rem}
+.tag{justify-self:start;align-self:start;font:600 .72rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border-radius:3px;background:var(--signal-soft);color:var(--fg)}
+.demand.main .tag{background:#f2c94c;color:#0f1f33}
+.demand-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.demand-row>div{min-width:0}
+@media (max-width:620px){.demand-row{grid-template-columns:1fr}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .demand.main{background:#13406b;border-color:#13406b}}
+:root[data-theme="dark"] .demand.main{background:#13406b;border-color:#13406b}
 footer{border-top:1px solid var(--line);padding-top:18px}
 figure{margin:0;display:grid;gap:10px}
 figure img{display:block;width:100%;height:auto;border-radius:4px;border:1px solid var(--line);background:var(--surface)}
@@ -107,26 +129,50 @@ figcaption .src{margin-top:6px}
 <body>
 <div class="wrap">
 
-<header>
-  <span class="eyebrow">E6 Omkjøringsvegen, Nidarvoll-Moholtlia, Trondheim</span>
-  <h1>Ny støyskjerm på Nardo</h1>
-  <p class="lead">Støyskjermen langs E6 forbi Nardo er 35 år gammel og bygd for langt mindre trafikk. Skolen, barnehagen og boligene bak den ligger i rød og lilla støysone. Miljøpakken har foreslått 3 mill. kr til å planlegge bedre skjerming forbi Nardo skole og barnehage, men ingenting for boligene langs resten av strekningen. Vi ber om at planleggingen gjelder hele strekningen.</p>
-  <div class="stats">
+<header class="hero">
+  <div class="hero-in">
+    <span class="eyebrow">E6 Omkjøringsvegen, Nidarvoll-Moholtlia, Trondheim</span>
+    <h1>Ny støyskjerm på Nardo</h1>
+    <p>Skjermen langs E6 er 35 år gammel og bygd for langt mindre trafikk. Skolen, barnehagen og boligene bak den ligger i rød og lilla støysone. Miljøpakken har foreslått penger til å planlegge bedre skjerming forbi skolen og barnehagen, men ingenting for boligene.</p>
+  </div>
+  <div class="zones" aria-hidden="true"><span style="background:#f2ee4e"></span><span style="background:#f7c96b"></span><span style="background:#f2343c"></span><span style="background:#a63fc2"></span><span style="background:#5b7fd6"></span></div>
+  <div class="zone-lbl" aria-hidden="true"><span>55-59 dB</span><span>60-64</span><span>65-69</span><span>70-74</span><span>75+</span></div>
+</header>
+
+<section aria-labelledby="krav">
+  <span class="eyebrow">Våre krav</span>
+  <h2 id="krav">Dette ber vi om</h2>
+  <div class="demands">
+    <div class="demand main">
+      <span class="tag">Hovedkrav</span>
+      <h3>Ny støyskjerm for hele strekningen Nidarvoll-Moholtlia</h3>
+      <p>Planleggingen Miljøpakken har foreslått ved Nardo skole og barnehage, utvides til hele strekningen, også forbi boligene.</p>
+    </div>
+    <div class="demand-row">
+      <div class="demand">
+        <span class="tag">Likebehandling</span>
+        <h3>Boligene vurderes etter Miljøpakkens egne kriterier</h3>
+        <p>De samme kriteriene Miljøpakken brukte for boliger i 2021: bolig oppført før 2005 og privat uteareal over 60 dB.</p>
+      </div>
+      <div class="demand">
+        <span class="tag">Mens vi venter</span>
+        <h3>60 km/t og streknings-ATK</h3>
+        <p>Lavere fart virker med en gang. Da fartsgrensen her ble satt ned fra 80 til 70 km/t, ga det beregnet 1,7 dB lavere støy. Statens vegvesen skrev selv i 2017: <q>Vi vil også forsøke å få til strekningsvis ATK her.</q></p>
+        <span class="src">Handlingsplan mot støy i Trondheim 2013-2018. SVV, e-post 21.08.2017, sak 17/34060-20</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Nøkkeltall">
+<div class="stats">
     <div class="stat"><b>1991</b><span>Dagens skjerm ble satt opp da vegen fikk fire felt.</span></div>
     <div class="stat"><b>47 200 <small>i 2025</small></b><b>53 170 <small>i 2027</small></b><span>kjøretøy i døgnet. 2027 er tallet Statens vegvesens beregninger bruker. Rundt år 2000: 25 000-30 000.</span></div>
     <div class="stat"><b>69-71 dB</b><span>ved husveggene. Miljøpakkens mål for uteareal er 55 dB.</span></div>
   </div>
   <p class="src">Kilder: Statens vegvesen, “På god veg” (2001) og Trafikkdata 2025. EFLA, Tiltaksutredning for Statens vegvesen 2025, tabell 4. Miljøpakken, tilbudsforespørsel 2021.</p>
-</header>
-
-<section class="krav" aria-labelledby="krav">
-  <span class="eyebrow">Kravet</span>
-  <h2 id="krav">Hele strekningen, med boligene</h2>
-  <ol>
-    <li>Planleggingen Miljøpakken nå foreslår ved Nardo skole og barnehage utvides til ny støyskjerm for hele strekningen Nidarvoll-Moholtlia.</li>
-    <li>Boligene vurderes etter de samme kriteriene Miljøpakken selv brukte for boliger i 2021: bolig oppført før 2005 og privat uteareal over 60 dB.</li>
-  </ol>
 </section>
+
 
 <section class="support" aria-labelledby="stotte">
   <span class="eyebrow">Støtt kravet</span>
