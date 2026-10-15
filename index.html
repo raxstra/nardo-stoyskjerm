@@ -71,8 +71,11 @@ td .src{margin-top:2px}
 .steps li > div{min-width:0}
 .steps .when{font:500 .85rem/1.6 var(--mono);color:var(--muted)}
 
-.docs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.docs li{padding:8px 0;border-bottom:1px dashed var(--line)}
+.docgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:20px 24px;margin:4px 0 18px}
+.docgroups h3{font-size:1rem;margin:0 0 6px}
+.docs{margin:0;padding-left:1.1em;display:grid;gap:6px}
+.docs li{padding-left:2px}
+.docs .ref{display:block;font:500 .78rem/1.4 var(--mono);color:var(--muted)}
 .contact{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:20px;display:grid;gap:12px}
 .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .phone{font:500 1.1rem/1 var(--mono);user-select:all}
@@ -344,20 +347,36 @@ figcaption .src{margin-top:6px}
   <span class="eyebrow">Dokumentasjon</span>
   <h2 id="dok">Dokumentene bak denne siden</h2>
   <p>Alle dokumentene er offentlige eller utlevert etter innsynskrav. Aksjonsgruppa sender dem gjerne til politikere, journalister og andre som vil lese dem selv.</p>
-  <ul class="docs">
-    <li>Statens vegvesen, e-post 21.08.2017 og brev til Trondheim kommune 2017 (sak 17/34060-19 og -20)</li>
-    <li>Statens vegvesen, prosjektark “Forprosjekt Omkjøringsvegen, løsningsvalg”, 06.07.2018</li>
-    <li>Statens vegvesens innspill til Handlingsplan mot støy 2024-2029 (Trondheim kommune sak 2024/19783-1)</li>
-    <li>Statens vegvesens brev i sak 26/199383, juli til oktober 2026</li>
-    <li>Miljøpakken, innkalling til kontaktutvalget 12.10.2026, sak 39/26</li>
-    <li>Miljøpakken og Trondheim kommune, tilbudsforespørsel om utendørs støy 2021 (sak 2020/77502)</li>
-    <li>EFLA, Tiltaksutredning, samlerapport 13.05.2025</li>
-    <li>Trondheim kommune, tilsyn med lydmiljø ved Nardo skole og barnehage (sak 2026/4758, 2026/4761 og 2026/5545)</li>
-    <li>Forretningsutvalget 17.08.2026, PS 99/2026</li>
-    <li>Flyfoto 1964 og kommunens støykart for Nardo</li>
-    <li>Strinda historielag, <a href="https://www.strindahistorielag.no/wiki/index.php/Omkj%C3%B8ringsvegen" target="_blank" rel="noopener">WikiStrinda: Omkjøringsvegen</a> (åpen nettside)</li>
-    <li>Norsk vegmuseum, <a href="https://digitaltmuseum.no/011012926398/rv-706-omkjoringsvegen" target="_blank" rel="noopener">foto av skjermmontering ved Nardo 30.05.1991</a> og <a href="https://digitaltmuseum.no/011012926409/rv-706-omkjoringsvegen" target="_blank" rel="noopener">Nardo-krysset 05.07.1991</a> (DigitaltMuseum)</li>
-  </ul>
+  <div class="docgroups">
+    <div>
+      <h3>Statens vegvesen</h3>
+      <ul class="docs">
+        <li>E-post og brev om skjermene, 2017 <span class="ref">sak 17/34060</span></li>
+        <li>Prosjektark “Forprosjekt Omkjøringsvegen”, 2018</li>
+        <li>Innspill til handlingsplan mot støy, 2024 <span class="ref">sak 2024/19783</span></li>
+        <li>Brev til aksjonsgruppa, juli til oktober 2026 <span class="ref">sak 26/199383</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Kommunen og Miljøpakken</h3>
+      <ul class="docs">
+        <li>Handlingsplan mot støy 2024-2029</li>
+        <li>Tilsyn med lydmiljø ved Nardo skole og barnehage, 2026</li>
+        <li>Forretningsutvalget 17.08.2026 <span class="ref">PS 99/2026</span></li>
+        <li>Miljøpakkens kriterier for støyskjerming av boliger, 2021</li>
+        <li>Innkalling til kontaktutvalget 12.10.2026</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Utredninger, kart og historie</h3>
+      <ul class="docs">
+        <li>EFLA, tiltaksutredning for Statens vegvesen, 2025</li>
+        <li>Kommunens støysonekart og flyfoto fra 1964</li>
+        <li><a href="https://www.strindahistorielag.no/wiki/index.php/Omkj%C3%B8ringsvegen" target="_blank" rel="noopener">WikiStrinda: Omkjøringsvegen</a></li>
+        <li>Norsk vegmuseum: <a href="https://digitaltmuseum.no/011012926398/rv-706-omkjoringsvegen" target="_blank" rel="noopener">skjermene monteres, 1991</a>, og <a href="https://digitaltmuseum.no/011012926409/rv-706-omkjoringsvegen" target="_blank" rel="noopener">Nardokrysset, 1991</a></li>
+      </ul>
+    </div>
+  </div>
   <div class="contact">
     <h3>Be om dokumentene</h3>
     <p>Kontakt Rasmus Strand, Aksjonsgruppa for ny støyskjerm på Nardo. Send en e-post og si hvilket dokument du vil ha.</p>
@@ -371,7 +390,7 @@ figcaption .src{margin-top:6px}
 </section>
 
 <footer>
-  <p class="meta">Sist oppdatert 14.10.2026. Sitater er gjengitt ordrett fra kildene som er oppgitt. Aksjonsgruppa for ny støyskjerm på Nardo.</p>
+  <p class="meta">Sist oppdatert 15.10.2026. Sitater er gjengitt ordrett fra kildene som er oppgitt. Aksjonsgruppa for ny støyskjerm på Nardo.</p>
 </footer>
 
 </div>
