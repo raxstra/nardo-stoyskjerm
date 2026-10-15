@@ -136,9 +136,10 @@ figure{margin:0;display:grid;gap:10px}
 figure img{display:block;width:100%;height:auto;border-radius:4px;border:1px solid var(--line);background:var(--surface)}
 figcaption{font-size:.95rem;color:var(--fg)}
 figcaption .src{margin-top:6px}
-.legend{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font:500 .85rem/1.4 var(--mono)}
-.legend li{display:flex;align-items:center;gap:8px}
-.sw{width:22px;height:14px;border-radius:2px;border:1px solid var(--line);flex:none}
+.legend{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;font:500 .8rem/1.3 var(--mono)}
+.legend li{display:flex;flex-direction:column;gap:3px}
+.legend b{font-weight:700}
+.sw{display:block;width:100%;height:12px;border-radius:2px;border:1px solid var(--line)}
 .maps{display:grid;gap:28px}
 @media (max-width:520px){
   .tl li{grid-template-columns:1fr;gap:4px}
@@ -212,24 +213,19 @@ figcaption .src{margin-top:6px}
     </svg>
   </div>
   <p class="src">Fargene følger kommunens støysonekart (se under). Mål og kriterium: Miljøpakkens tilbudsforespørsel 2021, sak 2020/77502, vedlegg 4, s. 5. Beregning: EFLA, Tiltaksutredning, samlerapport 13.05.2025, tabell 4.</p>
-  <p style="margin-top:16px">Statens vegvesen skriver selv om regelverket og støynivået:</p>
-  <blockquote>“[…] «juridisk» akseptabelt støynivå dessverre vil oppleves uakseptabelt for mange boligeiere.”</blockquote>
-  <span class="src">SVV, brev 16.07.2026, sak 26/199383-2, s. 2</span>
-  <blockquote style="margin-top:10px">“Det er ikke et uttrykk for en mening om at støysituasjonen er god, men baserer seg på at Statens vegvesen må forholde seg til det til enhver tid gjeldende regelverk […]”</blockquote>
-  <span class="src">SVV, brev 02.10.2026, sak 26/199383-21, s. 3, pkt. 7</span>
   <figure>
     <img src="tungtrafikk.jpg" width="1600" height="739" loading="lazy" alt="Vogntog og tankbil på E6 sett gjennom et vindu i dagens støyskjerm. Nardo barnehage ses i bakgrunnen.">
     <figcaption>Tungtrafikk på E6, sett gjennom et vindu i dagens støyskjerm. I bakgrunnen ses Nardo barnehage.
     </figcaption>
   </figure>
   <h3 style="margin-top:12px">Støysonekartet langs Omkjøringsvegen</h3>
-  <p>Kommunens støykart viser beregnet gjennomsnittlig støynivå fra vegtrafikk over døgnet. Fargene betyr:</p>
+  <p>Kommunens støykart viser beregnet gjennomsnittlig støynivå fra vegtrafikk over døgnet. Fargene betyr, i desibel (dB):</p>
   <ul class="legend" aria-label="Fargeforklaring for støykartet">
-    <li><span class="sw" style="background:#f2ee4e"></span>Gul: 55-59 dB</li>
-    <li><span class="sw" style="background:#f7c96b"></span>Oransje: 60-64 dB</li>
-    <li><span class="sw" style="background:#f2343c"></span>Rød: 65-69 dB</li>
-    <li><span class="sw" style="background:#a63fc2"></span>Lilla: 70-74 dB</li>
-    <li><span class="sw" style="background:#5b7fd6"></span>Blå: 75 dB og over</li>
+    <li><span class="sw" style="background:#f2ee4e"></span><b>Gul</b>55-59</li>
+    <li><span class="sw" style="background:#f7c96b"></span><b>Oransje</b>60-64</li>
+    <li><span class="sw" style="background:#f2343c"></span><b>Rød</b>65-69</li>
+    <li><span class="sw" style="background:#a63fc2"></span><b>Lilla</b>70-74</li>
+    <li><span class="sw" style="background:#5b7fd6"></span><b>Blå</b>75+</li>
   </ul>
   <p>Til sammenligning er Miljøpakkens mål for privat uteareal 55 dB, altså under gul sone. Mange av hagene og husveggene langs vegen ligger i rød og lilla sone.</p>
   <div class="maps">
@@ -283,7 +279,7 @@ figcaption .src{margin-top:6px}
   <div class="qa">
     <div><h3>“Skolen har jo fått 3 millioner.”</h3><p>Pengene gjelder planlegging av tiltak på de eksisterende skjermene ved skolen og barnehagen. Boligene langs resten av strekningen er ikke med.<span class="src">Innkalling kontaktutvalget 12.10.2026, s. 2</span></p></div>
     <div><h3>“Dette er statens ansvar, ikke Miljøpakkens.”</h3><p>Statens vegvesen skrev selv i 2024 at utskifting av skjermer langs riksveg her “må finansieres gjennom miljøpakken”. Miljøpakken har støytiltak mot boliger som eget tiltaksområde.<span class="src">Trondheim kommune sak 2024/19783-1, s. 11. Langsiktig tiltaksplan 2022-2029, s. 26</span></p></div>
-    <div><h3>“Husene ligger under grensen.”</h3><p>Grensen i forurensningsforskriften gjelder bare støy innendørs. Hager og uteplasser er ikke omfattet, og Statens vegvesen skriver selv at “lovverket synes noe mangelfullt mht. utendørs støy”. Miljøpakkens egne kriterier for boliger gjelder uteareal over 60 dB.<span class="src">SVV 02.10.2026, s. 3. Miljøpakken, tilbudsforespørsel 2021, s. 5</span></p></div>
+    <div><h3>“Husene ligger under grensen.”</h3><p>Grensen i forurensningsforskriften gjelder bare støy innendørs. Hager og uteplasser er ikke omfattet, og Statens vegvesen skriver selv at “lovverket synes noe mangelfullt mht. utendørs støy”, og at standpunktet deres “ikke [er] et uttrykk for en mening om at støysituasjonen er god”. Miljøpakkens egne kriterier for boliger gjelder uteareal over 60 dB.<span class="src">SVV 02.10.2026, s. 3. Miljøpakken, tilbudsforespørsel 2021, s. 5</span></p></div>
     <div><h3>“Det holder med vedlikehold.”</h3><p>Statens vegvesen konkluderte i 2017: “For å kunne oppnå en forbedring så må utforming og høyde på skjerm endres vesentlig.”<span class="src">SVV, e-post 21.08.2017, sak 17/34060-20</span></p></div>
   </div>
 </section>
