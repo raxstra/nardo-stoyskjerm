@@ -108,11 +108,12 @@ button{font:600 .85rem/1 var(--body);color:var(--accent);background:transparent;
 @media (max-width:620px){.stats{grid-template-columns:1fr}}
 .hero{display:block;padding:0;border:0;position:relative;border-radius:10px;overflow:hidden;color:#fff;background:#0f1f33 url("hero-stoykart.jpg") right center/cover no-repeat;isolation:isolate}
 @media (max-width:600px){.hero{background-position:75% center}}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(9,22,40,.92) 0%,rgba(9,22,40,.82) 40%,rgba(9,22,40,.4) 68%,rgba(9,22,40,.1) 100%)}
-.hero-in{padding:clamp(24px,5vw,48px);display:grid;gap:18px;max-width:40rem}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(9,22,40,.96) 0%,rgba(9,22,40,.92) 46%,rgba(9,22,40,.45) 70%,rgba(9,22,40,.08) 100%)}
+@media (max-width:600px){.hero::before{background:linear-gradient(180deg,rgba(9,22,40,.9) 0%,rgba(9,22,40,.82) 100%)}}
+.hero-in{padding:clamp(28px,6vw,56px) clamp(24px,5vw,48px);display:grid;gap:18px;max-width:40rem}
 .hero .eyebrow{color:#f2c94c}
 .hero h1{color:#fff;font-size:clamp(2.3rem,7vw,3.6rem)}
-.hero p{font-size:1.15rem;color:#e7edf4}
+.hero p{font-size:1.25rem;line-height:1.5;color:#f1f5f9;max-width:30rem}
 .zones{display:flex;height:10px}
 .zones span{flex:1}
 .zone-lbl span{flex:1;padding-left:8px}
@@ -217,6 +218,10 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 .toc a{flex:none;font:600 .88rem/1 var(--body);text-decoration:none;color:var(--muted);padding:8px 11px;border-radius:999px}
 .toc a:hover{color:var(--fg);background:var(--accent-soft)}
 .toc a.on{color:#fff;background:var(--accent)}
+.fbpill{position:absolute;top:16px;right:16px;z-index:1;font:700 .9rem/1 var(--body);text-decoration:none;background:#f2c94c;color:#0f1f33;padding:10px 14px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.fbpill:hover{background:#ffd95e}
+.fbpill:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media (max-width:600px){.fbpill{position:static;display:inline-block;margin:16px 0 0 24px}.hero-in{padding-top:18px}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .toc a.on{color:#0b1a2b}}
 :root[data-theme="dark"] .toc a.on{color:#0b1a2b}
 </style>
@@ -226,13 +231,11 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 <div class="wrap">
 
 <header class="hero">
+  <a class="fbpill" href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Bli med i Facebook-gruppa &#8599;</a>
   <div class="hero-in">
     <span class="eyebrow">E6 Omkjøringsvegen, Nidarvoll-Moholtlia, Trondheim</span>
     <h1>Ny støyskjerm på Nardo</h1>
-    <p>Skjermen langs E6 er 35 år gammel og bygd for langt mindre trafikk. Over 600 personer langs strekningen har støy over 60 dB ved boligen, og mange hus ligger i rød og lilla støysone. Også skolen og barnehagen har støy over anbefalt nivå på uteområdene.</p>
-    <div class="cta">
-      <a class="btn" href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Bli med i Facebook-gruppa</a>
-    </div>
+    <p>Skjermen langs E6 er 35 år gammel, og trafikken er doblet siden den ble satt opp. Over 600 personer langs strekningen har støy over 60 dB ved boligen.</p>
   </div>
   <div class="zones" aria-hidden="true"><span style="background:#f2ee4e"></span><span style="background:#f7c96b"></span><span style="background:#f2343c"></span><span style="background:#a63fc2"></span><span style="background:#5b7fd6"></span></div>
   <div class="zone-lbl" aria-hidden="true"><span>55-59 dB</span><span>60-64</span><span>65-69</span><span>70-74</span><span>75+</span></div>
