@@ -5,23 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ny støyskjerm på Nardo</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Fakta og kilder om kravet om ny støyskjerm langs E6 Omkjøringsvegen på Nardo i Trondheim.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:site_name" content="Aksjonsgruppa for ny støyskjerm på Nardo">
+<meta property="og:title" content="Ny støyskjerm på Nardo">
+<meta property="og:description" content="Skjermen langs E6 er 35 år gammel, og trafikken er doblet. Over 600 personer langs strekningen har støy over 60 dB ved boligen. Fakta og kilder.">
+<meta property="og:url" content="https://stoyskjerm-nardo.vercel.app/">
+<meta property="og:image" content="https://stoyskjerm-nardo.vercel.app/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Støysonekart over E6 Omkjøringsvegen ved Nardo med teksten Ny støyskjerm på Nardo">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: én lesekolonne, som et saksdokument. Vegskiltblå som aksent, signalgul bare på dB-skalaen. */
 :root{
   --bg:#f5f7f9; --surface:#ffffff; --fg:#17202b; --muted:#56616e; --line:#d6dce3;
-  --accent:#0b4f8a; --accent-soft:#e3edf6; --signal:#e8a400; --signal-soft:#fff3d1; --warn:#a33a1f;
+  --accent:#0b4f8a; --accent-soft:#e3edf6; --signal:#e8a400; --signal-soft:#fff3d1; --warn:#a33a1f; --warn-soft:#fbebe6;
   --display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#10161d; --surface:#18212b; --fg:#e6ebf0; --muted:#9aa6b3; --line:#2c3845;
-  --accent:#7db4e6; --accent-soft:#1c2c3d; --signal:#f2bd3a; --signal-soft:#3a2f12; --warn:#ef8a6c; color-scheme:dark}}
+  --accent:#7db4e6; --accent-soft:#1c2c3d; --signal:#f2bd3a; --signal-soft:#3a2f12; --warn:#ef8a6c; --warn-soft:#3a231c; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#10161d; --surface:#18212b; --fg:#e6ebf0; --muted:#9aa6b3; --line:#2c3845;
-  --accent:#7db4e6; --accent-soft:#1c2c3d; --signal:#f2bd3a; --signal-soft:#3a2f12; --warn:#ef8a6c; color-scheme:dark}
+  --accent:#7db4e6; --accent-soft:#1c2c3d; --signal:#f2bd3a; --signal-soft:#3a2f12; --warn:#ef8a6c; --warn-soft:#3a231c; color-scheme:dark}
 body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body);
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .wrap{max-width:46rem;margin:0 auto;padding-block:40px 64px;display:grid;gap:48px}
@@ -47,9 +59,12 @@ header{display:grid;gap:16px;border-bottom:3px solid var(--accent);padding-botto
 /* dB-skala */
 .scale{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px 18px 14px;overflow-x:auto}
 .scale svg{display:block;width:100%;min-width:520px;height:auto}
-.scale text{font-family:var(--mono);fill:var(--muted);font-size:11px}
-.scale .lbl{fill:var(--fg);font-size:12px}
+.scale text{font-family:var(--body);fill:var(--muted);font-size:13px}
+.scale .tick{font-family:var(--mono);font-size:11px}
+.scale .lbl{fill:var(--fg);font-size:14px}
+.scale .big{fill:var(--fg);font-size:15px;font-weight:700}
 
+q{quotes:"“" "”" "‘" "’"}
 blockquote{margin:0;padding:2px 0 2px 16px;border-left:3px solid var(--line);font-style:italic}
 
 .tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
@@ -132,8 +147,8 @@ button{font:600 .85rem/1 var(--body);color:var(--accent);background:transparent;
 @media (max-width:440px){.kpis{grid-template-columns:1fr}}
 .kpi h3{font-size:1.25rem}
 .kpi p{font-size:.95rem;margin-top:4px}
-.kpis .tall2{grid-row:span 2}
-.minor{display:grid;gap:12px;padding:16px 20px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.kpis .tall2{grid-row:auto;grid-column:1 / -1}
+.minor{display:grid;gap:12px;padding:16px 20px;border:1px solid var(--accent-soft);border-radius:8px;background:var(--accent-soft)}
 .minor>div{display:grid;grid-template-columns:9.5rem 1fr;gap:12px;align-items:baseline}
 .minor>div>p{min-width:0}
 @media (max-width:560px){.minor>div{grid-template-columns:1fr;gap:6px}}
@@ -151,6 +166,43 @@ figcaption .src{margin-top:6px}
   .tl li{grid-template-columns:1fr;gap:4px}
   .steps li{grid-template-columns:1fr;gap:2px}
 }
+
+/* knapper i toppen */
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 1rem/1.2 var(--body);text-decoration:none;padding:12px 16px;border-radius:6px;background:#f2c94c;color:#0f1f33}
+.btn:hover{background:#ffd95e}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.7)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* skole mot boliger */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.split>div{border-radius:8px;padding:14px 16px;display:grid;gap:2px;background:var(--surface);border:1px solid var(--line)}
+.split b{font:800 1.6rem/1.1 var(--display);font-variant-numeric:tabular-nums}
+.split .yes b{color:var(--accent)}
+.split .no{border-color:var(--warn)}
+.split .no b{color:var(--warn)}
+.split span{font-size:.95rem}
+@media (max-width:440px){.split{grid-template-columns:1fr}}
+/* motstrid */
+.flips{display:grid;gap:14px}
+.flip{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:grid;gap:10px}
+.flip h3{font-size:1.1rem}
+.pair{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch}
+.pair>div{border-radius:6px;padding:10px 12px;display:grid;gap:4px;align-content:start;min-width:0}
+.pair .was{background:var(--accent-soft)}
+.pair .then{background:var(--warn-soft);border-left:3px solid var(--warn)}
+.pair .when{font:600 .78rem/1.2 var(--mono);color:var(--muted);letter-spacing:.02em}
+.pair p{font-size:1rem}
+.gap{display:grid;place-items:center;text-align:center;font:600 .75rem/1.2 var(--mono);color:var(--warn);min-width:5.5rem}
+.gap i{font-style:normal;font-size:1.4rem;line-height:1}
+@media (max-width:600px){.pair{grid-template-columns:1fr}.gap{min-width:0;grid-auto-flow:column;gap:8px;justify-content:start;padding-left:12px}.gap i{transform:rotate(90deg)}}
+/* sitat fra nabo */
+.voice{margin:0;padding:16px 18px;border-radius:8px;background:var(--accent-soft);display:grid;gap:8px}
+.voice p{font:600 1.15rem/1.45 var(--body);font-style:normal}
+.voice footer{border:0;padding:0;font-size:.9rem;color:var(--muted)}
+/* boks til politikerne */
+.ask{background:var(--surface);border:1px solid var(--line);border-left:4px solid #f2c94c;border-radius:6px;padding:18px 20px;display:grid;gap:8px}
+.explain{display:grid;gap:8px;font-size:.98rem}
 </style>
 
 </head>
@@ -161,7 +213,11 @@ figcaption .src{margin-top:6px}
   <div class="hero-in">
     <span class="eyebrow">E6 Omkjøringsvegen, Nidarvoll-Moholtlia, Trondheim</span>
     <h1>Ny støyskjerm på Nardo</h1>
-    <p>Skjermen langs E6 er 35 år gammel og bygd for langt mindre trafikk. Skolen, barnehagen og boligene bak den ligger i rød og lilla støysone. Miljøpakken har foreslått penger til å planlegge bedre skjerming forbi skolen og barnehagen, men ingenting for boligene.</p>
+    <p>Skjermen langs E6 er 35 år gammel og bygd for langt mindre trafikk. Over 600 personer langs strekningen har støy over 60 dB ved boligen, og mange hus ligger i rød og lilla støysone. Også skolen og barnehagen har støy over anbefalt nivå på uteområdet.</p>
+    <div class="cta">
+      <a class="btn" href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Bli med i Facebook-gruppa</a>
+      <a class="btn ghost" href="historier.html">Hva naboene forteller</a>
+    </div>
   </div>
   <div class="zones" aria-hidden="true"><span style="background:#f2ee4e"></span><span style="background:#f7c96b"></span><span style="background:#f2343c"></span><span style="background:#a63fc2"></span><span style="background:#5b7fd6"></span></div>
   <div class="zone-lbl" aria-hidden="true"><span>55-59 dB</span><span>60-64</span><span>65-69</span><span>70-74</span><span>75+</span></div>
@@ -171,6 +227,10 @@ figcaption .src{margin-top:6px}
   <span class="eyebrow">Våre krav</span>
   <h2 id="krav">Dette ber vi om</h2>
   <div class="demands">
+    <div class="split">
+      <div class="yes"><span>Nardo skole og barnehage</span><b>3 mill. kr</b><span>til planlegging, foreslått av Miljøpakken</span></div>
+      <div class="no"><span>Boligene på samme strekning</span><b>0 kr</b><span>ikke med i noe forslag</span></div>
+    </div>
     <div class="demand main">
       <span class="tag">Hovedkrav</span>
       <h3>Ny støyskjerm for hele strekningen Nidarvoll-Moholtlia</h3>
@@ -179,8 +239,9 @@ figcaption .src{margin-top:6px}
     <div class="minor">
       <div><span class="tag">Likebehandling</span><p><b>Boligene vurderes for støyskjerming etter Miljøpakkens egne kriterier.</b> I 2021 brukte Miljøpakken disse kriteriene for skjerming av boliger: bygd før 2005 og uteareal over 60 dB. Mange av husene langs strekningen sto der allerede i 1964, og flere ligger på 69-71 dB.</p></div>
       <div><span class="tag">Mens vi venter</span><p><b>Streknings-ATK og 60-sone.</b> Streknings-ATK holder farten nede på hele strekningen, ikke bare forbi fotoboksen. Statens vegvesen ville selv forsøke å få til streknings-ATK her i 2017. Lavere fart gir mindre støy.</p></div>
-      <span class="src">Miljøpakken, tilbudsforespørsel 2021, s. 5. EFLA, befaringsrapporter og tabell 4, 2025. SVV, e-post 21.08.2017, sak 17/34060-20</span>
+      <span class="src">Miljøpakken, innkalling kontaktutvalget 12.10.2026, sak 39/26, s. 2. Miljøpakken, tilbudsforespørsel 2021, s. 5. EFLA, befaringsrapporter og tabell 4, 2025. SVV, e-post 21.08.2017, sak 17/34060-20</span>
     </div>
+  </div>
 </section>
 
 <section aria-labelledby="tall">
@@ -197,33 +258,44 @@ figcaption .src{margin-top:6px}
       </div>
       <p>Trafikken er doblet siden skjermen ble satt opp. Om lag 11 % er tunge kjøretøy. 2027 er tallet Statens vegvesens støyberegninger bruker.</p>
     </div>
+    <div class="kpi"><b>600+</b><span>personer langs strekningen har over 60 dB ved boligen, ifølge Statens vegvesens eget anslag fra 2018. Tallet er ikke oppdatert siden, mens trafikken har økt.</span></div>
     <div class="kpi"><b>69-71 dB</b><span>beregnet ved husveggene i Njords veg. Miljøpakkens mål for uteareal er 55 dB.</span></div>
     <div class="kpi"><b>35 år</b><span>gammel er dagens skjerm. Den ble satt opp i 1991, da vegen fikk fire felt.</span></div>
   </div>
-  <p class="src">Kilder: Statens vegvesen, Vegkart, historisk årsdøgntrafikk for E6 ved Nardo (1993, 2004) og Trafikkdata 2025. EFLA, Tiltaksutredning for Statens vegvesen 2025, tabell 4. Miljøpakken, tilbudsforespørsel 2021.</p>
+  <p class="src">Kilder: Statens vegvesen, Vegkart, historisk årsdøgntrafikk for E6 ved Nardo (1993, 2004) og Trafikkdata 2025. SVV, prosjektark “Forprosjekt Omkjøringsvegen, løsningsvalg”, 06.07.2018, s. 1. EFLA, Tiltaksutredning for Statens vegvesen 2025, tabell 4. Miljøpakken, tilbudsforespørsel 2021.</p>
 </section>
 
 <section aria-labelledby="db">
   <span class="eyebrow">Støynivå</span>
   <h2 id="db">Langt over Miljøpakkens egne grenser</h2>
-  <div class="scale" role="img" aria-label="Skala i desibel fra 45 til 80, farget som kommunens støykart: gul 55-59, oransje 60-64, rød 65-69, lilla 70-74, blå 75 og over. Miljøpakkens mål for privat uteareal er 55 dB, kriteriet for å vurdere tiltak er over 60 dB, og EFLA har beregnet 69 til 71 dB ved fasaden på seks boliger i Njords veg.">
-    <svg viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg">
-      <rect x="30" y="62" width="165.7" height="14" fill="var(--accent-soft)"/><rect x="195.7" y="62" width="82.9" height="14" fill="#f2ee4e"/><rect x="278.6" y="62" width="82.9" height="14" fill="#f7c96b"/><rect x="361.4" y="62" width="82.9" height="14" fill="#f2343c"/><rect x="444.3" y="62" width="82.9" height="14" fill="#a63fc2"/><rect x="527.1" y="62" width="82.9" height="14" fill="#5b7fd6"/>
-      <rect x="427.7" y="54" width="33.1" height="30" rx="2" fill="none" stroke="var(--fg)" stroke-width="3"/><polygon points="436.3,40 452.3,40 444.3,50" fill="var(--fg)"/><text class="lbl" x="444.3" y="34" text-anchor="middle" font-weight="700">I DAG</text>
-      <g stroke="var(--muted)" stroke-width="1"><line x1="30.0" y1="80" x2="30.0" y2="88"/><line x1="112.9" y1="80" x2="112.9" y2="88"/><line x1="195.7" y1="80" x2="195.7" y2="88"/><line x1="278.6" y1="80" x2="278.6" y2="88"/><line x1="361.4" y1="80" x2="361.4" y2="88"/><line x1="444.3" y1="80" x2="444.3" y2="88"/><line x1="527.1" y1="80" x2="527.1" y2="88"/><line x1="610.0" y1="80" x2="610.0" y2="88"/></g>
-      <g text-anchor="middle"><text x="30.0" y="102">45</text><text x="112.9" y="102">50</text><text x="195.7" y="102">55</text><text x="278.6" y="102">60</text><text x="361.4" y="102">65</text><text x="444.3" y="102">70</text><text x="527.1" y="102">75</text><text x="610.0" y="102">80 dB</text></g>
-      <g stroke="var(--fg)" stroke-width="1"><line x1="195.7" y1="40" x2="195.7" y2="62"/><line x1="278.6" y1="22" x2="278.6" y2="62"/><line x1="444.3" y1="122" x2="444.3" y2="84"/></g>
-      <text class="lbl" x="191.7" y="36" text-anchor="end">Mål for uteareal: 55 dB</text>
-      <text class="lbl" x="274.6" y="18" text-anchor="end">Kriterium for tiltak: over 60 dB</text>
-      <text class="lbl" x="448.3" y="136" text-anchor="middle" font-weight="700">I dag: 69-71 dB ved husveggene (beregnet)</text>
+  <div class="scale" role="img" aria-label="Skala i desibel fra 45 til 80, farget som kommunens støykart: gul 55-59, oransje 60-64, rød 65-69, lilla 70-74, blå 75 og over. Miljøpakkens mål for privat uteareal er 55 dB, tiltak vurderes over 60 dB, og EFLA har beregnet 69 til 71 dB ved fasaden på seks boliger i Njords veg.">
+    <svg viewBox="0 0 640 178" xmlns="http://www.w3.org/2000/svg">
+      <rect x="30" y="62" width="165.7" height="16" fill="var(--accent-soft)"/><rect x="195.7" y="62" width="82.9" height="16" fill="#f2ee4e"/><rect x="278.6" y="62" width="82.9" height="16" fill="#f7c96b"/><rect x="361.4" y="62" width="82.9" height="16" fill="#f2343c"/><rect x="444.3" y="62" width="82.9" height="16" fill="#a63fc2"/><rect x="527.1" y="62" width="82.9" height="16" fill="#5b7fd6"/>
+      <rect x="427.7" y="55" width="33.1" height="30" rx="2" fill="none" stroke="var(--fg)" stroke-width="3"/>
+      <g stroke="var(--muted)" stroke-width="1"><line x1="30.0" y1="82" x2="30.0" y2="90"/><line x1="112.9" y1="82" x2="112.9" y2="90"/><line x1="195.7" y1="82" x2="195.7" y2="90"/><line x1="278.6" y1="82" x2="278.6" y2="90"/><line x1="361.4" y1="82" x2="361.4" y2="90"/><line x1="444.3" y1="82" x2="444.3" y2="90"/><line x1="527.1" y1="82" x2="527.1" y2="90"/><line x1="610.0" y1="82" x2="610.0" y2="90"/></g>
+      <g text-anchor="middle" class="tick"><text class="tick" x="30.0" y="104">45</text><text class="tick" x="112.9" y="104">50</text><text class="tick" x="195.7" y="104">55</text><text class="tick" x="278.6" y="104">60</text><text class="tick" x="361.4" y="104">65</text><text class="tick" x="444.3" y="104">70</text><text class="tick" x="527.1" y="104">75</text><text class="tick" x="610.0" y="104">80 dB</text></g>
+      <g stroke="var(--fg)" stroke-width="1"><line x1="195.7" y1="42" x2="195.7" y2="62"/><line x1="278.6" y1="20" x2="278.6" y2="62"/><line x1="444.3" y1="128" x2="444.3" y2="86"/></g>
+      <text class="lbl" x="190" y="38" text-anchor="end">Mål for uteareal: 55 dB</text>
+      <text class="lbl" x="273" y="16" text-anchor="end">Tiltak vurderes over 60 dB</text>
+      <text class="big" x="444.3" y="146" text-anchor="middle">I dag: 69-71 dB</text><text x="444.3" y="166" text-anchor="middle">ved husveggene i Njords veg (beregnet)</text>
     </svg>
   </div>
   <p class="src">Fargene følger kommunens støysonekart (se under). Mål og kriterium: Miljøpakkens tilbudsforespørsel 2021, sak 2020/77502, vedlegg 4, s. 5. Beregning: EFLA, Tiltaksutredning, samlerapport 13.05.2025, tabell 4.</p>
+  <div class="explain">
+    <h3>Hvorfor noen få desibel betyr mye</h3>
+    <p>Desibel er en logaritmisk skala. En lyd oppfattes omtrent dobbelt så sterk når nivået er 10 dB høyere. Husene på 70 dB har altså støy som oppleves omtrent dobbelt så sterk som ved 60 dB, der Miljøpakken vurderer tiltak.</p>
+    <p>Trafikken påvirker nivået mindre enn mange tror: Ifølge kommunens handlingsplan må trafikken halveres for å senke støyen med 3 dB. Motsatt gir en dobling av trafikken om lag 3 dB mer, og trafikken forbi Nardo er doblet siden 1993.</p>
+    <span class="src">Store norske leksikon, “desibel” (Holtebekk, Myren, Ulseth og Gjestland), oppdatert 03.11.2025. Trondheim kommune, Handlingsplan mot støy 2024-2029, pkt. 7.2.4, s. 40.</span>
+  </div>
   <figure>
     <img src="tungtrafikk.jpg" width="1600" height="739" loading="lazy" alt="Vogntog og tankbil på E6 sett gjennom et vindu i dagens støyskjerm. Nardo barnehage ses i bakgrunnen.">
     <figcaption>Tungtrafikk på E6, sett gjennom et vindu i dagens støyskjerm. I bakgrunnen ses Nardo barnehage.
     </figcaption>
   </figure>
+  <blockquote class="voice">
+    <p>“Det er vanskelig å kommunisere med hverandre om vi står mer enn to meter fra hverandre.”</p>
+    <footer>Beboer i Njords veg, juni 2026. <a href="historier.html">Les flere historier fra naboene</a></footer>
+  </blockquote>
   <h3 style="margin-top:12px">Støysonekartet langs Omkjøringsvegen</h3>
   <p>Kommunens støykart viser beregnet gjennomsnittlig støynivå fra vegtrafikk over døgnet. Fargene betyr, i desibel (dB):</p>
   <ul class="legend" aria-label="Fargeforklaring for støykartet">
@@ -263,18 +335,18 @@ figcaption .src{margin-top:6px}
   <h3 style="margin-top:12px">Hva Statens vegvesen selv har skrevet</h3>
   <ol class="tl">
     <li><span class="yr">2017</span><div>
-      <blockquote>“For å kunne oppnå en forbedring så må utforming og høyde på skjerm endres vesentlig.”</blockquote>
+      <blockquote>“For å kunne oppnå en forbedring så må utforming og høyde på skjerm <b>endres vesentlig</b>.”</blockquote>
       <span class="src">SVV, intern e-post 21.08.2017, sak 17/34060-20</span>
       <p style="margin-top:10px">Samme høst skrev vegvesenet til kommunen: <q>Vegvesenet vil jobbe videre for å få finansiert et større prosjekt med støytiltak.</q></p>
       <span class="src">SVV til Trondheim kommune, sak 17/34060-19</span></div></li>
     <li><span class="yr">2018</span><div>Vegvesenet laget et skriftlig prosjektforslag for et forprosjekt, kategorisert som miljøtiltak med Miljøpakken som bevilgning. Målet var å redusere støyen utendørs til under 60 dB for beboerne langs strekningen, og over 600 personer ble oppgitt å ha støy over 60 dB. Forslaget ble ikke godkjent.<span class="src">SVV, prosjektark “Forprosjekt Omkjøringsvegen, løsningsvalg”, 06.07.2018, s. 1</span></div></li>
     <li><span class="yr">2023</span><div>En henvendelse om bedre skjerming ved skolen og barnehagen ble aldri besvart. Vegvesenet skriver nå: <q>Henvendelsen ble ikke besvart, noe som burde vært gjort.</q><span class="src">SVV, brev 09.10.2026, sak 26/199383-23, s. 3, pkt. 4</span></div></li>
     <li><span class="yr">2024</span><div>
-      <blockquote>Utskifting av støyskjermer langs riksveg “må finansieres gjennom miljøpakken da de kommer utenom det som eventuelt allerede er oppgitt i NTP”.</blockquote>
+      <blockquote>Utskifting av støyskjermer langs riksveg “<b>må finansieres gjennom miljøpakken</b> da de kommer utenom det som eventuelt allerede er oppgitt i NTP”.</blockquote>
       <span class="src">SVVs innspill til Handlingsplan mot støy 2024-2029, Trondheim kommune sak 2024/19783-1, s. 11. E6 Nidarvoll-Moholtlia er første eksempel.</span>
       <p style="margin-top:10px">Kommunens handlingsplan mot støy 2024-2029 fører opp E6 Nidarvoll-Moholtlia som planlagt tiltak med <q>Fokusområde: Ny og bedre skjerm på strekningen</q>, og Nardo skole og barnehage som støyprosjekt, begge med Statens vegvesen som ansvarlig. Kommunen skriver at oppføringen bygger på vegvesenets eget innspill.</p>
       <span class="src">Trondheim kommune, Handlingsplan mot støy 2024-2029, tabell 3 (s. 28) og tabell 6 (s. 31). Trondheim kommune, brev 28.09.2026, ref. 2026/33550</span></div></li>
-    <li><span class="yr">Juli 2026</span><div>Vegvesenet skriver at et eget prosjekt gjennom Miljøpakken er <q>den eneste realistiske muligheten</q> for en vesentlig oppgradering av skjermingen, og: <q>vi kan love at vi vil følge opp dette utover høsten.</q><span class="src">SVV, brev 16.07.2026, sak 26/199383-2, s. 1-2</span></div></li>
+    <li><span class="yr">Juli 2026</span><div>Vegvesenet skriver at et eget prosjekt gjennom Miljøpakken er <q><b>den eneste realistiske muligheten</b></q> for en vesentlig oppgradering av skjermingen, og: <q>vi kan love at vi vil følge opp dette utover høsten.</q><span class="src">SVV, brev 16.07.2026, sak 26/199383-2, s. 1-2</span></div></li>
     <li class="now"><span class="yr">Høsten 2026</span><div>Vegvesenet snur. I september skriver de at prosjektet trolig ikke blir meldt inn til Miljøpakken, og at byvekstavtalemidlene <q>bør gå til andre formål</q>. I oktober omtales forprosjektet fra 2017-2018 som <q>en verbal ambisjon</q>, og bedre skjerming ved skolen som <q>et ordinært vedlikeholdstiltak</q>.<span class="src">SVV, brev 14.09.2026 (26/199383-13) og 09.10.2026 (26/199383-23)</span></div></li>
   </ol>
 </section>
@@ -293,16 +365,44 @@ figcaption .src{margin-top:6px}
 <section aria-labelledby="motstrid">
   <span class="eyebrow">Motstrid</span>
   <h2 id="motstrid">Det ene, og det andre</h2>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th scope="col">Statens vegvesen har skrevet</th><th scope="col">Statens vegvesen har også skrevet</th></tr></thead>
-      <tbody>
-        <tr><td>Miljøpakken er “den eneste realistiske muligheten”<span class="src">16.07.2026, s. 1</span></td><td>Det er “lite sannsynlig at det vil bli fremmet noen ny sak om dette gjennom Miljøpakken”<span class="src">14.09.2026, s. 1</span></td></tr>
-        <tr><td>Ny skjerm “må finansieres gjennom miljøpakken”<span class="src">Innspill 2024, s. 11</span></td><td>Byvekstavtalemidlene “bør gå til andre formål”<span class="src">14.09.2026</span></td></tr>
-        <tr><td>Forprosjektet var “en verbal ambisjon”<span class="src">09.10.2026</span></td><td>Prosjektark med kategori, bevilgning og mål, og “utforming og høyde på skjerm [må] endres vesentlig”<span class="src">06.07.2018 og 21.08.2017</span></td></tr>
-        <tr><td>Prosjektet i 2017 utgikk av “ressursmessige og økonomiske årsaker”<span class="src">24.09.2026</span></td><td>Det “ble stilt spørsmål ved effekten av de tiltak som var planlagt”<span class="src">02.10.2026, s. 2</span></td></tr>
-      </tbody>
-    </table>
+  <p>Statens vegvesen har skrevet om saken i mange brev. Her er fire spørsmål der svarene ikke henger sammen.</p>
+  <div class="flips">
+    <article class="flip">
+      <h3>Er Miljøpakken løsningen?</h3>
+      <div class="pair">
+        <div class="was"><span class="when">16.07.2026</span><p>Miljøpakken er “den eneste realistiske muligheten”.</p></div>
+        <div class="gap"><i aria-hidden="true">→</i>Åtte uker senere</div>
+        <div class="then"><span class="when">14.09.2026</span><p>Det er “lite sannsynlig at det vil bli fremmet noen ny sak om dette gjennom Miljøpakken”.</p></div>
+      </div>
+      <span class="src">SVV, brev 16.07.2026 (26/199383-2), s. 1, og 14.09.2026 (26/199383-13), s. 1</span>
+    </article>
+    <article class="flip">
+      <h3>Hvem skal betale?</h3>
+      <div class="pair">
+        <div class="was"><span class="when">2024</span><p>Ny skjerm på strekningen “må finansieres gjennom miljøpakken”.</p></div>
+        <div class="gap"><i aria-hidden="true">→</i>To år senere</div>
+        <div class="then"><span class="when">14.09.2026</span><p>Pengene i byvekstavtalen “bør gå til andre formål”.</p></div>
+      </div>
+      <span class="src">SVVs innspill til Handlingsplan mot støy 2024-2029, Trondheim kommune sak 2024/19783-1, s. 11. SVV, brev 14.09.2026 (26/199383-13)</span>
+    </article>
+    <article class="flip">
+      <h3>Fantes det en plan for ny skjerm?</h3>
+      <div class="pair">
+        <div class="was"><span class="when">2017-2018</span><p>Skjermen må “endres vesentlig” i utforming og høyde. Vegvesenet lager et prosjektark for forprosjekt, med kategori, bevilgning og mål.</p></div>
+        <div class="gap"><i aria-hidden="true">→</i>Åtte år senere</div>
+        <div class="then"><span class="when">09.10.2026</span><p>Forprosjektet var “en verbal ambisjon”.</p></div>
+      </div>
+      <span class="src">SVV, e-post 21.08.2017 (17/34060-20). SVV, prosjektark 06.07.2018, s. 1. SVV, brev 09.10.2026 (26/199383-23), pkt. 1.1.2</span>
+    </article>
+    <article class="flip">
+      <h3>Hvorfor stoppet arbeidet i 2017?</h3>
+      <div class="pair">
+        <div class="was"><span class="when">24.09.2026</span><p>Av “ressursmessige og økonomiske årsaker”.</p></div>
+        <div class="gap"><i aria-hidden="true">→</i>Åtte dager senere</div>
+        <div class="then"><span class="when">02.10.2026</span><p>Det “ble stilt spørsmål ved effekten av de tiltak som var planlagt”.</p></div>
+      </div>
+      <span class="src">SVV, brev 24.09.2026 (26/199383-18) og 02.10.2026 (26/199383-21), s. 2</span>
+    </article>
   </div>
 </section>
 
@@ -312,11 +412,17 @@ figcaption .src{margin-top:6px}
   <ul class="steps">
     <li><span class="when">17.08.2026</span><div>Forretningsutvalget sendte innbyggerforslaget enstemmig videre til utvalg for miljø, næring og samferdsel.<span class="src">Forretningsutvalget, PS 99/2026</span></div></li>
     <li><span class="when">28.09.2026</span><div>Miljøpakkens programråd foreslo 3 mill. kr i bompenger til planlegging av tiltak på eksisterende skjermer ved Nardo skole og barnehage. Boligene er ikke med.<span class="src">Innkalling kontaktutvalget 12.10.2026, sak 39/26, s. 2</span></div></li>
-    <li><span class="when">Høsten 2026</span><div>Utvalg for miljø, næring og samferdsel behandler innbyggerforslaget. Dato er ikke fastsatt.</div></li>
+    <li><span class="when">2.11.2026</span><div>Utvalg for miljø, næring og samferdsel behandler innbyggerforslaget.<span class="src">E-post fra utvalgslederen, 15.10.2026</span></div></li>
+    <li><span class="when">20.11.2026</span><div>Bystyret behandler innbyggerforslaget.<span class="src">Samme</span></div></li>
     <li><span class="when">Desember 2026</span><div>Bystyret, fylkestinget og de andre partene behandler Miljøpakkens handlingsprogram 2027-2030.<span class="src">Innkalling kontaktutvalget 12.10.2026, s. 4</span></div></li>
     <li><span class="when">Jan.-feb. 2027</span><div>Samordning. <q>De forslagene som da får felles tilslutning fra alle parter, tas inn i handlingsprogrammet.</q><span class="src">Samme, s. 4</span></div></li>
   </ul>
   <p>Utvidelsen må altså foreslås av kommunen eller fylket før desember, og staten må slutte seg til den.</p>
+  <div class="ask">
+    <h3>Til politikerne</h3>
+    <p>Vi ber bystyret om å be byrådet foreslå i Miljøpakken at planleggingen ved Nardo skole og barnehage utvides til hele strekningen Nidarvoll-Moholtlia, også forbi boligene, og at boligene vurderes etter Miljøpakkens egne kriterier fra 2021.</p>
+    <p>Spørsmål eller dokumenter: <a href="mailto:stoyskjerm.nardo@gmail.com">stoyskjerm.nardo@gmail.com</a></p>
+  </div>
 </section>
 
 <section aria-labelledby="regler">
@@ -330,6 +436,8 @@ figcaption .src{margin-top:6px}
         <tr><td><span class="tag">Forskrift</span></td><td>Forskrift om helse og miljø i barnehager og skoler</td><td>Grunnlaget for tilsynet og påleggene til skolen og barnehagen. Plikten ligger hos eieren av virksomheten, ikke hos vegeieren.</td></tr>
         <tr><td><span class="tag soft">Retningslinje</span></td><td>T-1442/2021</td><td>Gjelder ny planlegging. Ikke bindende for eksisterende veg og boliger.</td></tr>
         <tr><td><span class="tag soft">Avtale</span></td><td>Byvekstavtalen 2023-2029 og Miljøpakken</td><td>Mål 7: trafikkstøy skal reduseres “innendørs og utendørs” (s. 6). Tiltak krever enighet mellom partene.</td></tr>
+        <tr><td><span class="tag soft">Plan</span></td><td>Handlingsplan mot støy 2024-2029</td><td>Lovpålagt etter forurensningsforskriften. Fører opp ny og bedre skjerm på E6 Nidarvoll-Moholtlia som fokusområde, men <q>har ingen egen økonomisk handlingsramme</q> (s. 35).</td></tr>
+        <tr><td><span class="tag soft">Praksis</span></td><td>Miljøpakkens kriterier for boliger, 2021</td><td>Ikke et vedtak eller et krav, men det Miljøpakken selv brukte: boligen er bygd før 2005, og uteareal har over 60 dB. Grunnlaget for kravet om likebehandling.</td></tr>
       </tbody>
     </table>
   </div>
@@ -391,7 +499,7 @@ figcaption .src{margin-top:6px}
 </section>
 
 <footer>
-  <p class="meta">Sist oppdatert 15.10.2026. Sitater er gjengitt ordrett fra kildene som er oppgitt. Aksjonsgruppa for ny støyskjerm på Nardo.</p>
+  <p class="meta">Sist oppdatert <span id="updated">15.10.2026</span>. Sitater er gjengitt ordrett fra kildene som er oppgitt. Uthevinger i sitater er våre. Aksjonsgruppa for ny støyskjerm på Nardo.</p>
 </footer>
 
 </div>

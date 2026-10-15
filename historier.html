@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hva naboene forteller</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Naboer langs E6 Omkjøringsvegen på Nardo forteller hvordan støyen påvirker hverdagen. Svar fra 52 beboere.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:site_name" content="Aksjonsgruppa for ny støyskjerm på Nardo">
+<meta property="og:title" content="Hva naboene langs E6 på Nardo forteller">
+<meta property="og:description" content="To av tre sier de ikke kan ha vinduene åpne. Like mange sover dårligere. Svar fra 52 beboere langs E6 på Nardo.">
+<meta property="og:url" content="https://stoyskjerm-nardo.vercel.app/historier.html">
+<meta property="og:image" content="https://stoyskjerm-nardo.vercel.app/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Støysonekart over E6 Omkjøringsvegen ved Nardo med teksten Ny støyskjerm på Nardo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: én lesekolonne, som et saksdokument. Vegskiltblå som aksent, signalgul bare på dB-skalaen. */
+:root{
+  --bg:#f5f7f9; --surface:#ffffff; --fg:#17202b; --muted:#56616e; --line:#d6dce3;
+  --accent:#0b4f8a; --accent-soft:#e3edf6; --signal:#e8a400; --signal-soft:#fff3d1; --warn:#a33a1f; --warn-soft:#fbebe6;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#10161d; --surface:#18212b; --fg:#e6ebf0; --muted:#9aa6b3; --line:#2c3845;
+  --accent:#7db4e6; --accent-soft:#1c2c3d; --signal:#f2bd3a; --signal-soft:#3a2f12; --warn:#ef8a6c; --warn-soft:#3a231c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10161d; --surface:#18212b; --fg:#e6ebf0; --muted:#9aa6b3; --line:#2c3845;
+  --accent:#7db4e6; --accent-soft:#1c2c3d; --signal:#f2bd3a; --signal-soft:#3a2f12; --warn:#ef8a6c; --warn-soft:#3a231c; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:46rem;margin:0 auto;padding-block:40px 64px;display:grid;gap:48px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(2rem,6vw,3rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:1.45rem;font-weight:700;margin-bottom:14px}
+h3{font-size:1.05rem;font-weight:700}
+p{margin:0}
+section{display:grid;gap:14px}
+.eyebrow{font:500 .78rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:1.15rem;color:var(--fg)}
+.meta{font:400 .8rem/1.4 var(--mono);color:var(--muted)}
+.src{display:block;font:400 .76rem/1.4 var(--mono);color:var(--muted);margin-top:4px}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+header{display:grid;gap:16px;border-bottom:3px solid var(--accent);padding-bottom:28px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;font:500 .85rem/1.4 var(--mono);color:var(--muted)}
+.facts b{color:var(--fg);font-weight:500}
+
+.krav{background:var(--accent-soft);border-radius:6px;padding:22px 22px 20px;display:grid;gap:12px}
+.krav ol{margin:0;padding-left:1.3rem;display:grid;gap:8px}
+
+/* dB-skala */
+.scale{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px 18px 14px;overflow-x:auto}
+.scale svg{display:block;width:100%;min-width:520px;height:auto}
+.scale text{font-family:var(--body);fill:var(--muted);font-size:13px}
+.scale .tick{font-family:var(--mono);font-size:11px}
+.scale .lbl{fill:var(--fg);font-size:14px}
+.scale .big{fill:var(--fg);font-size:15px;font-weight:700}
+
+q{quotes:"“" "”" "‘" "’"}
+blockquote{margin:0;padding:2px 0 2px 16px;border-left:3px solid var(--line);font-style:italic}
+
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:5.2rem 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.tl li > div{min-width:0}
+.tl .yr{font:500 .95rem/1.5 var(--mono);color:var(--accent)}
+.tl .now .yr{color:var(--warn)}
+
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.95rem}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font:600 .78rem/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+td .src{margin-top:2px}
+.tag{display:inline-block;font:500 .72rem/1 var(--mono);letter-spacing:.04em;text-transform:uppercase;padding:4px 7px;border-radius:3px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.tag.soft{background:var(--signal-soft);color:var(--fg)}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.steps li{display:grid;grid-template-columns:7.5rem 1fr;gap:14px}
+.steps li > div{min-width:0}
+.steps .when{font:500 .85rem/1.6 var(--mono);color:var(--muted)}
+
+.docgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:20px 24px;margin:4px 0 18px}
+.docgroups h3{font-size:1rem;margin:0 0 6px}
+.docs{margin:0;padding-left:1.1em;display:grid;gap:6px}
+.docs li{padding-left:2px}
+.docs .ref{display:block;font:500 .78rem/1.4 var(--mono);color:var(--muted)}
+.contact{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:20px;display:grid;gap:12px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.phone{font:500 1.1rem/1 var(--mono);user-select:all}
+button{font:600 .85rem/1 var(--body);color:var(--accent);background:transparent;border:1px solid var(--accent);border-radius:4px;padding:8px 12px;cursor:pointer}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:grid;gap:6px;align-content:start}
+.stat b{font:800 2rem/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.stat span{font-size:.95rem}
+.stat small{font:600 .8rem/1 var(--mono);color:var(--muted);letter-spacing:0}
+.support{display:grid;gap:10px}
+.support ol{margin:0;padding-left:1.3rem;display:grid;gap:6px}
+.qa{display:grid;gap:16px}
+.qa div{display:grid;gap:4px;border-top:1px solid var(--line);padding-top:12px}
+.qa h3{font-size:1rem}
+@media (max-width:620px){.stats{grid-template-columns:1fr}}
+.hero{display:block;padding:0;border:0;position:relative;border-radius:10px;overflow:hidden;color:#fff;background:#0f1f33 url("hero-stoykart.jpg") right center/cover no-repeat;isolation:isolate}
+@media (max-width:600px){.hero{background-position:75% center}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(9,22,40,.92) 0%,rgba(9,22,40,.82) 40%,rgba(9,22,40,.4) 68%,rgba(9,22,40,.1) 100%)}
+.hero-in{padding:clamp(24px,5vw,48px);display:grid;gap:18px;max-width:40rem}
+.hero .eyebrow{color:#f2c94c}
+.hero h1{color:#fff;font-size:clamp(2.3rem,7vw,3.6rem)}
+.hero p{font-size:1.15rem;color:#e7edf4}
+.zones{display:flex;height:10px}
+.zones span{flex:1}
+.zone-lbl span{flex:1;padding-left:8px}
+.zone-lbl{display:flex;padding:6px 0 14px;font:500 .72rem/1 var(--mono);color:#c9d6e4;background:#0f1f33}
+.demands{display:grid;gap:12px}
+.demand{border-radius:8px;padding:18px 20px;display:grid;gap:6px;align-content:start;background:var(--surface);border:1px solid var(--line)}
+.demand.main{background:var(--accent);border-color:var(--accent);color:#fff}
+.demand.main h3,.demand.main p{color:#fff}
+.demand h3{font-size:1.2rem}
+.tag{justify-self:start;align-self:start;font:600 .72rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border-radius:3px;background:var(--signal-soft);color:var(--fg)}
+.demand.main .tag{background:#f2c94c;color:#0f1f33}
+.demand-row{display:grid;grid-template-columns:1fr;gap:12px}
+.demand-row>div{min-width:0}
+@media (max-width:620px){.demand-row{grid-template-columns:1fr}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .demand.main{background:#13406b;border-color:#13406b}}
+:root[data-theme="dark"] .demand.main{background:#13406b;border-color:#13406b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bar .fill{color:#0b1a2b}}
+:root[data-theme="dark"] .bar .fill{color:#0b1a2b}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;display:grid;gap:6px;align-content:start;min-width:0}
+.kpi b{font:800 2.1rem/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.kpi span{font-size:.95rem}
+.kpi.wide{grid-column:span 2}
+.bars{display:grid;gap:8px;margin-top:4px}
+.bar{display:grid;grid-template-columns:4.2rem 1fr;gap:10px;align-items:center}
+.bar .yr{font:500 .85rem/1 var(--mono);color:var(--muted)}
+.bar .track{position:relative;height:30px}
+.bar .fill{height:100%;border-radius:3px;background:var(--accent);display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font:700 1rem/1 var(--display);font-variant-numeric:tabular-nums;color:#fff;white-space:nowrap}
+.bar .fill.now{background:var(--accent);color:#fff}
+.bar .fill.future{background:repeating-linear-gradient(135deg,var(--accent) 0 8px,#2d6aa5 8px 16px);color:#fff}
+@media (max-width:720px){.kpis{grid-template-columns:1fr 1fr}.kpi.wide{grid-column:1 / -1}}
+@media (max-width:440px){.kpis{grid-template-columns:1fr}}
+.kpi h3{font-size:1.25rem}
+.kpi p{font-size:.95rem;margin-top:4px}
+.kpis .tall2{grid-row:span 3}
+.minor{display:grid;gap:12px;padding:16px 20px;border:1px solid var(--accent-soft);border-radius:8px;background:var(--accent-soft)}
+.minor>div{display:grid;grid-template-columns:9.5rem 1fr;gap:12px;align-items:baseline}
+.minor>div>p{min-width:0}
+@media (max-width:560px){.minor>div{grid-template-columns:1fr;gap:6px}}
+footer{border-top:1px solid var(--line);padding-top:18px}
+figure{margin:0;display:grid;gap:10px}
+figure img{display:block;width:100%;height:auto;border-radius:4px;border:1px solid var(--line);background:var(--surface)}
+figcaption{font-size:.95rem;color:var(--fg)}
+figcaption .src{margin-top:6px}
+.legend{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;font:500 .8rem/1.3 var(--mono)}
+.legend li{display:flex;flex-direction:column;gap:3px}
+.legend b{font-weight:700}
+.sw{display:block;width:100%;height:12px;border-radius:2px;border:1px solid var(--line)}
+.maps{display:grid;gap:28px}
+@media (max-width:520px){
+  .tl li{grid-template-columns:1fr;gap:4px}
+  .steps li{grid-template-columns:1fr;gap:2px}
+}
+
+/* knapper i toppen */
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 1rem/1.2 var(--body);text-decoration:none;padding:12px 16px;border-radius:6px;background:#f2c94c;color:#0f1f33}
+.btn:hover{background:#ffd95e}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.7)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* skole mot boliger */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.split>div{border-radius:8px;padding:14px 16px;display:grid;gap:2px;background:var(--surface);border:1px solid var(--line)}
+.split b{font:800 1.6rem/1.1 var(--display);font-variant-numeric:tabular-nums}
+.split .yes b{color:var(--accent)}
+.split .no{border-color:var(--warn)}
+.split .no b{color:var(--warn)}
+.split span{font-size:.95rem}
+@media (max-width:440px){.split{grid-template-columns:1fr}}
+/* motstrid */
+.flips{display:grid;gap:14px}
+.flip{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:grid;gap:10px}
+.flip h3{font-size:1.1rem}
+.pair{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch}
+.pair>div{border-radius:6px;padding:10px 12px;display:grid;gap:4px;align-content:start;min-width:0}
+.pair .was{background:var(--accent-soft)}
+.pair .then{background:var(--warn-soft);border-left:3px solid var(--warn)}
+.pair .when{font:600 .78rem/1.2 var(--mono);color:var(--muted);letter-spacing:.02em}
+.pair p{font-size:1rem}
+.gap{display:grid;place-items:center;text-align:center;font:600 .75rem/1.2 var(--mono);color:var(--warn);min-width:5.5rem}
+.gap i{font-style:normal;font-size:1.4rem;line-height:1}
+@media (max-width:600px){.pair{grid-template-columns:1fr}.gap{min-width:0;grid-auto-flow:column;gap:8px;justify-content:start;padding-left:12px}.gap i{transform:rotate(90deg)}}
+/* sitat fra nabo */
+.voice{margin:0;padding:16px 18px;border-radius:8px;background:var(--accent-soft);display:grid;gap:8px}
+.voice p{font:600 1.15rem/1.45 var(--body);font-style:normal}
+.voice footer{border:0;padding:0;font-size:.9rem;color:var(--muted)}
+/* boks til politikerne */
+.ask{background:var(--surface);border:1px solid var(--line);border-left:4px solid #f2c94c;border-radius:6px;padding:18px 20px;display:grid;gap:8px}
+.explain{display:grid;gap:8px;font-size:.98rem}
+
+.back{font:600 .95rem/1.2 var(--body)}
+.pbars{display:grid;gap:10px}
+.pbar{display:grid;gap:4px}
+.pbar .lab{display:flex;justify-content:space-between;gap:12px;font-size:.98rem}
+.pbar .lab b{font:700 1rem/1.2 var(--display);font-variant-numeric:tabular-nums;color:var(--accent);white-space:nowrap}
+.pbar .track{height:12px;border-radius:3px;background:var(--accent-soft)}
+.pbar .fill{height:100%;border-radius:3px;background:var(--accent)}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:14px}
+.q{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:grid;gap:8px;align-content:start}
+.q p{font-size:1.02rem}
+.q footer{border:0;padding:0;font-size:.88rem;color:var(--muted)}
+.note{font-size:.95rem;color:var(--muted)}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="back" href="./">&larr; Tilbake til faktasida</a>
+  <span class="eyebrow">Naboene langs E6</span>
+  <h1>Hva naboene forteller</h1>
+  <p class="lead">I juni og juli 2026 svarte 52 beboere langs E6 Omkjøringsvegen på et skjema om hvordan vegen påvirker hverdagen. Svarene ble samlet for å vise politikerne hvordan det er å bo her.</p>
+</header>
+
+<section aria-labelledby="tall">
+  <span class="eyebrow">Svarene i tall</span>
+  <h2 id="tall">Dette krysset beboerne av for</h2>
+  <div class="pbars">
+      <div class="pbar"><div class="lab"><span>Plages av mye støv og svevestøv fra E6</span><b>42 av 52</b></div><div class="track"><div class="fill" style="width:81%"></div></div></div>
+      <div class="pbar"><div class="lab"><span>Hagen, verandaen eller uteområdet blir lite eller ikke brukt på grunn av støy</span><b>37 av 52</b></div><div class="track"><div class="fill" style="width:71%"></div></div></div>
+      <div class="pbar"><div class="lab"><span>Kan ikke ha vinduer åpne på soverom eller oppholdsrom</span><b>36 av 52</b></div><div class="track"><div class="fill" style="width:69%"></div></div></div>
+      <div class="pbar"><div class="lab"><span>Redusert søvnkvalitet</span><b>35 av 52</b></div><div class="track"><div class="fill" style="width:67%"></div></div></div>
+      <div class="pbar"><div class="lab"><span>Bekymring for barnas lekemiljø</span><b>32 av 52</b></div><div class="track"><div class="fill" style="width:62%"></div></div></div>
+      <div class="pbar"><div class="lab"><span>Risting eller vibrasjoner i huset</span><b>27 av 52</b></div><div class="track"><div class="fill" style="width:52%"></div></div></div>
+      <div class="pbar"><div class="lab"><span>Stress, hodepine eller konsentrasjonsvansker</span><b>22 av 52</b></div><div class="track"><div class="fill" style="width:42%"></div></div></div>
+      <div class="pbar"><div class="lab"><span>Helseplager de setter i sammenheng med støyen og støvet</span><b>18 av 52</b></div><div class="track"><div class="fill" style="width:35%"></div></div></div>
+      <div class="pbar"><div class="lab"><span>Har fått avslag på bygge- eller fasadesøknad på grunn av støysonen</span><b>3 av 52</b></div><div class="track"><div class="fill" style="width:6%"></div></div></div>
+  </div>
+  <p class="note">Hver beboer kunne krysse av for flere plager. Én dobbeltregistrering er fjernet. Svaralternativet om avslag på byggesøknad fikk ny ordlyd underveis, og de to variantene er telt som ett. Svarene er fra de som valgte å svare, og er ikke en representativ undersøkelse.</p>
+  <span class="src">Kilde: skjemaet “Støy fra E6: Del din hverdag med politikerne”, 25.06-07.07.2026, 52 svar.</span>
+</section>
+
+<section aria-labelledby="sitater">
+  <span class="eyebrow">Med egne ord</span>
+  <h2 id="sitater">Hverdagen bak skjermen</h2>
+  <div class="quotes">
+      <blockquote class="q"><p>“Barna trives ikke i egen hage fordi det bråker så [mye] at de må skrike til hverandre.”</p><footer>Mor til to</footer></blockquote>
+      <blockquote class="q"><p>“Ungene våkner på natt om motorsykler tar av rett utenfor soveromsvinduet.”</p><footer>Beboer i Njords veg</footer></blockquote>
+      <blockquote class="q"><p>“Vi måtte endre barnerom fordi barnet ikke fikk sove på grunn av støy”</p><footer>Beboer i Njords veg</footer></blockquote>
+      <blockquote class="q"><p>“Vi kvier oss for å bruke terrassen og hagen vår på grunn av støyen, og velger ofte å holde vinduer og verandadør stengt”</p><footer>Barnefamilie i Røllikvegen</footer></blockquote>
+      <blockquote class="q"><p>“Ved bruk av uteområdet er støyen konstant og det er nødvendig å rope enkelte ganger for å snakke med andre, da særlig i rushtiden.”</p><footer>Beboer i Prestekragevegen</footer></blockquote>
+      <blockquote class="q"><p>“Noen dager bråker trafikken så mye at vi må rope for å snakke på terrassen.”</p><footer>Beboer i Sunnlandsskrenten</footer></blockquote>
+      <blockquote class="q"><p>“Å sitte utendørs orker vi ikke, det er i så fall kun med støykansellerende hodetelefoner.”</p><footer>Beboer i Prestekragevegen</footer></blockquote>
+      <blockquote class="q"><p>“Kan aldri sove med soveromsvindu åpent pga støy fra e6”</p><footer>Beboer i Jotunvegen</footer></blockquote>
+      <blockquote class="q"><p>“Det er aldri stille i Tistelvegen.”</p><footer>Småbarnsforeldre i Tistelvegen</footer></blockquote>
+      <blockquote class="q"><p>“De utsettes for dette 24 timer i døgnet, først i rød støysone i barnehagen, og deretter i lilla støysone når de skal hoppe på trampolinen eller leke i sandkassen hjemme i hagen.”</p><footer>Småbarnsfar i Njords veg</footer></blockquote>
+      <blockquote class="q"><p>“Støy fra E6 gjør at det er veldig redusert bruksverdi av den fine hagen og plattingen vi har, særlig om sommeren.”</p><footer>Beboer i Njords veg siden 2006</footer></blockquote>
+      <blockquote class="q"><p>“Trampolinen i hagen må spyles for å få vekk støvet før barna kan bruke den.”</p><footer>Mor til to</footer></blockquote>
+  </div>
+  <h3 style="margin-top:8px">Fra kommentarfeltet til innbyggerforslaget</h3>
+  <div class="quotes">
+      <blockquote class="q"><p>“Det har blitt stadig mere støy den siste tiden, det går utover nattesøvn bla.”</p><footer>Kommentar på minsak.no</footer></blockquote>
+      <blockquote class="q"><p>“Vi øverst i Prestekragevegen plages veldig av støyen.”</p><footer>Kommentar på minsak.no</footer></blockquote>
+      <blockquote class="q"><p>“Støyskjermingen burde blitt byttet ut for 15 år siden.”</p><footer>Kommentar på minsak.no</footer></blockquote>
+  </div>
+  <p class="note">Sitatene er gjengitt ordrett, med små utelatelser. Ord i hakeparentes er rettet av oss. Navn og husnummer er tatt bort.</p>
+  <span class="src">Kilder: skjemaet “Støy fra E6: Del din hverdag med politikerne” (2026) og kommentarer på <a href="https://minsak.no/sak/3665" target="_blank" rel="noopener">minsak.no/sak/3665</a>.</span>
+</section>
+
+<section>
+  <p><a class="back" href="./">&larr; Tilbake til faktasida</a>, med krav, tall, kart og dokumenter.</p>
+</section>
+
+<footer>
+  <p class="meta">Sist oppdatert <span id="updated">15.10.2026</span>. Aksjonsgruppa for ny støyskjerm på Nardo.</p>
+</footer>
+
+</div>
+</body>
+</html>
