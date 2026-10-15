@@ -110,6 +110,20 @@ button{font:600 .85rem/1 var(--body);color:var(--accent);background:transparent;
 @media (max-width:620px){.demand-row{grid-template-columns:1fr}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .demand.main{background:#13406b;border-color:#13406b}}
 :root[data-theme="dark"] .demand.main{background:#13406b;border-color:#13406b}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;display:grid;gap:6px;align-content:start;min-width:0}
+.kpi b{font:800 2.1rem/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.kpi span{font-size:.95rem}
+.kpi.wide{grid-column:span 2}
+.bars{display:grid;gap:8px;margin-top:4px}
+.bar{display:grid;grid-template-columns:4.2rem 1fr;gap:10px;align-items:center}
+.bar .yr{font:500 .85rem/1 var(--mono);color:var(--muted)}
+.bar .track{position:relative;height:30px}
+.bar .fill{height:100%;border-radius:3px;background:var(--accent-soft);display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font:700 1rem/1 var(--display);font-variant-numeric:tabular-nums;color:var(--fg);white-space:nowrap}
+.bar .fill.now{background:var(--accent);color:#fff}
+.bar .fill.future{background:repeating-linear-gradient(135deg,var(--accent) 0 8px,#2d6aa5 8px 16px);color:#fff}
+@media (max-width:720px){.kpis{grid-template-columns:1fr 1fr}.kpi.wide{grid-column:1 / -1}}
+@media (max-width:440px){.kpis{grid-template-columns:1fr}}
 footer{border-top:1px solid var(--line);padding-top:18px}
 figure{margin:0;display:grid;gap:10px}
 figure img{display:block;width:100%;height:auto;border-radius:4px;border:1px solid var(--line);background:var(--surface)}
@@ -164,13 +178,25 @@ figcaption .src{margin-top:6px}
   </div>
 </section>
 
-<section aria-label="Nøkkeltall">
-<div class="stats">
-    <div class="stat"><b>1991</b><span>Dagens skjerm ble satt opp da vegen fikk fire felt.</span></div>
-    <div class="stat"><b>47 200 <small>i 2025</small></b><b>53 170 <small>i 2027</small></b><span>kjøretøy i døgnet. 2027 er tallet Statens vegvesens beregninger bruker. Rundt år 2000: 25 000-30 000.</span></div>
-    <div class="stat"><b>69-71 dB</b><span>ved husveggene. Miljøpakkens mål for uteareal er 55 dB.</span></div>
+<section aria-labelledby="tall">
+  <span class="eyebrow">Nøkkeltall</span>
+  <h2 id="tall">Strekningen i tall</h2>
+  <div class="kpis">
+    <div class="kpi"><b>35 år</b><span>gammel er dagens skjerm. Den ble satt opp i 1991, da vegen fikk fire felt.</span></div>
+    <div class="kpi wide">
+      <span>Kjøretøy i døgnet forbi Nardo</span>
+      <div class="bars" role="img" aria-label="Trafikk: 25 000 til 30 000 kjøretøy i døgnet rundt år 2000, 47 200 i 2025, og 53 170 i Statens vegvesens beregninger for 2027.">
+        <div class="bar"><span class="yr">ca. 2000</span><div class="track"><div class="fill" style="width:50%">25-30 000</div></div></div>
+        <div class="bar"><span class="yr">2025</span><div class="track"><div class="fill now" style="width:86%">47 200</div></div></div>
+        <div class="bar"><span class="yr">2027</span><div class="track"><div class="fill future" style="width:97%">53 170</div></div></div>
+      </div>
+      <span class="meta">2027 er tallet Statens vegvesens støyberegninger bruker.</span>
+    </div>
+    <div class="kpi"><b>69-71 dB</b><span>beregnet ved husveggene i Njords veg. Miljøpakkens mål for uteareal er 55 dB.</span></div>
+    <div class="kpi"><b>2 av 3</b><span>deler av barnehagens uteområde ligger i oransje og røde støysoner.</span></div>
+    <div class="kpi"><b>11 %</b><span>av trafikken er tunge kjøretøy (2025).</span></div>
   </div>
-  <p class="src">Kilder: Statens vegvesen, “På god veg” (2001) og Trafikkdata 2025. EFLA, Tiltaksutredning for Statens vegvesen 2025, tabell 4. Miljøpakken, tilbudsforespørsel 2021.</p>
+  <p class="src">Kilder: Statens vegvesen, “På god veg” (2001) og Trafikkdata 2025. EFLA, Tiltaksutredning for Statens vegvesen 2025, tabell 4. Miljøpakken, tilbudsforespørsel 2021. Barnehageeiers svar til tilsynet, sak 2026/5545-2, s. 2.</p>
 </section>
 
 
