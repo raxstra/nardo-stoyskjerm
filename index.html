@@ -127,6 +127,10 @@ button{font:600 .85rem/1 var(--body);color:var(--accent);background:transparent;
 .kpi h3{font-size:1.25rem}
 .kpi p{font-size:.95rem;margin-top:4px}
 .kpis .tall2{grid-row:span 2}
+.minor{display:grid;gap:12px;padding:16px 20px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.minor>div{display:grid;grid-template-columns:9.5rem 1fr;gap:12px;align-items:baseline}
+.minor>div>p{min-width:0}
+@media (max-width:560px){.minor>div{grid-template-columns:1fr;gap:6px}}
 footer{border-top:1px solid var(--line);padding-top:18px}
 figure{margin:0;display:grid;gap:10px}
 figure img{display:block;width:100%;height:auto;border-radius:4px;border:1px solid var(--line);background:var(--surface)}
@@ -165,20 +169,11 @@ figcaption .src{margin-top:6px}
       <h3>Ny støyskjerm for hele strekningen Nidarvoll-Moholtlia</h3>
       <p>Planleggingen Miljøpakken har foreslått ved Nardo skole og barnehage, utvides til hele strekningen, også forbi boligene.</p>
     </div>
-    <div class="demand-row">
-      <div class="demand">
-        <span class="tag">Likebehandling</span>
-        <h3>Boligene vurderes etter Miljøpakkens egne kriterier</h3>
-        <p>De samme kriteriene Miljøpakken brukte for boliger i 2021: bolig oppført før 2005 og privat uteareal over 60 dB.</p>
-      </div>
-      <div class="demand">
-        <span class="tag">Mens vi venter</span>
-        <h3>Streknings-ATK og 60-sone</h3>
-        <p>Streknings-ATK holder farten nede på hele strekningen, ikke bare forbi én fotoboks. Etter tilbakemeldinger om fartsøkning etter fotoboksen skrev Statens vegvesen selv i 2017: <q>Vi vil også forsøke å få til strekningsvis ATK her.</q> Lavere fart gir mindre støy. Da fartsgrensen her ble satt ned fra 80 til 70 km/t, ga det beregnet 1,7 dB lavere støy.</p>
-        <span class="src">SVV, e-post 21.08.2017, sak 17/34060-20. Handlingsplan mot støy i Trondheim 2013-2018</span>
-      </div>
+    <div class="minor">
+      <div><span class="tag">Likebehandling</span><p><b>Boligene vurderes etter Miljøpakkens egne kriterier fra 2021:</b> bygd før 2005 og uteareal over 60 dB.</p></div>
+      <div><span class="tag">Mens vi venter</span><p><b>Streknings-ATK og 60-sone.</b> Holder farten nede på hele strekningen. Statens vegvesen ville selv forsøke å få det til i 2017.</p></div>
+      <span class="src">Miljøpakken, tilbudsforespørsel 2021, s. 5. SVV, e-post 21.08.2017, sak 17/34060-20</span>
     </div>
-  </div>
 </section>
 
 <section aria-labelledby="tall">
