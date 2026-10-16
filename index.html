@@ -188,15 +188,15 @@ figcaption .src{margin-top:6px}
 .flips{display:grid;gap:14px}
 .flip{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:grid;gap:10px}
 .flip h3{font-size:1.1rem}
-.pair{display:grid;grid-template-columns:minmax(0,1fr) 2rem minmax(0,1fr);gap:8px;align-items:stretch}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 5.5rem minmax(0,1fr);gap:8px;align-items:stretch}
 .pair>div{border-radius:6px;padding:10px 12px;display:grid;gap:4px;align-content:start;min-width:0}
 .pair .was{background:var(--accent-soft)}
 .pair .then{background:var(--warn-soft);border-left:3px solid var(--warn)}
 .pair .when{font:600 .78rem/1.2 var(--mono);color:var(--muted);letter-spacing:.02em}
 .pair p{font-size:1rem}
-.gap{display:grid;place-content:center;font:700 1.3rem/1 var(--body);color:var(--warn)}
-.gap i{font-style:normal;font-size:1.4rem;line-height:1}
-@media (max-width:600px){.pair{grid-template-columns:1fr}.gap{transform:rotate(90deg);justify-self:start;padding-left:14px}}
+.pair .gap{padding:0;display:grid;place-content:center;justify-items:center;gap:4px;text-align:center;font:600 .74rem/1.25 var(--mono);color:var(--warn)}
+.gap i{font:700 1.4rem/1 var(--body);font-style:normal}
+@media (max-width:600px){.pair{grid-template-columns:1fr}.pair .gap{display:flex;align-items:center;justify-content:flex-start;gap:10px;padding-left:12px;text-align:left}.gap i{transform:rotate(90deg)}}
 /* sitat fra nabo */
 .voice{padding:18px 20px;border-radius:8px;background:var(--accent-soft);display:grid;gap:12px}
 .voice blockquote{border-left:3px solid var(--accent);font-style:normal;display:grid;gap:2px}
@@ -231,7 +231,6 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 .mapfig .ml text{font:700 26px/1 var(--body);fill:#fff;paint-order:stroke;stroke:#0f1f33;stroke-width:7px;stroke-linejoin:round}
 @media (max-width:600px){.mapfig .ml text{font-size:34px;stroke-width:8px}}
 .demand.main .decide{font-size:.95rem;border-top:1px solid rgba(255,255,255,.3);padding-top:10px;margin-top:6px}
-.gap.shift{color:var(--accent)}
 </style>
 
 </head>
@@ -413,8 +412,8 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
       <h3>Er Miljøpakken løsningen?</h3>
       <div class="pair">
         <div class="was"><span class="when">16.07.2026</span><p>Miljøpakken er “den eneste realistiske muligheten”.</p></div>
-        <div class="gap" aria-hidden="true">→</div>
-        <div class="then"><span class="when">14.09.2026 · åtte uker senere</span><p>Det er “lite sannsynlig at det vil bli fremmet noen ny sak om dette gjennom Miljøpakken”.</p></div>
+        <div class="gap"><i aria-hidden="true">→</i><span>åtte uker senere</span></div>
+        <div class="then"><span class="when">14.09.2026</span><p>Det er “lite sannsynlig at det vil bli fremmet noen ny sak om dette gjennom Miljøpakken”.</p></div>
       </div>
       <span class="src">SVV, brev 16.07.2026 (26/199383-2), s. 1, og 14.09.2026 (26/199383-13), s. 1</span>
     </article>
@@ -422,8 +421,8 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
       <h3>Hvem skal betale?</h3>
       <div class="pair">
         <div class="was"><span class="when">2024</span><p>Ny skjerm på strekningen “må finansieres gjennom miljøpakken”.</p></div>
-        <div class="gap" aria-hidden="true">→</div>
-        <div class="then"><span class="when">14.09.2026 · to år senere</span><p>Pengene i byvekstavtalen “bør gå til andre formål”.</p></div>
+        <div class="gap"><i aria-hidden="true">→</i><span>to år senere</span></div>
+        <div class="then"><span class="when">14.09.2026</span><p>Pengene i byvekstavtalen “bør gå til andre formål”.</p></div>
       </div>
       <span class="src">SVVs innspill til Handlingsplan mot støy 2024-2029, Trondheim kommune sak 2024/19783-1, s. 11. SVV, brev 14.09.2026 (26/199383-13)</span>
     </article>
@@ -431,8 +430,8 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
       <h3>Fantes det en plan for ny skjerm?</h3>
       <div class="pair">
         <div class="was"><span class="when">2017-2018</span><p>Skjermen må “endres vesentlig” i utforming og høyde. Vegvesenet lager et prosjektark for forprosjekt, med kategori, bevilgning og mål.</p></div>
-        <div class="gap" aria-hidden="true">→</div>
-        <div class="then"><span class="when">09.10.2026 · åtte år senere</span><p>Forprosjektet var “en verbal ambisjon”.</p></div>
+        <div class="gap"><i aria-hidden="true">→</i><span>åtte år senere</span></div>
+        <div class="then"><span class="when">09.10.2026</span><p>Forprosjektet var “en verbal ambisjon”.</p></div>
       </div>
       <span class="src">SVV, e-post 21.08.2017 (17/34060-20). SVV, prosjektark 06.07.2018, s. 1. SVV, brev 09.10.2026 (26/199383-23), pkt. 1.1.2</span>
     </article>
@@ -440,8 +439,8 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
       <h3>Hvorfor stoppet arbeidet i 2017?</h3>
       <div class="pair">
         <div class="was"><span class="when">24.09.2026</span><p>Av “ressursmessige og økonomiske årsaker”.</p></div>
-        <div class="gap shift" aria-hidden="true">→</div>
-        <div class="was"><span class="when">02.10.2026 · åtte dager senere</span><p>Det “ble stilt spørsmål ved effekten av de tiltak som var planlagt”.</p></div>
+        <div class="gap"><i aria-hidden="true">→</i><span>åtte dager senere</span></div>
+        <div class="then"><span class="when">02.10.2026</span><p>Det “ble stilt spørsmål ved effekten av de tiltak som var planlagt”.</p></div>
       </div>
       <span class="src">SVV, brev 24.09.2026 (26/199383-18) og 02.10.2026 (26/199383-21), s. 2</span>
     </article>
