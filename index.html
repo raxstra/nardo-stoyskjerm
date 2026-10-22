@@ -225,6 +225,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 .nypill{font:700 .9rem/1 var(--body);color:#fff;background:rgba(15,31,51,.78);border:1px solid rgba(255,255,255,.55);padding:10px 14px;border-radius:999px;cursor:pointer;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .nypill:hover{background:rgba(15,31,51,.95)}
 .nypill:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.nypill .short{display:none}
 .nypill .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#f2c94c;margin-left:8px;vertical-align:1px}
 .nypanel{box-sizing:border-box;position:fixed;z-index:20;top:64px;right:max(16px,calc((100vw - 1100px)/2 + 16px));width:min(420px,calc(100vw - 32px));max-height:calc(100vh - 88px);overflow:auto;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,.3);padding:16px 18px}
 .nypanel[hidden]{display:none}
@@ -247,7 +248,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 .fbpill{font:700 .9rem/1 var(--body);text-decoration:none;background:#f2c94c;color:#0f1f33;padding:10px 14px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .fbpill:hover{background:#ffd95e}
 .fbpill:focus-visible{outline:2px solid #fff;outline-offset:2px}
-@media (max-width:600px){.pills{position:static;flex-wrap:wrap;margin:16px 0 0 24px}.hero-in{padding-top:18px}}
+@media (max-width:600px){.pills{position:static;flex-wrap:nowrap;justify-content:space-between;gap:6px;margin:16px 14px 0 18px}.pills>*{white-space:nowrap}.pills .fbpill{order:1;font-size:.76rem;padding:9px 10px}.pills .nypill{order:2;font-size:.78rem;padding:8px 11px;font-weight:600;background:rgba(15,31,51,.55);border-color:rgba(255,255,255,.4);box-shadow:none}.nypill .full{display:none}.nypill .short{display:inline}.nypill .dot{width:7px;height:7px;margin-left:6px}.hero-in{padding-top:18px}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .toc a.on{color:#0b1a2b}}
 :root[data-theme="dark"] .toc a.on{color:#0b1a2b}
 
@@ -274,7 +275,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 <div class="wrap">
 
 <header class="hero">
-  <div class="pills"><button type="button" class="nypill" id="nybtn" aria-expanded="false" aria-controls="nypanel">Siste endringer<span class="dot" id="nydot" hidden></span></button><a class="fbpill" href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Bli med i Facebook-gruppa &#8599;</a></div>
+  <div class="pills"><button type="button" class="nypill" id="nybtn" aria-expanded="false" aria-controls="nypanel" aria-label="Siste endringer"><span class="full">Siste endringer</span><span class="short">Nytt</span><span class="dot" id="nydot" hidden></span></button><a class="fbpill" href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Bli med i Facebook-gruppa &#8599;</a></div>
   <div class="hero-in">
     <span class="eyebrow">E6 Omkjøringsvegen, Nidarvoll-Moholtlia, Trondheim</span>
     <h1>Ny støyskjerm på Nardo</h1>
