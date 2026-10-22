@@ -222,15 +222,32 @@ figcaption .src{margin-top:6px}
 /* fast innholdsmeny */
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.nypill{font:700 .9rem/1 var(--body);color:#fff;background:rgba(15,31,51,.78);border:1px solid rgba(255,255,255,.55);padding:10px 14px;border-radius:999px;cursor:pointer;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.nypill:hover{background:rgba(15,31,51,.95)}
+.nypill:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.nypill .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#f2c94c;margin-left:8px;vertical-align:1px}
+.nypanel{box-sizing:border-box;position:fixed;z-index:20;top:64px;right:max(16px,calc((100vw - 1100px)/2 + 16px));width:min(420px,calc(100vw - 32px));max-height:calc(100vh - 88px);overflow:auto;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,.3);padding:16px 18px}
+.nypanel[hidden]{display:none}
+.nypanel h2{font:800 1.05rem/1.2 var(--display);margin:0 0 4px}
+.nypanel p.meta{margin:0 0 10px;font-size:.85rem}
+.nypanel ul{list-style:none;margin:0;padding:0}
+.nypanel li{border-top:1px solid var(--line)}
+.nypanel li a{display:block;padding:10px 2px;text-decoration:none;color:var(--fg);font:400 .98rem/1.35 var(--body)}
+.nypanel li a:hover{color:var(--accent)}
+.nypanel li a b{display:block;font:500 .78rem/1.2 var(--mono);color:var(--muted);margin-bottom:2px}
+.nypanel li.new a{border-left:3px solid var(--signal);padding-left:9px}
+.nypanel .x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:1.3rem;line-height:1;color:var(--muted);cursor:pointer;padding:6px}
+.flip{scroll-margin-top:70px}
 .toc{position:sticky;top:0;z-index:5;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin:-28px calc(-1 * max(16px,env(safe-area-inset-left,0px))) -24px;padding:10px max(16px,env(safe-area-inset-left,0px));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .toc::-webkit-scrollbar{display:none}
 .toc a{flex:none;font:600 .88rem/1 var(--body);text-decoration:none;color:var(--muted);padding:8px 11px;border-radius:999px}
 .toc a:hover{color:var(--fg);background:var(--accent-soft)}
 .toc a.on{color:#fff;background:var(--accent)}
-.fbpill{position:absolute;top:16px;right:16px;z-index:1;font:700 .9rem/1 var(--body);text-decoration:none;background:#f2c94c;color:#0f1f33;padding:10px 14px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.pills{position:absolute;top:16px;right:16px;z-index:1;display:flex;gap:8px;align-items:center}
+.fbpill{font:700 .9rem/1 var(--body);text-decoration:none;background:#f2c94c;color:#0f1f33;padding:10px 14px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .fbpill:hover{background:#ffd95e}
 .fbpill:focus-visible{outline:2px solid #fff;outline-offset:2px}
-@media (max-width:600px){.fbpill{position:static;display:inline-block;margin:16px 0 0 24px}.hero-in{padding-top:18px}}
+@media (max-width:600px){.pills{position:static;flex-wrap:wrap;margin:16px 0 0 24px}.hero-in{padding-top:18px}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .toc a.on{color:#0b1a2b}}
 :root[data-theme="dark"] .toc a.on{color:#0b1a2b}
 
@@ -257,7 +274,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 <div class="wrap">
 
 <header class="hero">
-  <a class="fbpill" href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Bli med i Facebook-gruppa &#8599;</a>
+  <div class="pills"><button type="button" class="nypill" id="nybtn" aria-expanded="false" aria-controls="nypanel">Siste endringer<span class="dot" id="nydot" hidden></span></button><a class="fbpill" href="https://www.facebook.com/groups/1323976876523782" target="_blank" rel="noopener">Bli med i Facebook-gruppa &#8599;</a></div>
   <div class="hero-in">
     <span class="eyebrow">E6 Omkjøringsvegen, Nidarvoll-Moholtlia, Trondheim</span>
     <h1>Ny støyskjerm på Nardo</h1>
@@ -267,6 +284,18 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
   <div class="zone-lbl" aria-hidden="true"><span>55-59 dB</span><span>60-64</span><span>65-69</span><span>70-74</span><span>75+</span></div>
 </header>
 
+<div class="nypanel" id="nypanel" role="dialog" aria-label="Siste endringer" hidden>
+  <button type="button" class="x" id="nyx" aria-label="Lukk">&times;</button>
+  <h2>Siste endringer</h2>
+  <p class="meta">De fem siste. Trykk for å gå dit det er endret.</p>
+  <ul id="nylist">
+    <li data-d="2026-10-22"><a href="#m-byvekst"><b>22.10.2026</b>Nytt kort i Motstrid: byvekstavtalen har støy som mål, men Vegvesenet mener pengene bør gå til andre formål</a></li>
+    <li data-d="2026-10-21"><a href="#media"><b>21.10.2026</b>Nidaros om Vegvesenets nei til 60 km/t og streknings-ATK, under Saken i avisene</a></li>
+    <li data-d="2026-10-19"><a href="#dok"><b>19.10.2026</b>Vegvesenets brev 19.10 og bestillingen fra 2017 er lagt ut under Dokumentene</a></li>
+    <li data-d="2026-10-18"><a href="#m-oslo"><b>18.10.2026</b>Nytt kort i Motstrid: støy var hovedgrunnen til lavere fart på rv. 4 i Oslo</a></li>
+    <li data-d="2026-10-16"><a href="#m-atk"><b>16.10.2026</b>Vegvesenets svar om 60 km/t og streknings-ATK, med kort om ATK i Motstrid</a></li>
+  </ul>
+</div>
 <nav class="toc" aria-label="Innhold">
   <a href="#krav">Krav</a><a href="#status">Status</a><a href="#tall">Tall</a><a href="#db">Støy</a><a href="#naboer">Naboene</a><a href="#historikk">Historikk</a><a href="#innvendinger">Svar</a><a href="#motstrid">Motstrid</a><a href="#veien">Saksgang</a><a href="#regler">Regler</a><a href="#dok">Dokumenter</a><a href="#media">Media</a>
 </nav>
@@ -493,7 +522,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
       <p>I samme brev 19.10 skriver Vegvesenet at vedlikeholdet i 2021 “på ingen måte oppfyller de dokumenterte ambisjonene som først ble formidlet til naboer, publikum og andre”.</p>
       <span class="src">SVV, <a href="/dok/SVV_bestilling_stoyskjerm_Sluppen-Nardo_2017.pdf" target="_blank" rel="noopener">bestilling “Rehabilitering av støyskjermer Sluppen – Nardokrysset (sørside)”</a>, prosjekt 406067, udatert, s. 1 og 4. SVV, e-post 21.08.2017 (17/34060-20). SVV, <a href="/dok/SVV_prosjektark_forprosjekt_Omkjoringsvegen_06-07-2018.pdf" target="_blank" rel="noopener">prosjektark 06.07.2018</a>, s. 1. SVV, brev <a href="/dok/SVV_brev_09-10-2026_26-199383-23.pdf" target="_blank" rel="noopener">09.10.2026</a> (26/199383-23), pkt. 1.1.2, og <a href="/dok/SVV_brev_19-10-2026_26-199383-28.pdf" target="_blank" rel="noopener">19.10.2026</a> (26/199383-28), s. 1 og 3</span>
     </article>
-    <article class="flip">
+    <article class="flip" id="m-byvekst">
       <h3>Byvekstavtalen har støy som mål, men Vegvesenet mener pengene bør gå til andre formål</h3>
       <div class="pair">
         <div class="was"><span class="when">Byvekstavtale 2023-2029, s. 5</span><p>“Det overordnede målet for byvekstavtalen er at klimagassutslipp, kø, luftforurensning og støy skal reduseres”. Miljøpakkens lokale mål 7: “Trafikkstøy innendørs og utendørs for støyfølsom bebyggelse og virksomhet skal reduseres”.</p></div>
@@ -522,7 +551,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
       </div>
       <span class="src">SVV, brev <a href="/dok/SVV_brev_16-10-2026_26-282466-2.pdf" target="_blank" rel="noopener">16.10.2026</a> (26/282466-2), s. 1-2</span>
     </article>
-    <article class="flip">
+    <article class="flip" id="m-oslo">
       <h3>Støy som hovedgrunn i Oslo, men ikke ved Nardo</h3>
       <div class="pair">
         <div class="was"><span class="when">12.04.2024</span><p>Rv. 4 mellom Grorud og Sinsen i Oslo, med 25&nbsp;000-35&nbsp;000 kjøretøy i døgnet: “Støy er hovedgrunnen til at vi ønsker å sette ned fartsgrensen fra 70 til 60 km/t året rundt.” SVV skriver at målinger viser at støyen reduseres “med om lag 2 dB”. Det er et prøveprosjekt til april 2027.</p></div>
@@ -541,7 +570,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
       </div>
       <span class="src">SVV, brev <a href="/dok/SVV_brev_16-10-2026_26-282466-2.pdf" target="_blank" rel="noopener">16.10.2026</a> (26/282466-2), s. 2. <a href="https://www.trondheim.kommune.no/globalassets/10-bilder-og-filer/10-byutvikling/miljoenheten/miljorettet-helsevern/stoy/handlingsplan-mot--stoy-i-trondheim--2013-2018.pdf" target="_blank" rel="noopener">Trondheim kommune, Handlingsplan mot støy 2013-2018</a>, s. 16</span>
     </article>
-    <article class="flip">
+    <article class="flip" id="m-atk">
       <h3>Streknings-ATK forbi Nardo?</h3>
       <div class="pair">
         <div class="was"><span class="when">21.08.2017</span><p>“Vi vil også forsøke å få til strekningsvis ATK her.” Bakgrunnen var at “fart og fartsøkning etter fotoboksen var ett problem”.</p></div>
@@ -692,6 +721,23 @@ document.getElementById('copy').addEventListener('click', function(){
 </script>
 
 
+<script>
+(function(){
+  var b=document.getElementById('nybtn'),p=document.getElementById('nypanel'),dot=document.getElementById('nydot');
+  var items=[].slice.call(document.querySelectorAll('#nylist li')),KEY='nytt-sett';
+  function seen(){try{return localStorage.getItem(KEY)||''}catch(e){return ''}}
+  function mark(){try{localStorage.setItem(KEY,items[0].getAttribute('data-d'))}catch(e){}}
+  var s0=seen();
+  if(s0){items.forEach(function(li){ if(li.getAttribute('data-d')>s0) li.className='new'; });
+    if(items.some(function(li){return li.className==='new'})) dot.hidden=false;}
+  function open(o){p.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false'); if(o){dot.hidden=true;mark();}}
+  b.addEventListener('click',function(e){e.stopPropagation();open(p.hidden);});
+  document.getElementById('nyx').addEventListener('click',function(){open(false);b.focus();});
+  p.addEventListener('click',function(e){e.stopPropagation(); if(e.target.closest('a')) open(false);});
+  document.addEventListener('click',function(){if(!p.hidden)open(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden){open(false);b.focus();}});
+})();
+</script>
 <script>
 (function(){
   var links=[].slice.call(document.querySelectorAll('.toc a[href^="#"]'));
