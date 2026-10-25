@@ -239,6 +239,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 .nypanel li.new a{border-left:3px solid var(--signal);padding-left:9px}
 .nypanel .x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:1.3rem;line-height:1;color:var(--muted);cursor:pointer;padding:6px}
 .flip{scroll-margin-top:70px}
+li:target{background:rgba(232,164,0,.2);scroll-margin-top:96px;transition:background .6s}
 .toc{position:sticky;top:0;z-index:5;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin:-28px calc(-1 * max(16px,env(safe-area-inset-left,0px))) -24px;padding:10px max(16px,env(safe-area-inset-left,0px));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .toc::-webkit-scrollbar{display:none}
 .toc a{flex:none;font:600 .88rem/1 var(--body);text-decoration:none;color:var(--muted);padding:8px 11px;border-radius:999px}
@@ -290,10 +291,10 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
   <h2>Siste endringer</h2>
   <p class="meta">Trykk for å gå dit det er endret.</p>
   <ul id="nylist">
-    <li data-d="2026-10-25"><a href="#h-foer"><b>25.10.2026</b>Ny historikk: Bystyret vedtok støygrenser i 1989, og NTH vurderte skjermhøyden i 1986</a></li>
-    <li data-d="2026-10-23"><a href="#media"><b>23.10.2026</b>Nytt leserinnlegg fra Beate Letnes i Adresseavisen, under Media</a></li>
+    <li data-d="2026-10-25"><a href="#h-1986"><b>25.10.2026</b>Ny historikk: Bystyret vedtok støygrenser i 1989, og NTH vurderte skjermhøyden i 1986</a></li>
+    <li data-d="2026-10-23"><a href="#a-letnes"><b>23.10.2026</b>Nytt leserinnlegg fra Beate Letnes i Adresseavisen, under Media</a></li>
     <li data-d="2026-10-22"><a href="#m-byvekst"><b>22.10.2026</b>Nytt kort i Motstrid: Byvekstavtalen har støy som mål, men Vegvesenet mener pengene bør gå til andre formål</a></li>
-    <li data-d="2026-10-21"><a href="#media"><b>21.10.2026</b>Nidaros om Vegvesenets nei til 60 km/t og streknings-ATK, under Media</a></li>
+    <li data-d="2026-10-21"><a href="#a-fart"><b>21.10.2026</b>Nidaros om Vegvesenets nei til 60 km/t og streknings-ATK, under Media</a></li>
     <li data-d="2026-10-19"><a href="#dok"><b>19.10.2026</b>Vegvesenets brev 19.10 og bestillingen fra 2017 er lagt ut under Dokumentene</a></li>
   </ul>
 </div>
@@ -456,9 +457,9 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
   </figure>
   <h3 id="h-foer" style="margin-top:12px">Før skjermen ble bygd</h3>
   <ol class="tl">
-    <li><span class="yr">1986</span><div>Vegsjefen oversendte 8. oktober en støyvurdering fra NTH for utvidelsen fra to til fire felt. Trafikken var da om lag 20&nbsp;000 kjøretøy i døgnet, og den eksisterende skjermen var 1 meter høy, på en voll. Rapporten regnet på å heve den til 2 meter: <q>Ved å øke eksisterende skjerms høyde til 2 m, vil det ikke oppstå støyøkning før trafikken overstiger ca 35&nbsp;000 kjt/døgn.</q> I 2025 var trafikken ved Nardo 47&nbsp;200 kjøretøy i døgnet.
+    <li id="h-1986"><span class="yr">1986</span><div>Vegsjefen oversendte 8. oktober en støyvurdering fra NTH for utvidelsen fra to til fire felt. Trafikken var da om lag 20&nbsp;000 kjøretøy i døgnet, og den eksisterende skjermen var 1 meter høy, på en voll. Rapporten regnet på å heve den til 2 meter: <q>Ved å øke eksisterende skjerms høyde til 2 m, vil det ikke oppstå støyøkning før trafikken overstiger ca 35&nbsp;000 kjt/døgn.</q> I 2025 var trafikken ved Nardo 47&nbsp;200 kjøretøy i døgnet.
       <span class="src">Trondheim bygningsråd, <a href="/dok/Bygningsradet_vedtak_r0291_16-06-1987_utdrag.pdf" target="_blank" rel="noopener">sak R 123, møte 16.06.1987, utdrag s. 1, 4 og 5</a>. ÅDT 2025: Statens vegvesen, Trafikkdata.</span></div></li>
-    <li><span class="yr">1989</span><div>Bystyret vedtok 28. september støygrenser for Omkjøringsvegen: <q>Ved gjennomføring av skjermingstiltak skal et maksimalt ekvivalent døgnnivå på 35 dbA oppnås inne og 55 dbA tilstrebes ute.</q> Grensene <q>skal gjelde hele Omkjøringsvegen</q>. Planen for Nardokrysset sier også: <q>Alle støyskjermer blir gjort lydabsorberende.</q> og <q>Støyskjermingstiltakene skal ferdigstilles samtidig med veganlegget.</q>
+    <li id="h-1989"><span class="yr">1989</span><div>Bystyret vedtok 28. september støygrenser for Omkjøringsvegen: <q>Ved gjennomføring av skjermingstiltak skal et maksimalt ekvivalent døgnnivå på 35 dbA oppnås inne og 55 dbA tilstrebes ute.</q> Grensene <q>skal gjelde hele Omkjøringsvegen</q>. Planen for Nardokrysset sier også: <q>Alle støyskjermer blir gjort lydabsorberende.</q> og <q>Støyskjermingstiltakene skal ferdigstilles samtidig med veganlegget.</q>
       <span class="src">Reguleringsbestemmelser <a href="/dok/Reguleringsbestemmelser_r0291b_28-09-1989.pdf" target="_blank" rel="noopener">r0291b</a> (Nardokrysset) § 2 og <a href="/dok/Reguleringsbestemmelser_r0291_med_tillegg_1989.pdf" target="_blank" rel="noopener">r0291</a> (langs Omkjøringsvegen, tillegget s. 2), begge vedtatt i bystyret 28.09.1989. Setningene om lydabsorberende skjermer og ferdigstilling står bare i r0291b.</span></div></li>
     <li><span class="yr">I dag</span><div>Vi vet ikke om planene er endret eller erstattet siden 1989, og vi har ikke funnet reguleringsplan 290, som bestemmelsene viser til. Vi har bedt kommunen om å avklare planstatus, og gjengir her bare hva bystyret vedtok.</div></li>
   </ol>
@@ -697,8 +698,8 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
   <span class="eyebrow">I media</span>
   <h2 id="media">Saken i avisene</h2>
   <ul class="media">
-    <li><a href="https://www.adressa.no/debatt/i/b8Joag/hvorfor-flytter-vi-ikke-bare" target="_blank" rel="noopener">Hvorfor flytter vi ikke bare?</a><span class="mmeta">23.10.2026 · Adresseavisen · Debatt, Beate Letnes</span></li>
-    <li><a href="https://www.nidaros.no/krevde-60-sone-og-fartskontroll-pa-e6-strekningen-fikk-nei-svart-lite-tilfredsstillende/s/80-113-35115" target="_blank" rel="noopener">Krevde 60-sone og fartskontroll på E6-strekningen - fikk nei: – Svært lite tilfredsstillende</a><span class="mmeta">21.10.2026 · Nidaros</span></li>
+    <li id="a-letnes"><a href="https://www.adressa.no/debatt/i/b8Joag/hvorfor-flytter-vi-ikke-bare" target="_blank" rel="noopener">Hvorfor flytter vi ikke bare?</a><span class="mmeta">23.10.2026 · Adresseavisen · Debatt, Beate Letnes</span></li>
+    <li id="a-fart"><a href="https://www.nidaros.no/krevde-60-sone-og-fartskontroll-pa-e6-strekningen-fikk-nei-svart-lite-tilfredsstillende/s/80-113-35115" target="_blank" rel="noopener">Krevde 60-sone og fartskontroll på E6-strekningen - fikk nei: – Svært lite tilfredsstillende</a><span class="mmeta">21.10.2026 · Nidaros</span></li>
     <li><a href="https://www.adressa.no/debatt/i/vlbA24/ned-med-farten-opp-med-stoeyskjermene-paa-nardo" target="_blank" rel="noopener">Ned med farten, opp med støyskjermene på Nardo</a><span class="mmeta">16.10.2026 · Adresseavisen · Debatt, Merethe Baustad Ranum (H)</span></li>
     <li><a href="https://www.adressa.no/debatt/i/OggpzV/nye-stoeyskjermer-og-lavere-fart" target="_blank" rel="noopener">Nye støyskjermer og lavere fart</a><span class="mmeta">09.10.2026 · Adresseavisen · Debatt, Silje Naper Salomonsen og Even Næss Bergseng (SV)</span></li>
     <li><a href="https://www.nidaros.no/krever-strakstiltak-pa-nardo-det-er-helt-uholdbart/s/80-113-27295" target="_blank" rel="noopener">Krever strakstiltak på Nardo: – Det er helt uholdbart</a><span class="mmeta">08.10.2026 · Nidaros · krever abonnement</span></li>
