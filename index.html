@@ -297,7 +297,6 @@ li:target,#h-1986:target+#h-1989{background:rgba(232,164,0,.2);scroll-margin-top
     <li data-d="2026-10-28"><a href="#a-sexy"><b>28.10.2026</b>Nytt leserinnlegg fra Rasmus Strand i Adresseavisen, under Media</a></li>
     <li data-d="2026-10-25"><a href="#h-1986"><b>25.10.2026</b>Ny historikk: Bystyret vedtok støygrenser i 1989, og NTH vurderte skjermhøyden i 1986</a></li>
     <li data-d="2026-10-23"><a href="#a-letnes"><b>23.10.2026</b>Nytt leserinnlegg fra Beate Letnes i Adresseavisen, under Media</a></li>
-    <li data-d="2026-10-22"><a href="#m-byvekst"><b>22.10.2026</b>Nytt kort i Motstrid: Byvekstavtalen har støy som mål, men Vegvesenet mener pengene bør gå til andre formål</a></li>
   </ul>
 </div>
 <nav class="toc" aria-label="Innhold">
@@ -784,6 +783,7 @@ document.getElementById('copy').addEventListener('click', function(){
 (function(){
   var b=document.getElementById('nybtn'),p=document.getElementById('nypanel'),dot=document.getElementById('nydot');
   var items=[].slice.call(document.querySelectorAll('#nylist li')),KEY='nytt-sett';
+  items.slice(5).forEach(function(li){li.parentNode.removeChild(li)}); items=items.slice(0,5); /* viser alltid bare de fem nyeste */
   function seen(){try{return localStorage.getItem(KEY)||''}catch(e){return ''}}
   function mark(){try{localStorage.setItem(KEY,items[0].getAttribute('data-d'))}catch(e){}}
   var s0=seen();
