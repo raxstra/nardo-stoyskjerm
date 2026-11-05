@@ -237,6 +237,10 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 .nypanel li a{display:block;padding:10px 2px;text-decoration:none;color:var(--fg);font:400 .98rem/1.35 var(--body)}
 .nypanel li a:hover{color:var(--accent)}
 .nypanel li a b{display:block;font:500 .78rem/1.2 var(--mono);color:var(--muted);margin-bottom:2px}
+.nypanel li.old{display:none}
+.nypanel.all li.old{display:block}
+.nypanel .nymore{display:block;width:100%;margin:6px 0 0;padding:10px 2px 4px;background:none;border:0;border-top:1px solid var(--line);font:600 .92rem/1.3 var(--body);color:var(--accent);text-align:left;cursor:pointer}
+.nypanel .nymore:hover{text-decoration:underline}
 .nypanel li.new a{border-left:3px solid var(--signal);padding-left:9px}
 .nypanel .x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:1.3rem;line-height:1;color:var(--muted);cursor:pointer;padding:6px}
 .flip{scroll-margin-top:70px}
@@ -297,7 +301,19 @@ li:target,#h-1986:target+#h-1989{background:rgba(232,164,0,.2);box-shadow:-12px 
     <li data-d="2026-11-03"><a href="#s-mns"><b>03.11.2026</b>Utvalget enstemmig for innstilling om planlegging av støyskjerm for hele strekningen, med bildet av hovedforslaget</a></li>
     <li data-d="2026-11-03"><a href="#a-rita"><b>03.11.2026</b>Nytt leserinnlegg fra Rita Skjulsvik i Nidaros, under Media</a></li>
     <li data-d="2026-11-02"><a href="#s-samferdselsdep"><b>02.11.2026</b>Kommunen har skrevet til Samferdselsdepartementet og bedt om umiddelbare tiltak mot støyen</a></li>
+    <li data-d="2026-11-01"><a href="#i-statens-ansvar"><b>01.11.2026</b>Kommunens fagenhet bekrefter at Miljøpakken har betalt skjerm for boligers uteområde i Okstadbakken</a></li>
+    <li data-d="2026-10-30"><a href="#m-vedlikehold"><b>30.10.2026</b>Statens vegvesen har svart: nytt kort i Motstrid, og SVV beklager at barnehagens henvendelse fra 2023 ikke ble besvart</a></li>
+    <li data-d="2026-10-29"><a href="#m-boligene"><b>29.10.2026</b>Nytt kort i Motstrid og ny linje i tidslinja: Vegvesenet og byrådet skrev selv at boligene trenger ny skjerm</a></li>
+    <li data-d="2026-10-28"><a href="#a-sexy"><b>28.10.2026</b>Nytt leserinnlegg fra Rasmus Strand i Adresseavisen, under Media</a></li>
+    <li data-d="2026-10-25"><a href="#h-1986"><b>25.10.2026</b>Ny historikk: Bystyret vedtok støygrenser i 1989, og NTH vurderte skjermhøyden i 1986</a></li>
+    <li data-d="2026-10-23"><a href="#a-letnes"><b>23.10.2026</b>Nytt leserinnlegg fra Beate Letnes i Adresseavisen, under Media</a></li>
+    <li data-d="2026-10-22"><a href="#m-byvekst"><b>22.10.2026</b>Nytt kort i Motstrid: Byvekstavtalen har støy som mål, men Vegvesenet mener pengene bør gå til andre formål</a></li>
+    <li data-d="2026-10-21"><a href="#a-fart"><b>21.10.2026</b>Nidaros om Vegvesenets nei til 60 km/t og streknings-ATK, under Media</a></li>
+    <li data-d="2026-10-19"><a href="#dok"><b>19.10.2026</b>Vegvesenets brev 19.10 og bestillingen fra 2017 er lagt ut under Dokumentene</a></li>
+    <li data-d="2026-10-18"><a href="#m-oslo"><b>18.10.2026</b>Nytt kort i Motstrid: Støy var hovedgrunnen til lavere fart på rv. 4 i Oslo</a></li>
+    <li data-d="2026-10-16"><a href="#m-atk"><b>16.10.2026</b>Vegvesenets svar om 60 km/t og streknings-ATK, med kort om ATK i Motstrid</a></li>
   </ul>
+  <button type="button" class="nymore" id="nymore" aria-expanded="false">Vis tidligere endringer</button>
 </div>
 <nav class="toc" aria-label="Innhold">
   <a href="#krav">Krav</a><a href="#status">Status</a><a href="#tall">Tall</a><a href="#db">Støy</a><a href="#naboer">Naboene</a><a href="#historikk">Historikk</a><a href="#innvendinger">Svar</a><a href="#motstrid">Motstrid</a><a href="#veien">Saksgang</a><a href="#regler">Regler</a><a href="#dok">Dokumenter</a><a href="#media">Media</a>
@@ -808,7 +824,9 @@ document.getElementById('copy').addEventListener('click', function(){
 (function(){
   var b=document.getElementById('nybtn'),p=document.getElementById('nypanel'),dot=document.getElementById('nydot');
   var items=[].slice.call(document.querySelectorAll('#nylist li')),KEY='nytt-sett';
-  items.slice(5).forEach(function(li){li.parentNode.removeChild(li)}); items=items.slice(0,5); /* viser alltid bare de fem nyeste */
+  items.slice(5).forEach(function(li){li.className='old'}); items=items.slice(0,5); /* de fem nyeste vises, resten ligger bak «Vis tidligere endringer» */
+  var more=document.getElementById('nymore');
+  more.addEventListener('click',function(){var on=!p.classList.contains('all');p.classList.toggle('all',on);more.setAttribute('aria-expanded',on?'true':'false');more.textContent=on?'Skjul tidligere endringer':'Vis tidligere endringer';});
   function seen(){try{return localStorage.getItem(KEY)||''}catch(e){return ''}}
   function mark(){try{localStorage.setItem(KEY,items[0].getAttribute('data-d'))}catch(e){}}
   var s0=seen();
