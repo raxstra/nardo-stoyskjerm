@@ -867,6 +867,7 @@ document.getElementById('copy').addEventListener('click', function(){
   var s0=seen();
   if(s0){items.forEach(function(li){ if(li.getAttribute('data-d')>s0) li.className='new'; });
     if(items.some(function(li){return li.className==='new'})) dot.hidden=false;}
+  else dot.hidden=false; /* førstegangsbesøk: prikken vises til panelet er åpnet */
   function open(o){p.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false'); if(o){dot.hidden=true;mark();}}
   b.addEventListener('click',function(e){e.stopPropagation();open(p.hidden);});
   document.getElementById('nyx').addEventListener('click',function(){open(false);b.focus();});
