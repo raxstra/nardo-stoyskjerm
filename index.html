@@ -244,7 +244,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 .nypanel li.new a{border-left:3px solid var(--signal);padding-left:9px}
 .nypanel .x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:1.3rem;line-height:1;color:var(--muted);cursor:pointer;padding:6px}
 .flip{scroll-margin-top:70px}
-li:target,#h-1986:target+#h-1989{background:rgba(232,164,0,.2);box-shadow:-12px 0 0 rgba(232,164,0,.2),12px 0 0 rgba(232,164,0,.2);scroll-margin-top:96px;transition:background .6s}
+li:target,#kommunerapport:target,#h-1986:target+#h-1989{background:rgba(232,164,0,.2);box-shadow:-12px 0 0 rgba(232,164,0,.2),12px 0 0 rgba(232,164,0,.2);scroll-margin-top:96px;transition:background .6s}
 .toc{position:sticky;top:0;z-index:5;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin:-28px calc(-1 * max(16px,env(safe-area-inset-left,0px))) -24px;padding:10px max(16px,env(safe-area-inset-left,0px));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .toc::-webkit-scrollbar{display:none}
 .toc a{flex:none;font:600 .88rem/1 var(--body);text-decoration:none;color:var(--muted);padding:8px 11px;border-radius:999px}
@@ -297,7 +297,7 @@ li:target,#h-1986:target+#h-1989{background:rgba(232,164,0,.2);box-shadow:-12px 
   <h2>Siste endringer</h2>
   <p class="meta">Trykk for å gå dit det er endret.</p>
   <ul id="nylist">
-    <li data-d="2026-11-19"><a href="#db"><b>19.11.2026</b>Kommunens støyrapport er publisert, med målinger og beregninger, under Støynivå og Saksgang</a></li>
+    <li data-d="2026-11-19"><a href="#kommunerapport"><b>19.11.2026</b>Kommunens støyrapport er publisert, med målinger og beregninger, under Støynivå og Saksgang</a></li>
     <li data-d="2026-11-18"><a href="#a-adressa-60"><b>18.11.2026</b>Ny sak i Adresseavisen om lavere fartsgrense og ny støyskjerm på Nardo, under Media</a></li>
     <li data-d="2026-11-13"><a href="#m-fartsgrense"><b>13.11.2026</b>Statens vegvesen skriver at skjønnet la 60 km/t til grunn og at fartsgrensen ble hevet til 70 først etter 1990, under Motstrid og Historikk</a></li>
     <li data-d="2026-11-12"><a href="#a-myrvold"><b>12.11.2026</b>Nytt debattinnlegg i Nidaros fra Martin Myrvold, under Media</a></li>
@@ -442,11 +442,13 @@ li:target,#h-1986:target+#h-1989{background:rgba(232,164,0,.2);box-shadow:-12px 
   </div>
   <p>Forurensningsforskriftens konkrete tiltaksgrense på 42 dB gjelder støy innendørs, med lukkede vinduer. Den kan derfor ikke brukes som grense for støynivået i hager og uteplasser. Kapittel 5 omfatter også kartlegging av støy og handlingsplaner mot støy, men gir ikke i seg selv en bolig rett til ny skjerm fordi støynivået utendørs er høyt. Statens vegvesen skrev selv i 2026 at <q>lovverket synes noe mangelfullt mht. utendørs støy</q>.<span class="src">SVV, brev <a href="/dok/SVV_brev_02-10-2026_26-199383-21.pdf" target="_blank" rel="noopener">02.10.2026</a> (sak 26/199383), s. 3, pkt. 7. Miljødirektoratet, <a href="https://www.miljodirektoratet.no/ansvarsomrader/forurensning/stoy/for-myndigheter/veileder-til-forurensningsforskriftens-kapittel-5-om-stoy/-5-1-formal/" target="_blank" rel="noopener">veileder til forurensningsforskriften kap. 5</a>, § 5-1</span></p>
   <p>Barnehageeieren svarte tilsynet at to tredjedeler av uteområdet ligger i oransje og røde soner, og at en permanent løsning <q>ligger utenfor barnehageeiers ansvar</q>. På skoleplassen ligger om lag 40 prosent av 7 500 m² på 55-60 dB, over Miljøpakkens mål på 55 dB.<span class="src">Trondheim kommune, tilsyn sak 2026/4758 og svar sak 2026/5545-2, s. 2 og 5</span></p>
-  <h3 id="kommunerapport">Kommunens støyrapport, november 2026</h3>
+  <div id="kommunerapport">
+  <h3>Kommunens støyrapport, november 2026</h3>
   <p>Etter innbyggerforslaget bestilte Klima- og miljøenheten i Trondheim kommune en støyrapport fra Brekke &amp; Strand Akustikk. Rapporten er datert 18.11.2026 og hører til sak 330/26, innbyggerforslaget, i bystyrets møte 19.11. Målingene ved fire uteplasser, blant dem Nardo barnehage, stemte med beregningene innenfor 0 til 2 dB.</p>
   <p>Rapporten beregner at 60&nbsp;km/t i stedet for 70 gir om lag 2 dB lavere støy. Den beregner også at Miljøpakkens mål, Lden ≤ 60 dB utendørs og om mulig ned mot 55 dB, kan nås ved <q>de aller fleste boligene</q> hvis skjermene heves med 0,5 til 2 meter, og skriver at det <q>mest sannsynlig</q> må bygges helt nye skjermer. Om skjermen fra Sunnlandsvegen 2 til Nardokrysset skriver den: <q>Denne skjermen vil bidra til å dempe støy betraktelig ved Nardo skole og barnehage.</q> Målet nås ikke ved alle hus kun med skjerm langs E6, blant annet øverst i Røllikvegen og Prestekragevegen. Vi ber derfor om både ny skjerm og 60&nbsp;km/t til den står. Rapporten vurderer ikke teknisk gjennomførbarhet og har ingen kostnadsoverslag.</p>
   <p>Rapportens målinger er gjort 1,5 meter over bakken, i høyde for uteareal. Kommunens støykartlegging er beregnet i 4 meters høyde, så tallene kan ikke sammenlignes direkte.</p>
   <span class="src">Brekke &amp; Strand Akustikk, <a href="https://digdem.blob.core.windows.net/trondheim-elements/cli2v0nfr001501nm6pq6bnoq-oznns24c33d9jba4d7vmsp.pdf" target="_blank" rel="noopener">E6 Sluppen - Moholt. Måling og beregninger av støy</a>, AKU-01 rev. 0, 18.11.2026, s. 1, 5, 9, 10, 11 og 12. Trondheim kommune, <a href="https://www.trondheim.kommune.no/contentassets/cba566a94eb94d98af0d5bb59d905137/handlingsplan-mot-stoy-2024-2029.pdf" target="_blank" rel="noopener">Handlingsplan mot støy 2024-2029</a>, s. 22</span>
+  </div>
   <div class="voice" id="naboer">
     <span class="eyebrow">Naboene forteller</span>
     <blockquote><p>“Støyskjermen som skulle beskytte oss ble bygd da barnas besteforeldre kanskje var unge.”</p><footer>Barnefamilie i Røllikvegen</footer></blockquote>
