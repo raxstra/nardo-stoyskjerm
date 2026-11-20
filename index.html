@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ny støyskjerm på Nardo</title>
-<script>(function(){var h=location.hash;if(h==="#historikk"||h.indexOf("#h-")===0)location.replace("/historikk.html"+h);})();</script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
@@ -215,9 +214,15 @@ figcaption .src{margin-top:6px}
 .voice blockquote p{font:600 1.1rem/1.45 var(--body)}
 .voice footer{border:0;padding:0;font-size:.9rem;color:var(--muted)}
 .vnum{font-size:.98rem}
-.histcta{margin-top:18px;padding:18px 20px;border-radius:8px;background:var(--accent-soft);display:grid;gap:12px}
-.histcta p{margin:0}
-.histcta .vbtn{font-size:1.1rem;padding:14px 20px}
+details.hist>summary{list-style:none;cursor:pointer;display:grid;gap:12px;margin-top:18px;padding:18px 20px;border-radius:8px;background:var(--accent-soft)}
+details.hist>summary::-webkit-details-marker{display:none}
+details.hist>summary .hq{margin:0}
+details.hist>summary .vbtn{font-size:1.1rem;padding:14px 20px;justify-self:start}
+details.hist>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details.hist .oo,details.hist[open] .oc{display:none}
+details.hist[open] .oo{display:inline}
+details.hist[open]>summary{margin-bottom:8px}
+.hclose{margin:18px 0 0}
 .vbtn{justify-self:start;font:700 1rem/1.2 var(--body);text-decoration:none;padding:11px 15px;border-radius:6px;background:var(--accent);color:#fff}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .vbtn{color:#0b1a2b}}
 :root[data-theme="dark"] .vbtn{color:#0b1a2b}
@@ -310,7 +315,7 @@ li:target,#kommunerapport:target,#h-1986:target~#h-1989,#a-nidaros-fart:target+#
     <li data-d="2026-11-18"><a href="#a-adressa-60"><b>18.11.2026</b>Ny sak i Adresseavisen om lavere fartsgrense og ny støyskjerm på Nardo, under Media</a></li>
     <li data-d="2026-11-12"><a href="#a-myrvold"><b>12.11.2026</b>Nytt debattinnlegg i Nidaros fra Martin Myrvold, under Media</a></li>
     <li data-d="2026-11-11"><a href="#s-svv-11-11"><b>11.11.2026</b>Statens vegvesen svarer at de tar stilling til innmelding i handlingsprogrammet når kommunen bringer saken inn, og at de vil behandle en søknad om fartsgrense, under Saksgang</a></li>
-    <li data-d="2026-11-10"><a href="/historikk.html#h-byrad-2026"><b>10.11.2026</b>Byrådet skriver at 35 dBA inne i reguleringsplanene er et absolutt krav og en bindende føring ved utforming av støyskjermen, under Historikk og Regelverk</a></li>
+    <li data-d="2026-11-10"><a href="#h-byrad-2026"><b>10.11.2026</b>Byrådet skriver at 35 dBA inne i reguleringsplanene er et absolutt krav og en bindende føring ved utforming av støyskjermen, under Historikk og Regelverk</a></li>
     <li data-d="2026-11-08"><a href="#a-skammelig"><b>08.11.2026</b>Nidaros har skrevet om utvalgsmøtet 3.11, under Media</a></li>
     <li data-d="2026-11-05"><a href="#a-saethero"><b>05.11.2026</b>Nytt debattinnlegg i Nidaros fra Nora Malini Sætherø (MDG), under Media</a></li>
     <li data-d="2026-11-03"><a href="#s-mns"><b>03.11.2026</b>Utvalget enstemmig for innstilling om planlegging av støyskjerm for hele strekninga, med bildet av hovedforslaget</a></li>
@@ -320,7 +325,7 @@ li:target,#kommunerapport:target,#h-1986:target~#h-1989,#a-nidaros-fart:target+#
     <li data-d="2026-10-30"><a href="#m-vedlikehold"><b>30.10.2026</b>Statens vegvesen har svart: nytt kort i Motstrid, og SVV beklager at barnehagens henvendelse fra 2023 ikke ble besvart</a></li>
     <li data-d="2026-10-29"><a href="#m-boligene"><b>29.10.2026</b>Nytt kort i Motstrid og ny linje i tidslinja: Vegvesenet og byrådet skrev selv at boligene trenger ny skjerm</a></li>
     <li data-d="2026-10-28"><a href="#a-sexy"><b>28.10.2026</b>Nytt debattinnlegg fra Rasmus Strand i Adresseavisen, under Media</a></li>
-    <li data-d="2026-10-25"><a href="/historikk.html#h-1986"><b>25.10.2026</b>Ny historikk: Bystyret vedtok støygrenser i 1989, og NTH vurderte skjermhøyden i 1986</a></li>
+    <li data-d="2026-10-25"><a href="#h-1986"><b>25.10.2026</b>Ny historikk: Bystyret vedtok støygrenser i 1989, og NTH vurderte skjermhøyden i 1986</a></li>
     <li data-d="2026-10-23"><a href="#a-letnes"><b>23.10.2026</b>Nytt debattinnlegg fra Beate Letnes i Adresseavisen, under Media</a></li>
     <li data-d="2026-10-22"><a href="#m-byvekst"><b>22.10.2026</b>Nytt kort i Motstrid: Byvekstavtalen har støy som mål, men Vegvesenet mener pengene bør gå til andre formål</a></li>
     <li data-d="2026-10-21"><a href="#a-fart"><b>21.10.2026</b>Nidaros om Vegvesenets nei til 60 km/t og streknings-ATK, under Media</a></li>
@@ -331,7 +336,7 @@ li:target,#kommunerapport:target,#h-1986:target~#h-1989,#a-nidaros-fart:target+#
   <button type="button" class="nymore" id="nymore" aria-expanded="false">Vis tidligere endringer</button>
 </div>
 <nav class="toc" aria-label="Innhold">
-  <a href="#krav">Krav</a><a href="#status">Status</a><a href="#tall">Tall</a><a href="#db">Støy</a><a href="#naboer">Naboene</a><a href="/historikk.html">Historikk</a><a href="#innvendinger">Svar</a><a href="#motstrid">Motstrid</a><a href="#veien">Saksgang</a><a href="#regler">Regler</a><a href="#dok">Dokumenter</a><a href="#media">Media</a>
+  <a href="#krav">Krav</a><a href="#status">Status</a><a href="#tall">Tall</a><a href="#db">Støy</a><a href="#naboer">Naboene</a><a href="#historikk">Historikk</a><a href="#innvendinger">Svar</a><a href="#motstrid">Motstrid</a><a href="#veien">Saksgang</a><a href="#regler">Regler</a><a href="#dok">Dokumenter</a><a href="#media">Media</a>
 </nav>
 
 <section aria-labelledby="krav">
@@ -495,10 +500,50 @@ li:target,#kommunerapport:target,#h-1986:target~#h-1989,#a-nidaros-fart:target+#
       <span class="src">Foto: ukjent fotograf/Norsk vegmuseum, Statens vegvesen. Nardo, 30.05.1991. Statens vegvesen, notat etter befaring 31.01.2017 (søyler og fundament “i OK stand”), og <a href="/dok/SVV_epost_21-08-2017_17-34060-20.pdf" target="_blank" rel="noopener">e-post 21.08.2017</a> (17/34060-20).</span>
     </figcaption>
   </figure>
-  <div class="histcta">
-    <p>Historikken samler hva som ble vedtatt og skrevet før skjermen ble bygd, om planene fortsatt gjelder i dag, og hva Statens vegvesen selv har skrevet. Fra 1986 til i dag, med kilder.</p>
-    <a class="vbtn" href="/historikk.html">Les hele historikken &rarr;</a>
-  </div>
+  <details class="hist" id="hist-alle">
+    <summary><span class="hq">Historikken samler hva som ble vedtatt og skrevet før skjermen ble bygd, og hva Statens vegvesen selv har skrevet. Fra 1986 til i dag, med kilder.</span><span class="vbtn"><span class="oc">Vis hele historikken &darr;</span><span class="oo">Skjul historikken &uarr;</span></span></summary>
+  <h3 id="h-foer" style="margin-top:12px">Før skjermen ble bygd</h3>
+    <ol class="tl">
+      <li id="h-1986-asvang"><span class="yr">1986 og 1988</span><div>Åsvang bydelsutvalg gikk i juni 1986 enstemmig imot fire felt, blant annet på grunn av <q>de helsemessige sidene ved å bo i umiddelbar nærhet av sterk trafikk</q>. I mars 1988 skrev Statens vegvesen til grunneierne at utvidelsen ville føre til inngrep på over 100 eiendommer, og at de satset <q>på å skjerme boligområdene så godt som mulig</q>.
+        <span class="src">Adresseavisen, 24.06.1986, s. 3, og Nidaros, 10.03.1988, s. 5, via nb.no</span></div></li>
+      <li id="h-1986"><span class="yr">Oktober 1986</span><div>Vegsjefen oversendte 8. oktober en støyvurdering fra NTH for utvidelsen fra to til fire felt. Trafikken var da om lag 20&nbsp;000 kjøretøy i døgnet, og den eksisterende skjermen var 1 meter høy, på en voll. Rapporten regnet på å heve den til 2 meter: <q>Ved å øke eksisterende skjerms høyde til 2 m, vil det ikke oppstå støyøkning før trafikken overstiger ca 35&nbsp;000 kjt/døgn.</q> I 2025 var trafikken ved Nardo 47&nbsp;200 kjøretøy i døgnet.
+        <span class="src">Trondheim bygningsråd, <a href="/dok/Bygningsradet_vedtak_r0291_16-06-1987_utdrag.pdf" target="_blank" rel="noopener">sak R 123, møte 16.06.1987, utdrag s. 1, 4 og 5</a>. ÅDT 2025: Statens vegvesen, Trafikkdata.</span></div></li>
+      <li id="h-skjonn-1989"><span class="yr">15. september 1989</span><div>Trondheim skjønnsrett for bygningssaker avsa skjønn (sak 4/1989) for utvidelsen av Omkjøringsvegen fra Klæbuveien til undergangen ved Nardo skole. Skjønnsforutsetningene sier: <q>Vegvesenet vedlikeholder de støyvoller og skjermer som blir etablert i henhold til punkt 6.1. A.</q> Saksøkeren påtok seg for alle berørte boligeiendommer bygningsmessige tiltak <q>med sikte på at døgnekvivalent støyniva ikke skal overstige 35 desibel A innendørs</q> (pkt. 6.1 B og 6.2 A, s. 16). Retten la til grunn at støynivået foran husfasadene med de nye skjermene ville ligge mellom 55 og 62 dB <q>ved en årsdøgntrafikk på 35000 kjøretøyer</q>, og skrev: <q>Forutsetningen for dette er at årsdøgntrafikken ikke overstiger 35000 kjøretøyer pr. døgn.</q> Retten skrev også at støynivået ved en dobling til 70000 ikke ville stige med mer enn 3 dB, og at økningen ikke ville overstige det de saksøkte måtte finne seg i (s. 22). Om innendørsstøy skrev retten at skjønnsforutsetningene løste spørsmålet <q>ved å garantere at innendørs støynivå ikke skal overstige 35 decibel A</q> (s. 23). Ut over skjønnsforutsetningene og det øvrige fremlagte materialet påtok saksøkeren seg ikke <q>arbeid eller andre forpliktelser</q> (pkt. 1 A, s. 10). I 2025 var ÅDT 47&nbsp;200.<span class="src">Trondheim skjønnsrett for bygningssaker, <a href="/dok/Skjonn_15-09-1989_sak_4-1989_utdrag.pdf" target="_blank" rel="noopener">skjønn 15.09.1989</a> (sak 4/1989), utdrag s. 10, 16, 22 og 23, oversendt av Statens vegvesen 19.11.2026. ÅDT 2025: Statens vegvesen, Trafikkdata.</span></div></li>
+      <li id="h-1989"><span class="yr">September 1989</span><div>Bystyret vedtok 28. september støygrenser for Omkjøringsvegen: <q>Ved gjennomføring av skjermingstiltak skal et maksimalt ekvivalent døgnnivå på 35 dbA oppnås inne og 55 dbA tilstrebes ute.</q> Ordlyden skiller mellom 35 dbA, som skal oppnås inne, og 55 dbA, som tilstrebes ute. Grensene <q>skal gjelde hele Omkjøringsvegen</q>. Planen for Nardokrysset sier også: <q>Alle støyskjermer blir gjort lydabsorberende.</q> og <q>Støyskjermingstiltakene skal ferdigstilles samtidig med veganlegget.</q>
+        <span class="src">Reguleringsbestemmelser <a href="/dok/Reguleringsbestemmelser_r0290_med_tillegg_1989.pdf" target="_blank" rel="noopener">r0290</a> (Klæbuvegen til Nardokrysset, tillegget s. 4), <a href="/dok/Reguleringsbestemmelser_r0291_med_tillegg_1989.pdf" target="_blank" rel="noopener">r0291</a> (langs Omkjøringsvegen, tillegget s. 2) og <a href="/dok/Reguleringsbestemmelser_r0291b_28-09-1989.pdf" target="_blank" rel="noopener">r0291b</a> (Nardokrysset) § 2, tillegget vedtatt i bystyret 28.09.1989. Setningene om lydabsorberende skjermer og ferdigstilling står bare i r0291b.</span></div></li>
+      <li id="h-1989-des"><span class="yr">Desember 1989</span><div>Statens vegvesens prosjektleder skrev i Adresseavisen: <q>Vi tar sikte på å gi bedre støydemping enn det er idag selv om trafikken skulle øke fra dagens 22 000 kjøretøy/døgn til for eksempel 35 000 kjøretøy/døgn.</q> Det er det samme tallet NTH regnet med i 1986. I 2025 var trafikken ved Nardo 47&nbsp;200 kjøretøy i døgnet.
+        <span class="src">Adresseavisen, Ordet fritt, 13.12.1989, s. 45, via nb.no. ÅDT 2025: Statens vegvesen, Trafikkdata.</span></div></li>
+    </ol>
+    <h3 style="margin-top:12px">Hva Statens vegvesen selv har skrevet</h3>
+    <ol class="tl">
+      <li id="h-1992"><span class="yr">1992</span><div>SINTEF DELAB gjorde kontrollmålinger for Statens vegvesen. For parsellen fra undergangen ved Nardo skole til Nardo trafo skrev rapporten at innendørs støynivå <q>underskrider 35 dB med rimelig god margin</q>, at utendørs nivå foran fasade i 2. etasje stort sett lå på 62-69 dB, og at 65-70 dB <q>må forventes ved mange boliger nær vegen</q> ved en årsdøgntrafikk på 35&nbsp;000 (sammendrag, s. III). Konsulenten skrev også at faktiske hastigheter etter visse indikasjoner lå <q>nærmere 80 km/t enn 70 km/t</q> (s. 11).<span class="src">SINTEF DELAB, <a href="/dok/SINTEF_DELAB_A92152_27-10-1992_utdrag.pdf" target="_blank" rel="noopener">rapport 40-A92152</a>, 27.10.1992, utdrag forside, s. III og 11</span></div></li>
+      <li><span class="yr">2001</span><div>Vegdirektoratet skrev 26. januar til en grunneier om et skjønn fra september 1989 for utvidelsen “fra og med Klæbuveien til og med undergangen ved Nardo skole”. Parsellen ble ferdigstilt i 1990 <q>i overensstemmelse med skjønnsforutsetningene</q>, og <q>I ettertid har vegvesenet økt fartsgrensen til 70 km/t</q>. Statens vegvesen har ikke funnet dokumentasjon på når fartsgrensen ble hevet. Vegdirektoratet skrev også at det <q>må for eksempel være anledning til å endre fartsgrensen dersom de totale hensyn tilsier det</q>. Brevet er sladdet.<span class="src">Vegdirektoratet, <a href="/dok/Vegdirektoratet_brev_26-01-2001_2000-05236-3.pdf" target="_blank" rel="noopener">brev 26.01.2001</a> (2000/05236-3), s. 1. SVV, <a href="/dok/SVV_brev_13-11-2026_26-199383-43.pdf" target="_blank" rel="noopener">brev 13.11.2026</a> (26/199383-43), s. 2, pkt. 3.1</span></div></li>
+      <li><span class="yr">2005</span><div>Vegvesenet skrev 17. juni, i svar på en privat forespørsel om høyere fartsgrense: <q>Ideelt sett burde E6 Omkjøringsvegen ha ligget i en såkalt miljøtunnel gjennom hele Nardoområdet, men ut i fra de tildelte økonomiske rammene var det dessverre ikke midler til et slikt tiltak.</q><span class="src">SVV, <a href="/dok/SVV_brev_17-06-2005_2005-38845-002.pdf" target="_blank" rel="noopener">brev 17.06.2005</a> (2005/38845-002), s. 1. Brevet er sladdet</span></div></li>
+      <li><span class="yr">2015</span><div>Et borettslag ved Nidarvoll klaget på skjermen. Statens vegvesen svarte 17. juni at en beregning viste innendørsnivå under tiltaksgrensen i forurensningsforskriften, og at det <q>følgelig</q> ikke var krav om tiltak. De skrev også: <q>Vi er likevel klar over at området har høyt støynivå.</q> og <q>Vi har diskutert å forhøye skjermen forbi Sundlandsskrenten/gamle Motortrade, men foreløpig har vi ikke midler til dette prosjektet.</q><span class="src"><a href="/dok/SVV_brev_17-06-2015_2015-054513-002.pdf" target="_blank" rel="noopener">SVV, brev 17.06.2015</a> (2015/054513-002), s. 1. Brevet er sladdet</span></div></li>
+      <li><span class="yr">2017</span><div>
+        <p style="margin:0 0 10px">Vegvesenet bestilte ny skjerm på sørsiden, fra Njords veg 1 til Klæbuveien 205, ca. 900 meter. Nærmere 30 boliger i Njords veg og Karl Jonssons veg hadde utendørs støy mellom 65 og 72 dB. Skjermen skulle erstattes med <q>ny og trolig noe høyere støyskjerm</q>, og målet var <q>at uteområde for boligene etter skjerming får lydnivå under 60 dB</q>. Bestillinga oppgir gjennomføring i 2017/2018 og 7 mill. kr.</p>
+        <span class="src">SVV, <a href="/dok/SVV_bestilling_stoyskjerm_Sluppen-Nardo_2017.pdf" target="_blank" rel="noopener">bestilling “Rehabilitering av støyskjermer Sluppen – Nardokrysset (sørside)”</a>, prosjekt 406067, udatert, s. 1, 2 og 4. Sendt aksjonsgruppa 19.10.2026</span>
+        <p style="margin:10px 0">I august samme år stoppet prosjektet:</p>
+        <blockquote>“For å kunne oppnå en forbedring så må utforming og høyde på skjerm <b>endres vesentlig</b>.”</blockquote>
+        <span class="src">SVV, <a href="/dok/SVV_epost_21-08-2017_17-34060-20.pdf" target="_blank" rel="noopener">intern e-post 21.08.2017</a>, sak 17/34060-20</span>
+        <p style="margin-top:10px">Samme høst skrev vegvesenet til kommunen: <q>Vegvesenet vil jobbe videre for å få finansiert et større prosjekt med støytiltak.</q></p>
+        <span class="src"><a href="/dok/SVV_epost_prosjektet_utgar_01-09-2017_17-34060-19.pdf" target="_blank" rel="noopener">SVV til Trondheim kommune</a>, sak 17/34060-19</span></div></li>
+      <li><span class="yr">2018</span><div>Vegvesenet laget et skriftlig prosjektforslag for et forprosjekt, kategorisert som miljøtiltak med Miljøpakken som bevilgning. Målet var å redusere støyen utendørs til under 60 dB for beboerne langs strekninga, og over 600 personer ble oppgitt å ha støy over 60 dB. Forslaget ble ikke godkjent.<span class="src">SVV, <a href="/dok/SVV_prosjektark_forprosjekt_Omkjoringsvegen_06-07-2018.pdf" target="_blank" rel="noopener">prosjektark “Forprosjekt Omkjøringsvegen, løsningsvalg”, 06.07.2018</a>, s. 1</span></div></li>
+      <li><span class="yr">2019</span><div>Ordføreren skrev 14. januar at hun hadde tatt støyskjermen opp med Vegvesenet, og at Vegvesenet hadde foreslått et forprosjekt. Ifølge ordføreren sa Vegvesenet at <q>eksisterende skjermer begynner å forfalle og at de enkelte steder burde vært noe høyere</q>. Om forprosjektet skrev hun: <q>Forprosjektet vil bli gjennomført i perioden 2019-2023.</q> og <q>Hensikten med forprosjektet er å skaffe mer kunnskap og grunnlag for kostnader som må legges inn i budsjett.</q> Hun la til at <q>Støyskjerming er viktig for både opplevelse av livskvalitet, et godt bomiljø og helse</q>.<span class="src">Trondheim kommune, ordføreren, <a href="/dok/Ordforer_svar_14-01-2019_18-41490.pdf" target="_blank" rel="noopener">svar på henvendelse om støyskjerming, 14.01.2019</a> (18/41490), s. 1. Utsagnet om forfall og høyde er ordførerens gjengivelse av hva Vegvesenet sa</span></div></li>
+      <li><span class="yr">2023</span><div>En henvendelse om bedre skjerming ved skolen og barnehagen ble aldri besvart. Vegvesenet skriver nå: <q>Henvendelsen ble ikke besvart, noe som burde vært gjort.</q>Svaret kom først 29.10.2026, og Vegvesenet “beklager at dere ikke tidligere har fått svar på henvendelsen”.<span class="src">SVV, brev <a href="/dok/SVV_brev_09-10-2026_26-199383-23.pdf" target="_blank" rel="noopener">09.10.2026</a>, sak 26/199383-23, s. 3, pkt. 4. SVV, svar til kommunen <a href="/dok/SVV_brev_29-10-2026_23-74840-2.pdf" target="_blank" rel="noopener">29.10.2026</a> (23/74840-2), s. 1</span></div></li>
+      <li><span class="yr">2024</span><div>
+        <blockquote>Utskifting av støyskjermer langs riksveg “<b>må finansieres gjennom miljøpakken</b> da de kommer utenom det som eventuelt allerede er oppgitt i NTP”.</blockquote>
+        <span class="src"><a href="/dok/SVV_innspill_handlingsplan_stoy_2024-2029.pdf" target="_blank" rel="noopener">SVVs innspill til Handlingsplan mot støy 2024-2029</a>, Trondheim kommune sak 2024/19783-1, s. 11. E6 Nidarvoll-Moholtlia er første eksempel. <a href="/#m-boligene">Se kortet under Motstrid</a>.</span>
+        <p style="margin-top:10px">Kommunens handlingsplan mot støy 2024-2029 fører opp E6 Nidarvoll-Moholtlia som planlagt tiltak med <q>Fokusområde: Ny og bedre skjerm på strekningen</q>, og Nardo skole og barnehage som støyprosjekt, begge med Statens vegvesen som ansvarlig. Kommunen skriver at oppføringa bygger på vegvesenets eget innspill.</p>
+        <span class="src">Trondheim kommune, <a href="https://www.trondheim.kommune.no/contentassets/cba566a94eb94d98af0d5bb59d905137/handlingsplan-mot-stoy-2024-2029.pdf" target="_blank" rel="noopener">Handlingsplan mot støy 2024-2029</a>, tabell 3 (s. 28) og tabell 6 (s. 31). Trondheim kommune, <a href="/dok/Trondheim_kommune_brev_28-09-2026_2026-33550.pdf" target="_blank" rel="noopener">brev 28.09.2026</a>, ref. 2026/33550</span></div></li>
+      <li><span class="yr">Oktober 2025</span><div>Byråden for miljø, næring og samferdsel skrev i saksframlegget om handlingsplanen at skjermen er <q>for lav til at den gir tilstrekkelig skjerming for skolen, barnehagen og store boligområder</q> (s. 3), og at hun <q>vil be Statens vegvesen om å melde prosjektet inn til Miljøpakken</q> (s. 4-5). <a href="/#m-boligene">Se kortet under Motstrid</a>.<span class="src"><a href="https://trondheim.kommune.no/contentassets/cba566a94eb94d98af0d5bb59d905137/cmhbyh3n3cux70px3g0p00hkq.pdf" target="_blank" rel="noopener">Byrådet i Trondheim, saksframlegg 2025/25538</a>, 28.10.2025</span></div></li>
+      <li><span class="yr">November 2025</span><div>Byrådet vedtok 6. november at Handlingsplan mot støy 2024-2029 skal legges til grunn for kommunens prioritering av støymidler i Miljøpakken. Planen ble 20. november oversendt Statsforvalteren som forurensningsmyndighet.<span class="src">Byrådet, <a href="https://trondheim-elements.digdem.no/file/cmhbyh3n6cv0z0px372n41jc1" target="_blank" rel="noopener">møteprotokoll 06.11.2025</a>, BS 552/2025, s. 7, og Trondheim kommune, <a href="/dok/Trondheim_kommune_brev_09-11-2026_2026-39318.pdf" target="_blank" rel="noopener">svar på innsynskrav 09.11.2026</a> (2026/39318), s. 2</span></div></li>
+      <li><span class="yr">Juni 2026</span><div>Saken kom først opp som en kort orientering under Eventuelt i Programrådet 19. juni 2026, etter kommunens tilsyn i mars. Kommunen opplyser 09.11.2026 at det ikke finnes skriftlige spor i arkivet eller i referatene fra Programrådet og Kontaktutvalget vinteren 2025-2026 om at kommunen ba Statens vegvesen melde inn saken. Kommunen skriver at dette kan ha skjedd muntlig.<span class="src">Trondheim kommune, <a href="/dok/Trondheim_kommune_brev_09-11-2026_2026-39318.pdf" target="_blank" rel="noopener">svar på innsynskrav 09.11.2026</a> (2026/39318), s. 1</span></div></li>
+      <li><span class="yr">Juli 2026</span><div>Vegvesenet skriver at et eget prosjekt gjennom Miljøpakken er <q><b>den eneste realistiske muligheten</b></q> for en vesentlig oppgradering av skjermingen, og: <q>vi kan love at vi vil følge opp dette utover høsten.</q><span class="src">SVV, <a href="/dok/SVV_brev_16-07-2026_26-199383-2.pdf" target="_blank" rel="noopener">brev 16.07.2026</a>, sak 26/199383-2, s. 1-2</span></div></li>
+      <li class="now"><span class="yr">Høsten 2026</span><div>Vegvesenet snur. I september skriver de at prosjektet trolig ikke blir meldt inn til Miljøpakken, og at byvekstavtalemidlene <q>bør gå til andre formål</q>. I oktober omtales forprosjektet fra 2017-2018 som <q>en verbal ambisjon</q>, og bedre skjerming ved skolen som <q>et ordinært vedlikeholdstiltak</q>. Den 19. oktober skriver de at <q>det er ingen bestemmelse i byvekstavtalen som er til hinder for at Miljøpakken finansierer støyskjerming langs riksveg</q>. Den 30. oktober er de <q>enig i at betegnelsen er upresis</q>.<span class="src">SVV, brev <a href="/dok/SVV_brev_11-09-2026_26-199383-13.pdf" target="_blank" rel="noopener">11.09.2026</a> (26/199383-13), <a href="/dok/SVV_brev_09-10-2026_26-199383-23.pdf" target="_blank" rel="noopener">09.10.2026</a> (26/199383-23) og <a href="/dok/SVV_brev_19-10-2026_26-199383-28.pdf" target="_blank" rel="noopener">19.10.2026</a> (26/199383-28), s. 4, og <a href="/dok/SVV_brev_30-10-2026_26-199383-30.pdf" target="_blank" rel="noopener">30.10.2026</a> (26/199383-30), s. 1</span></div></li>
+    </ol>
+    <p class="hclose"><button type="button" id="histclose">Skjul historikken &uarr;</button></p>
+  </details>
 </section>
 
 <section aria-labelledby="innvendinger">
@@ -702,6 +747,11 @@ li:target,#kommunerapport:target,#h-1986:target~#h-1989,#a-nidaros-fart:target+#
       </tbody>
     </table>
   </div>
+<h3 id="h-idag" style="margin-top:12px">Gjelder planene i dag?</h3>
+  <ol class="tl">
+    <li id="h-byrad-2026"><span class="yr">10. november 2026</span><div>Trondheim kommune bekreftet 27. oktober 2026 at reguleringsplanene 290, 291 og 291b er gjeldende, og byrådet skriver 10. november at de <q>fremdeles</q> gjelder. Om 35 dBA inne skriver byrådet: <q>At et maksimalt ekvivalent døgnnivå på 35 dbA skal oppnås inne forstås som et absolutt krav. Dette vil være en bindende føring for støyisolering av fasadene, samt ved utforming av støyskjermen.</q> Om 55 dBA ute: <q>At 55 dbA skal tilstrebes ute anses som retningsgivende og ikke et absolutt krav.</q> For området rundt Nardo skole og barnehage gjelder i tillegg r0290f, som viser til støygrensen i T-1442 og NS 8175 klasse C.
+      <span class="src"><a href="https://digdem.blob.core.windows.net/trondheim-elements/clkwg8igu013c01nm85a48fmc-wobuvyvfb8ujwxzuu5fp.pdf" target="_blank" rel="noopener">Byrådets notat 10.11.2026 (2026/22)</a> til byutviklingsutvalget, sak 24/26, s. 1-3.</span></div></li>
+  </ol>
 </section>
 
 <section aria-labelledby="dok">
@@ -878,6 +928,15 @@ document.getElementById('copy').addEventListener('click', function(){
   var b=document.getElementById('stepsmore'),l=document.getElementById('stepslist');
   if(!b||!l) return;
   b.addEventListener('click',function(){var on=!l.classList.contains('show-early');l.classList.toggle('show-early',on);b.setAttribute('aria-expanded',on?'true':'false');b.textContent=on?'Skjul tidligere oppføringer':'Vis tidligere oppføringer (17.08. til 06.10.)';});
+})();
+</script>
+<script>
+(function(){
+  var d=document.getElementById('hist-alle'); if(!d) return;
+  function opener(){var id=decodeURIComponent(location.hash.slice(1)); if(!id) return; var el=document.getElementById(id);
+    if(el&&d.contains(el)&&!d.open){d.open=true; setTimeout(function(){el.scrollIntoView();},0);}}
+  opener(); window.addEventListener('hashchange',opener);
+  document.getElementById('histclose').addEventListener('click',function(){d.open=false;document.getElementById('historikk').scrollIntoView();});
 })();
 </script>
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
