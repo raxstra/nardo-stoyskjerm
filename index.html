@@ -936,7 +936,11 @@ document.getElementById('copy').addEventListener('click', function(){
   function opener(){var id=decodeURIComponent(location.hash.slice(1)); if(!id) return; var el=document.getElementById(id);
     if(el&&d.contains(el)&&!d.open){d.open=true; setTimeout(function(){el.scrollIntoView();},0);}}
   opener(); window.addEventListener('hashchange',opener);
-  document.getElementById('histclose').addEventListener('click',function(){d.open=false;document.getElementById('historikk').scrollIntoView();});
+  document.getElementById('histclose').addEventListener('click',function(){
+    var nx=d.closest('section').nextElementSibling, before=nx.getBoundingClientRect().top;
+    d.open=false;
+    window.scrollBy({top:nx.getBoundingClientRect().top-before,left:0,behavior:'instant'}); /* seksjonen under blir stående på samme sted på skjermen */
+  });
 })();
 </script>
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
