@@ -217,6 +217,18 @@ figcaption .src{margin-top:6px}
 details.mmore>summary,details.sim>summary{cursor:pointer;list-style:none;justify-self:start;display:inline-block;font:700 .95rem/1.2 var(--body);color:var(--accent);border:1.5px solid var(--accent);border-radius:6px;padding:8px 12px}
 details.mmore>summary:hover,details.sim>summary:hover{background:var(--accent-soft)}
 details.docsall[open]>summary{margin-bottom:12px}
+details.docsall>summary .dhead{display:grid;grid-template-columns:1fr;gap:10px}
+details.docsall>summary .dhead span{border-top:3px solid var(--accent);padding-top:8px}
+details.docsall>summary .dhead b{display:block;font:700 1.05rem/1.25 var(--display);color:var(--fg)}
+details.docsall>summary .dhead i{display:block;font-style:normal;font-size:.9rem;color:var(--muted)}
+@media (min-width:760px){
+  details.docsall>summary .dhead,details.docsall .docgroups{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 24px}
+  details.docsall .docgroups{padding:0 20px}
+  details.docsall[open] .docgroups h3{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  details.docsall[open]>summary{margin-bottom:16px}
+}
+details.docsall .contact{margin-top:8px}
+
 #status .hl{color:var(--accent)}
 details.mmore[open]>summary{margin-bottom:8px}
 details.mmore{display:grid;gap:10px}
@@ -317,13 +329,13 @@ li:target,#kommunerapport:target,#h-1986:target~#h-1989,#a-nidaros-fart:target+#
   <p class="meta">Trykk for å gå dit det er endret.</p>
   <ul id="nylist">
     <li data-d="2026-11-21"><a href="#s-hus"><b>21.11.2026</b>Fylkets behandling av Miljøpakkens handlingsprogram: hovedutvalget 17.11, fylkesutvalget 24.11 og fylkestinget 09.12, under Status og Saksgang</a></li>
-    <li data-d="2026-11-19"><a href="#s-bystyret"><b>19.11.2026</b>Bystyret vedtok innstillinga: 67 mot 0 for planlegging av støyskjerm for hele strekninga og for at Statens vegvesen skal finansiere, under Status og Saksgang</a></li>
+    <li data-d="2026-11-19"><a href="#s-bystyret"><b>19.11.2026</b>Bystyret ba enstemmig om planlegging av støyskjerm for hele strekninga og om at Statens vegvesen skal finansiere, under Status og Saksgang</a></li>
     <li data-d="2026-11-19"><a href="#a-nidaros-fart"><b>19.11.2026</b>Nye saker i Nidaros og Adresseavisen etter bystyrets behandling, under Media</a></li>
     <li data-d="2026-11-19"><a href="#kommunerapport"><b>19.11.2026</b>Kommunens støyrapport er publisert, med målinger og beregninger, under Støynivå og Saksgang</a></li>
     <li data-d="2026-11-18"><a href="#a-adressa-60"><b>18.11.2026</b>Ny sak i Adresseavisen om lavere fartsgrense og ny støyskjerm på Nardo, under Media</a></li>
     <li data-d="2026-11-12"><a href="#a-myrvold"><b>12.11.2026</b>Nytt debattinnlegg i Nidaros fra Martin Myrvold, under Media</a></li>
     <li data-d="2026-11-11"><a href="#s-svv-11-11"><b>11.11.2026</b>Statens vegvesen svarer at de tar stilling til innmelding i handlingsprogrammet når kommunen bringer saken inn, og at de vil behandle en søknad om fartsgrense, under Saksgang</a></li>
-    <li data-d="2026-11-10"><a href="#h-byrad-2026"><b>10.11.2026</b>Byrådet skriver at 35 dBA inne i reguleringsplanene er et absolutt krav og en bindende føring ved utforming av støyskjermen, under Historikk og Regelverk</a></li>
+    <li data-d="2026-11-10"><a href="#h-byrad-2026"><b>10.11.2026</b>Byrådet skriver at 35 dBA inne i reguleringsplanene er et absolutt krav og en bindende føring ved utforming av støyskjermen, under Regelverk</a></li>
     <li data-d="2026-11-08"><a href="#a-skammelig"><b>08.11.2026</b>Nidaros har skrevet om utvalgsmøtet 3.11, under Media</a></li>
     <li data-d="2026-11-05"><a href="#a-saethero"><b>05.11.2026</b>Nytt debattinnlegg i Nidaros fra Nora Malini Sætherø (MDG), under Media</a></li>
     <li data-d="2026-11-03"><a href="#s-mns"><b>03.11.2026</b>Utvalget enstemmig for innstilling om planlegging av støyskjerm for hele strekninga, med bildet av hovedforslaget</a></li>
@@ -796,7 +808,7 @@ li:target,#kommunerapport:target,#h-1986:target~#h-1989,#a-nidaros-fart:target+#
   <h2 id="dok">Dokumentene bak denne siden</h2>
   <p>Alle dokumentene er offentlige eller utlevert etter innsynskrav.</p>
   <details class="docsall" id="dokliste">
-    <summary><span class="hq">43 dokumenter i tre grupper: Statens vegvesen, kommunen, Miljøpakken og Stortinget, og utredninger, kart og historie.</span><span class="vbtn"><span class="oc">Vis alle dokumentene &darr;</span><span class="oo">Skjul dokumentene &uarr;</span></span></summary>
+    <summary><span class="dhead"><span><b>Statens vegvesen</b><i>18 dokumenter</i></span><span><b>Kommunen, Miljøpakken og Stortinget</b><i>17 dokumenter</i></span><span><b>Utredninger, kart og historie</b><i>8 dokumenter</i></span></span><span class="vbtn"><span class="oc">Vis alle dokumentene &darr;</span><span class="oo">Skjul dokumentene &uarr;</span></span></summary>
     <div class="docgroups">
       <div>
         <h3>Statens vegvesen</h3>
@@ -857,16 +869,16 @@ li:target,#kommunerapport:target,#h-1986:target~#h-1989,#a-nidaros-fart:target+#
         </ul>
       </div>
     </div>
-  </details>
   <div class="contact">
-    <h3>Be om dokumentene</h3>
-    <p>Dokumentene med lenke kan åpnes direkte. I dokumentene vi har lagt ut er navn, adresser, e-postadresser og telefonnumre til enkeltpersoner sladdet. De andre dokumentene kan du få ved å sende en e-post til aksjonsgruppa og si hvilket dokument du vil ha.</p>
-    <div class="row">
-      <span class="phone" id="tlf">stoyskjerm.nardo@gmail.com</span>
-      <button type="button" id="copy">Kopier e-postadressen</button>
-      <span class="meta" id="copied" aria-live="polite"></span>
+      <h3>Be om dokumentene</h3>
+      <p>Dokumentene med lenke kan åpnes direkte. I dokumentene vi har lagt ut er navn, adresser, e-postadresser og telefonnumre til enkeltpersoner sladdet. De andre dokumentene kan du få ved å sende en e-post til aksjonsgruppa og si hvilket dokument du vil ha.</p>
+      <div class="row">
+        <span class="phone" id="tlf">stoyskjerm.nardo@gmail.com</span>
+        <button type="button" id="copy">Kopier e-postadressen</button>
+        <span class="meta" id="copied" aria-live="polite"></span>
+      </div>
     </div>
-  </div>
+  </details>
 </section>
 
 <section aria-labelledby="media">
