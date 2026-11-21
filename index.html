@@ -223,11 +223,13 @@ details.docsall>summary .dhead b{display:block;font:700 1.05rem/1.25 var(--displ
 details.docsall>summary .dhead i{display:block;font-style:normal;font-size:.9rem;color:var(--muted)}
 @media (min-width:760px){
   details.docsall>summary .dhead,details.docsall .docgroups{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 24px}
-  details.docsall .docgroups{padding:0 20px}
   details.docsall[open] .docgroups h3{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   details.docsall[open]>summary{margin-bottom:16px}
 }
 details.docsall .contact{margin-top:8px}
+#dokliste>summary{background:none;padding:0;margin-top:0;border-radius:0;gap:18px}
+#dokliste[open]>summary{margin-bottom:2px}
+#dokliste .docgroups{margin-top:0}
 
 #status .hl{color:var(--accent)}
 details.mmore[open]>summary{margin-bottom:8px}
@@ -808,7 +810,7 @@ li:target,#kommunerapport:target,#h-1986:target~#h-1989,#a-nidaros-fart:target+#
   <h2 id="dok">Dokumentene bak denne siden</h2>
   <p>Alle dokumentene er offentlige eller utlevert etter innsynskrav.</p>
   <details class="docsall" id="dokliste">
-    <summary><span class="dhead"><span><b>Statens vegvesen</b><i>18 dokumenter</i></span><span><b>Kommunen, Miljøpakken og Stortinget</b><i>17 dokumenter</i></span><span><b>Utredninger, kart og historie</b><i>8 dokumenter</i></span></span><span class="vbtn"><span class="oc">Vis alle dokumentene &darr;</span><span class="oo">Skjul dokumentene &uarr;</span></span></summary>
+    <summary><span class="vbtn"><span class="oc">Vis alle dokumentene &darr;</span><span class="oo">Skjul dokumentene &uarr;</span></span><span class="dhead"><span><b>Statens vegvesen</b><i>18 dokumenter</i></span><span><b>Kommunen, Miljøpakken og Stortinget</b><i>17 dokumenter</i></span><span><b>Utredninger, kart og historie</b><i>8 dokumenter</i></span></span></summary>
     <div class="docgroups">
       <div>
         <h3>Statens vegvesen</h3>
