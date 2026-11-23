@@ -303,6 +303,19 @@ figcaption .src{margin-top:6px}
 </footer>
 
 </div>
+<script data-goatcounter="https://rasmus.goatcounter.com/count" data-goatcounter-settings='{"no_onload":false}' async src="//gc.zgo.at/count.js"></script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href]');
+  if(!a||!window.goatcounter||!goatcounter.count)return;
+  var u;try{u=new URL(a.href,location.href)}catch(x){return}
+  var p=null;
+  if(u.origin!==location.origin&&/^https?:$/.test(u.protocol)){p='ut/'+u.hostname+u.pathname}
+  else if(u.origin===location.origin&&/^\/dok\//.test(u.pathname)){p='dok/'+u.pathname.slice(5)}
+  else if(u.protocol==='mailto:'){p='mailto'}
+  if(p)goatcounter.count({path:p,title:(a.textContent||'').trim().slice(0,80),event:true});
+},true);
+</script>
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script>
